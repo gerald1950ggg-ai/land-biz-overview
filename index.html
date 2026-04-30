@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Land Flipping AI System — Chris & Coose</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0b0f1a;
+    color: #e0e6f0;
+    line-height: 1.6;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0b0f1a 0%, #1a1f3a 50%, #0d2137 100%);
+    padding: 60px 40px;
+    text-align: center;
+    border-bottom: 1px solid #1e2a4a;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(59,130,246,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(16,185,129,0.06) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  .hero h1 {
+    font-size: 2.8em;
+    font-weight: 900;
+    background: linear-gradient(135deg, #3b82f6, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    letter-spacing: -1px;
+  }
+  .hero .subtitle {
+    font-size: 1.2em;
+    color: #8892b0;
+    margin-top: 12px;
+    position: relative;
+  }
+  .hero .tagline {
+    font-size: 0.95em;
+    color: #5a6480;
+    margin-top: 8px;
+    position: relative;
+  }
+
+  /* SECTIONS */
+  section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 40px;
+  }
+  section + section {
+    border-top: 1px solid #1a2040;
+  }
+  h2 {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #f0f4ff;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  h2 .emoji { margin-right: 10px; }
+  .section-sub {
+    color: #6b7a99;
+    font-size: 0.95em;
+    margin-bottom: 30px;
+  }
+  h3 {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #c8d4e8;
+    margin: 20px 0 10px;
+  }
+
+  /* PIPELINE FLOWCHART */
+  .pipeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+  .pipeline-step {
+    display: flex;
+    align-items: stretch;
+    min-height: 80px;
+    position: relative;
+  }
+  .pipeline-step .step-marker {
+    width: 64px;
+    min-width: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .step-dot {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.85em;
+    color: #fff;
+    z-index: 2;
+    flex-shrink: 0;
+    margin-top: 18px;
+  }
+  .step-dot.ai { background: linear-gradient(135deg, #3b82f6, #6366f1); }
+  .step-dot.human { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+  .step-dot.both { background: linear-gradient(135deg, #10b981, #3b82f6); }
+  .step-line {
+    width: 3px;
+    flex: 1;
+    background: #1e2a4a;
+    margin-top: 4px;
+  }
+  .pipeline-step:last-child .step-line { display: none; }
+  .step-content {
+    flex: 1;
+    padding: 14px 20px;
+    margin: 6px 0;
+    background: #111827;
+    border: 1px solid #1e2a4a;
+    border-radius: 12px;
+    margin-left: 16px;
+  }
+  .step-content h4 {
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .step-content h4.ai-label { color: #60a5fa; }
+  .step-content h4.human-label { color: #fbbf24; }
+  .step-content h4.both-label { color: #34d399; }
+  .step-content p {
+    font-size: 0.88em;
+    color: #7a8baa;
+    line-height: 1.5;
+  }
+  .step-badge {
+    display: inline-block;
+    font-size: 0.7em;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .badge-ai { background: rgba(59,130,246,0.2); color: #60a5fa; }
+  .badge-chris { background: rgba(245,158,11,0.2); color: #fbbf24; }
+  .badge-both { background: rgba(16,185,129,0.2); color: #34d399; }
+
+  /* SPLIT DIAGRAM */
+  .split-container {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 0;
+    margin: 20px 0;
+  }
+  .split-col {
+    padding: 24px;
+    border-radius: 16px;
+  }
+  .split-ai {
+    background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(99,102,241,0.05));
+    border: 1px solid rgba(59,130,246,0.25);
+  }
+  .split-human {
+    background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(239,68,68,0.05));
+    border: 1px solid rgba(245,158,11,0.25);
+  }
+  .split-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+  }
+  .split-col h3 {
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 16px;
+  }
+  .split-col h3.blue { color: #60a5fa; }
+  .split-col h3.gold { color: #fbbf24; }
+  .split-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .split-item:last-child { border-bottom: none; }
+  .split-icon {
+    font-size: 1.3em;
+    min-width: 28px;
+    text-align: center;
+    margin-top: 2px;
+  }
+  .split-item .label {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #c8d4e8;
+  }
+  .split-item .desc {
+    font-size: 0.8em;
+    color: #6b7a99;
+    margin-top: 2px;
+  }
+
+  /* COUNTY CARDS */
+  .county-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .county-card {
+    background: #111827;
+    border: 1px solid #1e2a4a;
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .county-card:hover { border-color: #3b82f6; }
+  .county-card.tier1 { border-left: 4px solid #10b981; }
+  .county-card.tier2 { border-left: 4px solid #3b82f6; }
+  .county-card.tier3 { border-left: 4px solid #6b7a99; }
+  .tier-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 0.7em;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tier-badge.t1 { background: rgba(16,185,129,0.2); color: #34d399; }
+  .tier-badge.t2 { background: rgba(59,130,246,0.2); color: #60a5fa; }
+  .county-card h4 {
+    font-size: 1.15em;
+    font-weight: 800;
+    color: #f0f4ff;
+    margin-bottom: 2px;
+  }
+  .county-card .metro {
+    font-size: 0.8em;
+    color: #6b7a99;
+    margin-bottom: 14px;
+  }
+  .stat-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    flex: 1;
+    min-width: 90px;
+  }
+  .stat .val {
+    font-size: 1.3em;
+    font-weight: 800;
+    color: #34d399;
+  }
+  .stat .lbl {
+    font-size: 0.7em;
+    color: #5a6480;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .county-card .why {
+    font-size: 0.85em;
+    color: #8892b0;
+    line-height: 1.5;
+  }
+  .county-card .flag {
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #f59e0b;
+    background: rgba(245,158,11,0.1);
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  /* SYSTEM ARCHITECTURE */
+  .arch-diagram {
+    background: #0d1221;
+    border: 1px solid #1e2a4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 20px 0;
+    position: relative;
+  }
+  .arch-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+  .arch-box {
+    padding: 16px 24px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 180px;
+    position: relative;
+  }
+  .arch-box.engine {
+    background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(99,102,241,0.08));
+    border: 1px solid rgba(59,130,246,0.3);
+  }
+  .arch-box.platform {
+    background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(6,182,212,0.08));
+    border: 1px solid rgba(16,185,129,0.3);
+  }
+  .arch-box.human {
+    background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.08));
+    border: 1px solid rgba(245,158,11,0.3);
+  }
+  .arch-box.data {
+    background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(139,92,246,0.08));
+    border: 1px solid rgba(168,85,247,0.3);
+  }
+  .arch-box .box-title {
+    font-weight: 800;
+    font-size: 0.95em;
+    margin-bottom: 4px;
+  }
+  .arch-box.engine .box-title { color: #60a5fa; }
+  .arch-box.platform .box-title { color: #34d399; }
+  .arch-box.human .box-title { color: #fbbf24; }
+  .arch-box.data .box-title { color: #a78bfa; }
+  .arch-box .box-desc {
+    font-size: 0.75em;
+    color: #6b7a99;
+  }
+  .arch-arrow {
+    text-align: center;
+    color: #2a3a5a;
+    font-size: 1.8em;
+    margin: 4px 0;
+    letter-spacing: 4px;
+  }
+  .arch-label {
+    text-align: center;
+    font-size: 0.75em;
+    color: #4a5a7a;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 6px 0 2px;
+  }
+
+  /* SELL THROUGH TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+  }
+  .data-table th {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 2px solid #1e2a4a;
+    color: #6b7a99;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #141c2e;
+    color: #c8d4e8;
+  }
+  .data-table tr:hover td { background: rgba(59,130,246,0.04); }
+  .green { color: #34d399; }
+  .yellow { color: #fbbf24; }
+  .red { color: #f87171; }
+  .bold { font-weight: 700; }
+
+  /* NEXT STEPS */
+  .next-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .next-card {
+    background: #111827;
+    border: 1px solid #1e2a4a;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .next-card .num {
+    font-size: 2em;
+    font-weight: 900;
+    background: linear-gradient(135deg, #3b82f6, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .next-card h4 {
+    font-size: 1em;
+    font-weight: 700;
+    color: #f0f4ff;
+    margin-bottom: 6px;
+  }
+  .next-card p {
+    font-size: 0.85em;
+    color: #6b7a99;
+    line-height: 1.5;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 30px 40px;
+    color: #3a4560;
+    font-size: 0.8em;
+    border-top: 1px solid #1a2040;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .split-container { grid-template-columns: 1fr; }
+    .split-center { display: none; }
+    .hero h1 { font-size: 2em; }
+    section { padding: 30px 20px; }
+    .county-grid { grid-template-columns: 1fr; }
+    .arch-row { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>🏗️ AI-Powered Land Flipping</h1>
+  <div class="subtitle">Chris Spiewak × Coose × Gerald AI</div>
+  <div class="tagline">Jack Bosch Method + AI Automation = Unfair Advantage</div>
+</div>
+
+<!-- SECTION 1: THE SPLIT -->
+<section>
+  <h2><span class="emoji">⚡</span>Division of Labor</h2>
+  <p class="section-sub">AI handles everything before and after the human touch. Chris only talks to warm leads and closes deals.</p>
+
+  <div class="split-container">
+    <div class="split-col split-ai">
+      <h3 class="blue">🤖 AI Agents</h3>
+      <div class="split-item">
+        <div class="split-icon">🔍</div>
+        <div>
+          <div class="label">County & List Research</div>
+          <div class="desc">Growth data analysis, vacant land list pulls, absentee owner filtering</div>
+        </div>
+      </div>
+      <div class="split-item">
+        <div class="split-icon">✉️</div>
+        <div>
+          <div class="label">AI-Personalized Direct Mail</div>
+          <div class="desc">Unique letter per owner — not templates. Parcel-specific, county-aware</div>
+        </div>
+      </div>
+      <div class="split-item">
+        <div class="split-icon">📊</div>
+        <div>
+          <div class="label">Comp Research & Pricing</div>
+          <div class="desc">Auto-pull Zillow/LandWatch comps, generate offer ranges (5-35% of market)</div>
+        </div>
+      </div>
+      <div class="split-item">
+        <div class="split-icon">📞</div>
+        <div>
+          <div class="label">Response Pre-Screening</div>
+          <div class="desc">Voicemail transcription, lead scoring, route warm leads to Chris</div>
+        </div>
+      </div>
+      <div class="split-item">
+        <div class="split-icon">🔄</div>
+        <div>
+          <div class="label">Follow-Up Sequences</div>
+          <div class="desc">Multi-touch automated follow-up on non-responders. Every 6 weeks.</div>
+        </div>
+      </div>
+      <div class="split-item">
+        <div class="split-icon">🏷️</div>
+        <div>
+          <div class="label">Listing & Marketing</div>
+          <div class="desc">Auto-generate listings for LandWatch, Zillow, Facebook, Craigslist</div>
+        </div>
+      </div>
+      <div class="split-item">
+        <div class="split-icon">👥</div>
+        <div>
+          <div class="label">Buyer List Building</div>
+          <div class="desc">Lead capture, drip sequences, buyer matching to inventory</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-center">⇄</div>
+
+    <div class="split-col split-human">
+      <h3 class="gold">🤝 Chris</h3>
+      <div class="split-item">
+        <div class="split-icon">📱</div>
+        <div>
+          <div class="label">Talk to Warm Sellers</div>
+          <div class="desc">AI pre-screens and qualifies. Chris gets ready-to-go leads with comp data attached.</div>
+        </div>
+      </div>
+      <div class="split-item">
+        <div class="split-icon">🤝</div>
+        <div>
+          <div class="label">Build Trust & Rapport</div>
+          <div class="desc">The human element that closes deals. Higher acceptance rate = more profit.</div>
+        </div>
+      </div>
+      <div class="split-item">
+        <div class="split-icon">📝</div>
+        <div>
+          <div class="label">Make Offers</div>
+          <div class="desc">Written offers at 5-35% of market value. AI provides comp-backed ranges.</div>
+        </div>
+      </div>
+      <div class="split-item">
+        <div class="split-icon">⚖️</div>
+        <div>
+          <div class="label">Negotiate & Structure</div>
+          <div class="desc">Renegotiations, deal structuring, contract terms — human judgment calls.</div>
+        </div>
+      </div>
+      <div class="split-item">
+        <div class="split-icon">🏦</div>
+        <div>
+          <div class="label">Close Deals</div>
+          <div class="desc">Title company coordination, escrow, final signatures, collect checks.</div>
+        </div>
+      </div>
+      <div class="split-item" style="margin-top:20px; border-top: 1px solid rgba(245,158,11,0.2); padding-top: 16px;">
+        <div class="split-icon">💡</div>
+        <div>
+          <div class="label" style="color: #fbbf24;">Chris's time = only high-value activities</div>
+          <div class="desc">No list building, no envelope stuffing, no cold outreach, no data entry. Just conversations and closings.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: PIPELINE FLOWCHART -->
+<section>
+  <h2><span class="emoji">🔄</span>Deal Pipeline — 30-Day Cycle</h2>
+  <p class="section-sub">Based on Jack Bosch's Land Profit method. Color = who owns the step.</p>
+
+  <div class="pipeline">
+    <div class="pipeline-step">
+      <div class="step-marker"><div class="step-dot ai">1</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <h4 class="ai-label">Select Target Counties <span class="step-badge badge-ai">AI</span></h4>
+        <p>Analyze population growth, land prices, sell-through rates, absentee owner data. Rank counties by opportunity score. <strong>Days 1</strong></p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div class="step-marker"><div class="step-dot ai">2</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <h4 class="ai-label">Pull & Filter Vacant Land Lists <span class="step-badge badge-ai">AI</span></h4>
+        <p>Pull owner data via PropStream/ATTOM API. Filter: $10-300K value, 1-100 acres, absentee owners, no govt/corp. <strong>Days 2-3</strong></p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div class="step-marker"><div class="step-dot ai">3</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <h4 class="ai-label">Send AI-Personalized Direct Mail <span class="step-badge badge-ai">AI</span></h4>
+        <p>Generate unique letters per owner via Lob.com/SendMailr. Personalized to parcel, county, owner situation. Not templates. <strong>Days 4-5</strong></p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div class="step-marker"><div class="step-dot ai">4</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <h4 class="ai-label">Process Inbound Responses <span class="step-badge badge-ai">AI</span></h4>
+        <p>Voicemail transcription → AI lead scoring → comp research auto-attached → warm leads routed to Chris. <strong>Days 7-10</strong></p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div class="step-marker"><div class="step-dot human">5</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <h4 class="human-label">Chris Calls Warm Sellers <span class="step-badge badge-chris">CHRIS</span></h4>
+        <p>Pre-qualified leads only. Comp data already attached. Friendly chat, build rapport, request to send written offer. <strong>Days 8-14</strong></p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div class="step-marker"><div class="step-dot both">6</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <h4 class="both-label">Make Written Offers <span class="step-badge badge-chris">CHRIS</span> <span class="step-badge badge-ai">AI COMPS</span></h4>
+        <p>AI generates offer range (5-35% of market). Chris chooses price, sends written offer. Offer tracking automated. <strong>Days 12-14</strong></p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div class="step-marker"><div class="step-dot ai">7</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <h4 class="ai-label">Follow Up on Non-Responses <span class="step-badge badge-ai">AI</span></h4>
+        <p>Automated multi-touch follow-up sequences. Different messaging each touch. Re-route any new warm leads to Chris. <strong>Day 15+</strong></p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div class="step-marker"><div class="step-dot human">8</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <h4 class="human-label">Negotiate & Close <span class="step-badge badge-chris">CHRIS</span></h4>
+        <p>Renegotiate if needed. Open escrow. Title company coordination. Sign contracts. <strong>Days 16-24</strong></p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div class="step-marker"><div class="step-dot ai">9</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <h4 class="ai-label">List Property for Sale <span class="step-badge badge-ai">AI</span></h4>
+        <p>Auto-generate listings: LandWatch, Zillow, Facebook Marketplace, Craigslist. Photo descriptions. SEO optimized. <strong>Days 17-18</strong></p>
+      </div>
+    </div>
+    <div class="pipeline-step">
+      <div class="step-marker"><div class="step-dot both">10</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <h4 class="both-label">Sell & Collect <span class="step-badge badge-chris">CHRIS</span> <span class="step-badge badge-ai">AI BUYERS</span></h4>
+        <p>AI buyer matching + drip campaigns bring buyers. Chris negotiates final sale. Title company closes. Check deposited. <strong>Day 30 🎯</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px; text-align:center; padding: 16px; background: rgba(16,185,129,0.08); border-radius: 12px; border: 1px solid rgba(16,185,129,0.2);">
+    <span style="font-size:1.1em; font-weight:700; color:#34d399;">↻ Repeat every 6 weeks</span>
+    <span style="display:block; font-size:0.85em; color:#6b7a99; margin-top:4px;">New mailer every cycle keeps the pipeline full. Multiple campaigns can overlap.</span>
+  </div>
+</section>
+
+<!-- SECTION 3: SYSTEM ARCHITECTURE -->
+<section>
+  <h2><span class="emoji">🏗️</span>System Architecture</h2>
+  <p class="section-sub">Four engines powered by AI, feeding warm leads to one human closer.</p>
+
+  <div class="arch-diagram">
+    <div class="arch-label">Data Sources</div>
+    <div class="arch-row">
+      <div class="arch-box data">
+        <div class="box-title">📊 PropStream / ATTOM</div>
+        <div class="box-desc">Vacant land lists, owner data, parcel details</div>
+      </div>
+      <div class="arch-box data">
+        <div class="box-title">🏘️ Zillow / LandWatch</div>
+        <div class="box-desc">Comp data, sold prices, active listings</div>
+      </div>
+      <div class="arch-box data">
+        <div class="box-title">📈 Census / Growth Data</div>
+        <div class="box-desc">Population, migration, development permits</div>
+      </div>
+    </div>
+
+    <div class="arch-arrow">▼ ▼ ▼</div>
+    <div class="arch-label">AI Engines</div>
+
+    <div class="arch-row">
+      <div class="arch-box engine">
+        <div class="box-title">🔍 List Engine</div>
+        <div class="box-desc">Pull, filter, score<br>vacant land lists</div>
+      </div>
+      <div class="arch-box engine">
+        <div class="box-title">✉️ Mail Engine</div>
+        <div class="box-desc">AI-personalized letters<br>via Lob.com / SendMailr</div>
+      </div>
+      <div class="arch-box engine">
+        <div class="box-title">📞 Response Handler</div>
+        <div class="box-desc">Voicemail → transcribe<br>→ score → route</div>
+      </div>
+      <div class="arch-box engine">
+        <div class="box-title">📋 Deal Tracker</div>
+        <div class="box-desc">Lead → Offer → Escrow<br>→ Close pipeline</div>
+      </div>
+    </div>
+
+    <div class="arch-arrow">▼ ▼ ▼</div>
+    <div class="arch-label">Warm Leads Only</div>
+
+    <div class="arch-row">
+      <div class="arch-box human" style="min-width: 300px;">
+        <div class="box-title">🤝 Chris — The Closer</div>
+        <div class="box-desc">Pre-qualified leads + comp data attached<br>Talk → Offer → Negotiate → Close → Collect</div>
+      </div>
+    </div>
+
+    <div class="arch-arrow">▼</div>
+
+    <div class="arch-row">
+      <div class="arch-box platform" style="min-width: 300px;">
+        <div class="box-title">💰 Revenue</div>
+        <div class="box-desc">Buy at 5-35% of market → Sell at market value<br>Target: $15K-$80K profit per flip</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: MARKET DATA -->
+<section>
+  <h2><span class="emoji">📊</span>Market Intelligence</h2>
+  <p class="section-sub">Sell-through data tells you where land actually moves — not just where it's cheap.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>State</th>
+        <th>Sell-Through Rate</th>
+        <th>Avg Days to Sell</th>
+        <th>Months of Supply</th>
+        <th>Verdict</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="bold">Ohio</td>
+        <td class="green bold">7.35%</td>
+        <td>55 days</td>
+        <td>~14 mo</td>
+        <td class="green">✅ Best market</td>
+      </tr>
+      <tr>
+        <td class="bold">North Carolina</td>
+        <td class="green bold">6.51%</td>
+        <td>72 days</td>
+        <td>~15 mo</td>
+        <td class="green">✅ Excellent + volume</td>
+      </tr>
+      <tr>
+        <td class="bold">Tennessee</td>
+        <td class="green bold">5.74%</td>
+        <td>60 days</td>
+        <td>~17 mo</td>
+        <td class="green">✅ Solid</td>
+      </tr>
+      <tr>
+        <td>Florida</td>
+        <td class="yellow">4.66%</td>
+        <td>—</td>
+        <td>15.2 mo</td>
+        <td class="yellow">⚠️ Buyer market</td>
+      </tr>
+      <tr>
+        <td>Texas</td>
+        <td class="red">1.67%</td>
+        <td>81 days</td>
+        <td class="red bold">47.3 mo</td>
+        <td class="red">🚨 Hard to sell</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- SECTION 5: TARGET COUNTIES -->
+<section>
+  <h2><span class="emoji">🎯</span>Target Counties — Ranked</h2>
+  <p class="section-sub">The Goldilocks zone: growing but not overheated, affordable entry, high absentee rates.</p>
+
+  <h3>🥇 Tier 1 — Best Opportunities</h3>
+  <div class="county-grid">
+    <div class="county-card tier1">
+      <span class="tier-badge t1">Tier 1</span>
+      <h4>Franklin County, NC</h4>
+      <div class="metro">Raleigh spillover • 45 min from Research Triangle</div>
+      <div class="stat-row">
+        <div class="stat"><div class="val">+20%</div><div class="lbl">Growth '20-'25</div></div>
+        <div class="stat"><div class="val">24.4%</div><div class="lbl">Annual Appreciation</div></div>
+        <div class="stat"><div class="val">$40-150K</div><div class="lbl">Land Prices</div></div>
+      </div>
+      <div class="why">Highest county appreciation in all of NC. 158% turnover ratio. The "next Chatham County." Tons of inherited rural land from multi-generational families — prime direct mail targets.</div>
+      <div class="flag">⏰ Getting discovered — move before 2027</div>
+    </div>
+
+    <div class="county-card tier1">
+      <span class="tier-badge t1">Tier 1</span>
+      <h4>White County, TN</h4>
+      <div class="metro">Between Nashville (95mi) & Knoxville (75mi)</div>
+      <div class="stat-row">
+        <div class="stat"><div class="val">28.8%</div><div class="lbl">Sell-Through Rate</div></div>
+        <div class="stat"><div class="val">57 days</div><div class="lbl">Avg Days to Sell</div></div>
+        <div class="stat"><div class="val">$10-50K</div><div class="lbl">Land Prices</div></div>
+      </div>
+      <div class="why">#1 sell-through in all of Tennessee. Ultra-affordable entry. Recreational land with caves, waterfalls. Nashville & Knoxville buyers seeking weekend retreats. High absentee/inherited land.</div>
+      <div class="flag">📦 Small county (~265 sales/yr) — focused campaigns, not scale</div>
+    </div>
+
+    <div class="county-card tier1">
+      <span class="tier-badge t1">Tier 1</span>
+      <h4>Osceola County, FL</h4>
+      <div class="metro">Orlando MSA • Disney corridor</div>
+      <div class="stat-row">
+        <div class="stat"><div class="val">+30.3%</div><div class="lbl">Growth '20-'25</div></div>
+        <div class="stat"><div class="val">4.7%/yr</div><div class="lbl">Annual Growth</div></div>
+        <div class="stat"><div class="val">$15-150K</div><div class="lbl">Land Prices</div></div>
+      </div>
+      <div class="why">Poinciana subdivisions from the 70s-80s packed with absentee owners who bought and forgot. Thousands of platted lots. Orlando's southward expansion along I-4/US-192.</div>
+      <div class="flag">🌊 Screen for flood zones • Some flipper competition</div>
+    </div>
+
+    <div class="county-card tier1">
+      <span class="tier-badge t1">Tier 1</span>
+      <h4>Pinal County, AZ</h4>
+      <div class="metro">Phoenix overflow • 45-60mi SE</div>
+      <div class="stat-row">
+        <div class="stat"><div class="val">+32.2%</div><div class="lbl">Growth '20-'25</div></div>
+        <div class="stat"><div class="val">#2</div><div class="lbl">Fastest Large County</div></div>
+        <div class="stat"><div class="val">$15-120K</div><div class="lbl">Land Prices</div></div>
+      </div>
+      <div class="why">Phoenix's overflow valve. TSMC fabs, warehouses, data centers nearby. Many 70s-80s speculator parcels never developed. Clear path of growth.</div>
+      <div class="flag">💧 WATER — always verify water rights/access before buying</div>
+    </div>
+
+    <div class="county-card tier1">
+      <span class="tier-badge t1">Tier 1</span>
+      <h4>Kaufman County, TX</h4>
+      <div class="metro">DFW eastern frontier • 45-60mi from Dallas</div>
+      <div class="stat-row">
+        <div class="stat"><div class="val">+49.5%</div><div class="lbl">Growth '20-'25</div></div>
+        <div class="stat"><div class="val">#1</div><div class="lbl">Fastest in US</div></div>
+        <div class="stat"><div class="val">$30-200K</div><div class="lbl">Land Prices</div></div>
+      </div>
+      <div class="why">Single fastest-growing county in America. DFW's eastern expansion — new subdivisions, distribution centers, commuter communities.</div>
+      <div class="flag">⚠️ TX has 47mo inventory statewide — must buy at 40-50% of value</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:30px;">🥈 Tier 2 — Worth Investigating</h3>
+  <div class="county-grid">
+    <div class="county-card tier2">
+      <span class="tier-badge t2">Tier 2</span>
+      <h4>Chatham County, NC</h4>
+      <div class="metro">Chapel Hill / Research Triangle</div>
+      <div class="stat-row">
+        <div class="stat"><div class="val">85%</div><div class="lbl">Turnover Ratio</div></div>
+        <div class="stat"><div class="val">Moderate</div><div class="lbl">Land Prices</div></div>
+      </div>
+      <div class="why">Triangle spillover market. Established but still growing. Focus on rural western portions — eastern parts getting pricey.</div>
+    </div>
+
+    <div class="county-card tier2">
+      <span class="tier-badge t2">Tier 2</span>
+      <h4>Cannon County, TN</h4>
+      <div class="metro">Nashville SE orbit • 30min from Murfreesboro</div>
+      <div class="stat-row">
+        <div class="stat"><div class="val">27.3%</div><div class="lbl">Appreciation</div></div>
+        <div class="stat"><div class="val">$22K/acre</div><div class="lbl">Median Price</div></div>
+      </div>
+      <div class="why">#3 appreciation in TN. Nashville remote workers and lifestyle seekers. Low competition. Small volume but affordable entry.</div>
+    </div>
+
+    <div class="county-card tier2">
+      <span class="tier-badge t2">Tier 2</span>
+      <h4>Marion County, FL</h4>
+      <div class="metro">Ocala / Horse Country</div>
+      <div class="stat-row">
+        <div class="stat"><div class="val">4.0%/yr</div><div class="lbl">Growth Rate</div></div>
+        <div class="stat"><div class="val">$30-150K</div><div class="lbl">5-20 Acre Parcels</div></div>
+      </div>
+      <div class="why">Florida's fastest-growing non-coastal county. World Equestrian Center driving demand. Retirement + horse country. Stick to parcels within 20min of Ocala.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: NEXT STEPS -->
+<section>
+  <h2><span class="emoji">🚀</span>Next Steps — Today</h2>
+  <p class="section-sub">Three decisions to make right now, then Gerald builds the system.</p>
+
+  <div class="next-grid">
+    <div class="next-card">
+      <div class="num">01</div>
+      <h4>Pick 2 Counties to Start</h4>
+      <p>Recommendation: <strong>White County, TN</strong> (cheapest entry, fastest sell-through) + <strong>Franklin County, NC</strong> (highest appreciation, strong demand). But Chris may know better targets.</p>
+    </div>
+    <div class="next-card">
+      <div class="num">02</div>
+      <h4>Choose Mail Platform</h4>
+      <p><strong>Deal Complete</strong> (land-specific, AI pricing, CRM built-in) vs <strong>SendMailr</strong> (AI writes unique letters) vs <strong>Lob.com API</strong> (we build custom). Budget: ~$0.50-1.50/letter.</p>
+    </div>
+    <div class="next-card">
+      <div class="num">03</div>
+      <h4>Set First Campaign Budget</h4>
+      <p>Jack Bosch says mail every 6 weeks. First batch: 500-1,000 letters × $1/ea = $500-1,000. Land response rate: 3-15% = 15-150 callbacks. Chris takes the warm ones.</p>
+    </div>
+    <div class="next-card">
+      <div class="num">04</div>
+      <h4>Gerald Builds the System</h4>
+      <p>Once counties + platform are chosen: List Engine, Mail Engine, Response Handler, Deal Tracker. Target: v1 running in 1 week. Chris gets a daily feed of warm leads.</p>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  Built by Gerald 🍊 • April 30, 2026 • Jack Bosch Land Profit Method + AI Automation
+</div>
+
+</body>
+</html>
