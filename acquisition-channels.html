@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Channel Acquisition Strategy — Land Biz</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: white;
+    color: #111;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  @media print {
+    body { font-size: 11px; }
+    .page-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+    @page { margin: 0.65in; }
+  }
+
+  .page { max-width: 960px; margin: 0 auto; padding: 44px; }
+
+  /* ── HEADER ── */
+  .doc-header {
+    border-bottom: 3px solid #111;
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+  }
+  .doc-header h1 {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .doc-header .sub {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  .team-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .chip.ai { background: #dbeafe; color: #1d4ed8; }
+  .chip.human { background: #fef3c7; color: #92400e; }
+  .chip.both { background: #d1fae5; color: #065f46; }
+  .chip.date { background: #f3f4f6; color: #555; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 44px; }
+  .section-title {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-bottom: 2px solid #111;
+    padding-bottom: 7px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ── THESIS ── */
+  .thesis {
+    background: #0f1729;
+    color: white;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+  .thesis h2 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: white;
+  }
+  .thesis p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+  }
+  .thesis p strong { color: white; }
+  .thesis .highlight {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(37,99,235,0.25);
+    border-left: 3px solid #60a5fa;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+
+  /* ── CHANNEL CARDS ── */
+  .channels { display: flex; flex-direction: column; gap: 16px; }
+
+  .channel-card {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px 22px;
+    page-break-inside: avoid;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .channel-card.mail { border-left: 5px solid #6b7280; }
+  .channel-card.newspaper { border-left: 5px solid #92400e; }
+  .channel-card.meta { border-left: 5px solid #2563eb; background: #f8faff; }
+  .channel-card.google { border-left: 5px solid #059669; }
+  .channel-card.sms { border-left: 5px solid #7c3aed; }
+  .channel-card.probate { border-left: 5px solid #dc2626; }
+  .channel-card.tax { border-left: 5px solid #d97706; }
+
+  .channel-left {}
+  .channel-icon { font-size: 26px; margin-bottom: 6px; }
+  .channel-name {
+    font-size: 15px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 2px;
+  }
+  .channel-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 10px;
+  }
+  .tag-baseline { background: #f3f4f6; color: #555; }
+  .tag-test { background: #fef3c7; color: #92400e; }
+  .tag-priority { background: #dbeafe; color: #1d4ed8; }
+  .tag-phase2 { background: #ede9fe; color: #5b21b6; }
+  .tag-compliance { background: #fee2e2; color: #991b1b; }
+
+  .channel-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .channel-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+  }
+  .meta-label { font-weight: 700; color: #555; min-width: 56px; }
+  .meta-val { color: #222; }
+  .meta-val.green { color: #059669; font-weight: 600; }
+  .meta-val.blue { color: #2563eb; font-weight: 600; }
+  .meta-val.amber { color: #d97706; font-weight: 600; }
+
+  .channel-right {}
+  .channel-desc {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .channel-points {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .channel-points li {
+    display: flex;
+    gap: 8px;
+    font-size: 12px;
+    color: #444;
+  }
+  .channel-points li::before { content: "→"; color: #aaa; flex-shrink: 0; }
+
+  .ai-callout {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #eff6ff;
+    border-left: 3px solid #2563eb;
+    border-radius: 0 6px 6px 0;
+    font-size: 12px;
+    color: #1e40af;
+    font-weight: 500;
+  }
+  .ai-callout strong { font-weight: 700; }
+
+  /* ── OPPORTUNITY CALLOUT ── */
+  .opportunity {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    page-break-inside: avoid;
+  }
+  .opportunity h3 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .opportunity p {
+    font-size: 12px;
+    opacity: 0.85;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .opp-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .opp-stat {
+    background: rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .opp-stat .val {
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+  }
+  .opp-stat .lbl {
+    font-size: 10px;
+    opacity: 0.7;
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── PRIORITY TABLE ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  th {
+    text-align: left;
+    padding: 9px 12px;
+    background: #0f1729;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  th:first-child { border-radius: 8px 0 0 0; }
+  th:last-child { border-radius: 0 8px 0 0; }
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #f9fafb; }
+  tr:hover td { background: #f0f9ff; }
+  .pri-1 { font-weight: 800; color: #059669; }
+  .pri-2 { font-weight: 700; color: #2563eb; }
+  .pri-3 { font-weight: 600; color: #7c3aed; }
+  .pri-4 { color: #555; }
+  .phase-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .ph1 { background: #d1fae5; color: #065f46; }
+  .ph2 { background: #dbeafe; color: #1d4ed8; }
+  .ph3 { background: #ede9fe; color: #5b21b6; }
+
+  /* ── ADVANTAGE BOX ── */
+  .advantage {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-radius: 12px;
+    padding: 22px 24px;
+    page-break-inside: avoid;
+  }
+  .advantage h3 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #065f46;
+    margin-bottom: 10px;
+  }
+  .advantage p {
+    font-size: 13px;
+    color: #166534;
+    line-height: 1.65;
+  }
+  .advantage p + p { margin-top: 8px; }
+
+  /* ── NOTES ── */
+  .notes-box {
+    border: 1.5px dashed #ccc;
+    border-radius: 8px;
+    padding: 18px;
+  }
+  .notes-label {
+    font-size: 11px; font-weight: 700; color: #bbb;
+    text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px;
+  }
+  .notes-lines { display: flex; flex-direction: column; gap: 22px; }
+  .notes-line { border-bottom: 1px solid #e5e7eb; }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    margin-top: 40px;
+    padding-top: 12px;
+    border-top: 1px solid #ddd;
+    font-size: 11px;
+    color: #aaa;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <h1>🎯 Multi-Channel Acquisition Strategy</h1>
+    <div class="sub">Going beyond direct mail — every channel that reaches motivated land sellers</div>
+    <div class="team-chips">
+      <span class="chip human">🤝 Chris Spiewak</span>
+      <span class="chip ai">🤖 Gerald AI</span>
+      <span class="chip both">⚡ Coose</span>
+      <span class="chip date">📅 May 9, 2026</span>
+    </div>
+  </div>
+
+  <!-- THESIS -->
+  <div class="section">
+    <div class="thesis">
+      <h2>The Premise</h2>
+      <p>Direct mail is the commodity play. <strong>Every land flipper does it.</strong> It works — but when everyone uses the same channel with the same templates, the edge erodes. Our AI system already makes our mail smarter (personalized per parcel, targeted by intelligence). But the bigger opportunity is owning channels that nobody else in land flipping is running.</p>
+      <div class="highlight">
+        💡 A solo investor running Investment Dominator picks one channel. We run all of them simultaneously, track cost-per-deal by channel, and shift budget to what's working. That's not operationally possible without AI management.
+      </div>
+    </div>
+  </div>
+
+  <!-- META OPPORTUNITY CALLOUT -->
+  <div class="section">
+    <div class="opportunity no-break">
+      <h3>📱 The Meta Opportunity — Why This Is Timely</h3>
+      <p>In 2026, Meta opened their API for AI agents to create, manage, and optimize ad campaigns. Facebook's 55+ demographic is the single largest group of absentee rural landowners in America. This combination has never existed before — and almost no land flippers are using it yet.</p>
+      <div class="opp-stats">
+        <div class="opp-stat">
+          <div class="val">3.2B</div>
+          <div class="lbl">Facebook Monthly Users</div>
+        </div>
+        <div class="opp-stat">
+          <div class="val">55+</div>
+          <div class="lbl">Fastest Growing Demo</div>
+        </div>
+        <div class="opp-stat">
+          <div class="val">ZIP</div>
+          <div class="lbl">Level Targeting</div>
+        </div>
+        <div class="opp-stat">
+          <div class="val">0</div>
+          <div class="lbl">Land Flipper Competitors</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHANNELS -->
+  <div class="section">
+    <div class="section-title">📡 The Full Channel Map</div>
+    <div class="channels">
+
+      <!-- DIRECT MAIL -->
+      <div class="channel-card mail no-break">
+        <div class="channel-left">
+          <div class="channel-icon">📬</div>
+          <div class="channel-name">Direct Mail</div>
+          <div><span class="channel-tag tag-baseline">LPG Baseline</span></div>
+          <div class="channel-meta">
+            <div class="channel-meta-row"><span class="meta-label">Cost</span><span class="meta-val">~$1/letter</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Response</span><span class="meta-val green">3–15% (good county)</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Demo</span><span class="meta-val">60+ absentee owners</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Phase</span><span class="meta-val blue">Phase 1</span></div>
+          </div>
+        </div>
+        <div class="channel-right">
+          <div class="channel-desc">The proven LPG backbone. Everyone does it — but we do it smarter. Where others send templates, we send a unique letter written for that specific parcel and owner. Response rate difference between a generic mailer and a personalized one can be 2-3x.</div>
+          <ul class="channel-points">
+            <li>Best for 60+ demographic in rural counties</li>
+            <li>Fully scalable with Lob.com API integration</li>
+            <li>AI tracks response rates by letter variation → continuous improvement</li>
+            <li>Every 6-week cycle produces measurable feedback</li>
+          </ul>
+          <div class="ai-callout">🤖 <strong>Our Edge:</strong> Parcel Personalization Engine writes unique letters per owner. Not templates.</div>
+        </div>
+      </div>
+
+      <!-- NEWSPAPER -->
+      <div class="channel-card newspaper no-break">
+        <div class="channel-left">
+          <div class="channel-icon">📰</div>
+          <div class="channel-name">Newspaper Classifieds</div>
+          <div><span class="channel-tag tag-test">$100 Test</span></div>
+          <div class="channel-meta">
+            <div class="channel-meta-row"><span class="meta-label">Cost</span><span class="meta-val green">$50–200/mo per county</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Response</span><span class="meta-val">Unknown — untested</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Demo</span><span class="meta-val">65–80 rural readers</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Phase</span><span class="meta-val blue">Phase 1</span></div>
+          </div>
+        </div>
+        <div class="channel-right">
+          <div class="channel-desc">Don't dismiss this. Rural county newspapers still have strong 65–80 readership — exactly the demographic that owns land they've had for decades. Cost is so low and competition so near-zero that even one call per month likely pays for years of ads.</div>
+          <ul class="channel-points">
+            <li>Rural county papers reach landowners not on digital platforms</li>
+            <li>Zero competition — no other land flippers are running these</li>
+            <li>Simple copy: "We buy land in [County] — quick, fair, simple. Call [#]"</li>
+            <li>Test budget: $100/month. One deal = ROI for years.</li>
+            <li>Can also test local Pennysaver-style publications</li>
+          </ul>
+          <div class="ai-callout">🤖 <strong>Low Effort:</strong> One ad placement, no ongoing management needed. Pure test.</div>
+        </div>
+      </div>
+
+      <!-- META -->
+      <div class="channel-card meta no-break">
+        <div class="channel-left">
+          <div class="channel-icon">📱</div>
+          <div class="channel-name">Meta AI Ads</div>
+          <div><span class="channel-tag tag-priority">Biggest Opportunity</span></div>
+          <div class="channel-meta">
+            <div class="channel-meta-row"><span class="meta-label">Cost</span><span class="meta-val">Pay per engagement</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Targeting</span><span class="meta-val green">ZIP-level + demographics</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Demo</span><span class="meta-val">55+ Facebook/IG users</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Phase</span><span class="meta-val amber">Phase 2</span></div>
+          </div>
+        </div>
+        <div class="channel-right">
+          <div class="channel-desc">Meta's 2026 AI agent API lets our system create, A/B test, and optimize campaigns without human input. Facebook's 55+ demographic is the largest group of absentee rural landowners in the country. This combination didn't exist before — and almost no land flippers are running it.</div>
+          <ul class="channel-points">
+            <li>Surgical county + ZIP targeting with age + behavior layering</li>
+            <li>Interest filters: rural living, farming, hunting, land ownership</li>
+            <li>Retargeting: anyone who visits our site sees the ad again (mail can't do this)</li>
+            <li>AI agent manages copy variations, creative testing, budget optimization</li>
+            <li>Pay per click/lead — can optimize to cost-per-warm-seller</li>
+            <li>Instagram extends reach to 40-55 demographic (often heirs)</li>
+            <li>Inbound leads route directly to Response Scoring Engine</li>
+          </ul>
+          <div class="ai-callout">🤖 <strong>Build Target Phase 2:</strong> AI agent manages Meta campaigns via API. Routes leads to scoring engine automatically. Zero manual ad management.</div>
+        </div>
+      </div>
+
+      <!-- GOOGLE -->
+      <div class="channel-card google no-break">
+        <div class="channel-left">
+          <div class="channel-icon">🔍</div>
+          <div class="channel-name">Google Search Ads</div>
+          <div><span class="channel-tag tag-priority">High Intent</span></div>
+          <div class="channel-meta">
+            <div class="channel-meta-row"><span class="meta-label">Cost</span><span class="meta-val">Low CPC (land niche)</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Intent</span><span class="meta-val green">Already motivated</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Demo</span><span class="meta-val">Any age, all motivated</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Phase</span><span class="meta-val blue">Phase 1–2</span></div>
+          </div>
+        </div>
+        <div class="channel-right">
+          <div class="channel-desc">The highest-intent channel available. Someone typing "sell my land fast" or "how to sell inherited land" is already motivated — they came to us. Unlike mail where we interrupt cold prospects, search captures people who are already looking for what we offer.</div>
+          <ul class="channel-points">
+            <li>Target: "sell my land fast," "sell inherited land [state]," "we buy land [county]"</li>
+            <li>Low CPC in rural land vs. house flipping (less competition)</li>
+            <li>Small test budget ($200-500/mo) to validate keywords</li>
+            <li>AI can manage bidding, ad copy, and keyword expansion</li>
+            <li>Conversion: landing page → call or form → Response Scoring Engine</li>
+          </ul>
+          <div class="ai-callout">🤖 <strong>Easy Start:</strong> Small test budget, AI manages bids and copy. Scale what converts.</div>
+        </div>
+      </div>
+
+      <!-- PROBATE -->
+      <div class="channel-card probate no-break">
+        <div class="channel-left">
+          <div class="channel-icon">⚖️</div>
+          <div class="channel-name">Probate & Inheritance</div>
+          <div><span class="channel-tag tag-phase2">Best Lead Quality</span></div>
+          <div class="channel-meta">
+            <div class="channel-meta-row"><span class="meta-label">Cost</span><span class="meta-val green">Low (public records)</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Motivation</span><span class="meta-val green">Very high</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Demo</span><span class="meta-val">Heirs, estate executors</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Phase</span><span class="meta-val amber">Phase 2</span></div>
+          </div>
+        </div>
+        <div class="channel-right">
+          <div class="channel-desc">Probate court records are public. When someone dies and land passes to heirs, those heirs often want to liquidate quickly — they didn't choose to own land, they inherited a tax liability. These are the most motivated sellers in the market and almost no land flippers are systematically finding them.</div>
+          <ul class="channel-points">
+            <li>Monitor county probate filings → identify newly inherited land</li>
+            <li>AI triggers personalized outreach to executor or heir automatically</li>
+            <li>Lead quality: exceptional — time pressure + no emotional attachment to the land</li>
+            <li>Often priced to move fast (heirs want cash, not property management)</li>
+            <li>Works alongside standard mail — separate list, separate campaign</li>
+          </ul>
+          <div class="ai-callout">🤖 <strong>Build Target Phase 2:</strong> AI monitors probate filings → auto-triggers outreach. Feeds into List Engine as dedicated segment.</div>
+        </div>
+      </div>
+
+      <!-- SMS -->
+      <div class="channel-card sms no-break">
+        <div class="channel-left">
+          <div class="channel-icon">💬</div>
+          <div class="channel-name">SMS / Text Campaigns</div>
+          <div><span class="channel-tag tag-phase2">Phase 2</span></div>
+          <div class="channel-meta">
+            <div class="channel-meta-row"><span class="meta-label">Cost</span><span class="meta-val">~$0.01–0.05/text</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Response</span><span class="meta-val green">Often > mail</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Demo</span><span class="meta-val">All ages with phones</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Phase</span><span class="meta-val amber">Phase 2–3</span></div>
+          </div>
+        </div>
+        <div class="channel-right">
+          <div class="channel-desc">Skip trace the absentee owner list to get mobile numbers, then send AI-personalized texts. Response rates can exceed mail in certain demographics. Growing channel in real estate overall — requires TCPA compliance setup but manageable.</div>
+          <ul class="channel-points">
+            <li>Skip trace → phone numbers → AI-personalized outreach</li>
+            <li>Conversational AI handles initial response, qualifies, routes to Chris</li>
+            <li>Runs alongside mail — different medium, same list</li>
+            <li>Requires TCPA compliance (consent, opt-out handling)</li>
+            <li>Best for supplementing mail on same owner list</li>
+          </ul>
+          <div class="ai-callout">🤖 <strong>Phase 2–3:</strong> AI handles text conversations, qualification, and routing. Chris only gets warm handoffs.</div>
+        </div>
+      </div>
+
+      <!-- TAX DELINQUENT -->
+      <div class="channel-card tax no-break">
+        <div class="channel-left">
+          <div class="channel-icon">💸</div>
+          <div class="channel-name">Tax Delinquent Lists</div>
+          <div><span class="channel-tag tag-phase2">Supplemental</span></div>
+          <div class="channel-meta">
+            <div class="channel-meta-row"><span class="meta-label">Cost</span><span class="meta-val green">Free (public records)</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Motivation</span><span class="meta-val amber">High (financial pressure)</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Demo</span><span class="meta-val">Owners 2+ yrs delinquent</span></div>
+            <div class="channel-meta-row"><span class="meta-label">Phase</span><span class="meta-val amber">Phase 2</span></div>
+          </div>
+        </div>
+        <div class="channel-right">
+          <div class="channel-desc">Counties publish lists of owners who haven't paid property taxes in 2+ years. These owners are often checked out on their land, may not know what to do with it, and are facing eventual tax sale. They can be highly receptive to an offer — it solves a problem they've been ignoring.</div>
+          <ul class="channel-points">
+            <li>Free data from county assessor / tax collector offices</li>
+            <li>Dedicated campaign separate from main absentee owner list</li>
+            <li>Messaging angle: "We can help you avoid tax sale and get cash now"</li>
+            <li>Layer with standard mail or SMS outreach</li>
+          </ul>
+          <div class="ai-callout">🤖 <strong>Phase 2:</strong> AI pulls and processes county tax delinquent lists. Feeds as dedicated segment into Parcel Personalization Engine.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PRIORITY TABLE -->
+  <div class="section page-break">
+    <div class="section-title">🚦 Channel Priority & Build Order</div>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Channel</th>
+          <th>Phase</th>
+          <th>Why Now</th>
+          <th>Est. Budget to Start</th>
+          <th>AI Managed?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="pri-1">1</td>
+          <td><strong>Direct Mail (AI-personalized)</strong></td>
+          <td><span class="phase-badge ph1">Phase 1</span></td>
+          <td>Proven channel, LPG foundation</td>
+          <td>$500–1,000/campaign</td>
+          <td>✅ Full AI</td>
+        </tr>
+        <tr>
+          <td class="pri-1">2</td>
+          <td><strong>Newspaper Classifieds</strong></td>
+          <td><span class="phase-badge ph1">Phase 1</span></td>
+          <td>Near-zero cost, zero competition</td>
+          <td>$100/month</td>
+          <td>➕ One-time setup</td>
+        </tr>
+        <tr>
+          <td class="pri-1">3</td>
+          <td><strong>Google Search Ads</strong></td>
+          <td><span class="phase-badge ph1">Phase 1–2</span></td>
+          <td>Highest intent — sellers already looking</td>
+          <td>$200–500/month</td>
+          <td>✅ AI-managed bids</td>
+        </tr>
+        <tr>
+          <td class="pri-2">4</td>
+          <td><strong>Meta AI-Managed Ads</strong></td>
+          <td><span class="phase-badge ph2">Phase 2</span></td>
+          <td>Biggest scale, new Meta API unlocks AI mgmt</td>
+          <td>$500–1,000/month</td>
+          <td>✅ Full AI via API</td>
+        </tr>
+        <tr>
+          <td class="pri-2">5</td>
+          <td><strong>Probate Monitoring</strong></td>
+          <td><span class="phase-badge ph2">Phase 2</span></td>
+          <td>Best lead quality in market</td>
+          <td>~$0 (public records)</td>
+          <td>✅ AI monitors filings</td>
+        </tr>
+        <tr>
+          <td class="pri-3">6</td>
+          <td><strong>SMS / Text Campaigns</strong></td>
+          <td><span class="phase-badge ph2">Phase 2–3</span></td>
+          <td>High response rates, needs compliance setup</td>
+          <td>$200–400/month</td>
+          <td>✅ AI conversations</td>
+        </tr>
+        <tr>
+          <td class="pri-3">7</td>
+          <td><strong>Tax Delinquent Lists</strong></td>
+          <td><span class="phase-badge ph2">Phase 2</span></td>
+          <td>Free data, motivated sellers</td>
+          <td>$0 data + mail cost</td>
+          <td>✅ AI pulls lists</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ADVANTAGE -->
+  <div class="section">
+    <div class="advantage no-break">
+      <h3>✅ The System Advantage</h3>
+      <p>A solo land flipper with Investment Dominator picks one channel, runs it manually, and hopes for the best. They have no way to know if their money is going to the right counties, the right owners, or the right message.</p>
+      <p>We run every channel simultaneously. Every inbound lead — whether from a mailer, a Facebook ad, a Google search, or a probate filing — flows into the same Response Scoring Engine. Chris sees a single ranked daily feed. The system learns which channels produce the best deals and shifts budget automatically. No other land flipper is operating this way.</p>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="section">
+    <div class="section-title">📝 Notes</div>
+    <div class="notes-box">
+      <div class="notes-label">Use this space</div>
+      <div class="notes-lines">
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <span>Multi-Channel Acquisition Strategy · Chris Spiewak × Coose × Gerald 🍊</span>
+    <span>May 9, 2026 · projects/land-biz/acquisition-channels.html</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Land Flipping AI Business System — Chris × Coose × Gerald 🍊</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0f1729;
+    --navy-light: #1e2d4a;
+    --blue: #2563eb;
+    --blue-light: #dbeafe;
+    --blue-mid: #3b82f6;
+    --amber: #d97706;
+    --amber-light: #fef3c7;
+    --emerald: #059669;
+    --emerald-light: #d1fae5;
+    --grey: #e5e7eb;
+    --slate: #f8fafc;
+    --text: #111827;
+    --muted: #6b7280;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f1f5f9;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 48px 48px 64px;
+  }
+
+  /* ─── HEADER ─────────────────────────────────────────────── */
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 16px;
+    padding: 40px 44px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(37,99,235,0.18);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(5,150,105,0.10);
+  }
+  .header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative; z-index: 1;
+  }
+  .header-badge {
+    background: rgba(37,99,235,0.35);
+    border: 1px solid rgba(37,99,235,0.5);
+    color: #93c5fd;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 99px;
+  }
+  .header-meta {
+    text-align: right;
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+  }
+  .header-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    position: relative; z-index: 1;
+  }
+  .header-title span {
+    color: #60a5fa;
+  }
+  .header-subtitle {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 10px;
+    position: relative; z-index: 1;
+  }
+  .header-team {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    position: relative; z-index: 1;
+  }
+  .team-chip {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 99px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+  }
+  .team-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+
+  /* ─── SECTION HEADER ─────────────────────────────────────── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+  .section-label h2 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-label::before {
+    content: '';
+    flex: none;
+    width: 3px;
+    height: 18px;
+    border-radius: 99px;
+    background: var(--blue);
+  }
+
+  /* ─── LEGEND ─────────────────────────────────────────────── */
+  .legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: var(--slate);
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin-bottom: 28px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .legend-dot {
+    width: 12px; height: 12px; border-radius: 50%; flex: none;
+  }
+  .dot-blue { background: var(--blue); }
+  .dot-amber { background: var(--amber); }
+  .dot-emerald { background: var(--emerald); }
+  .dot-grey { background: #9ca3af; }
+
+  /* ─── PIPELINE ───────────────────────────────────────────── */
+  .pipeline-section {
+    display: flex;
+    gap: 0;
+  }
+  .side-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 6px;
+    border-radius: 8px;
+    min-width: 28px;
+    margin-right: 10px;
+  }
+  .side-acq { background: #eff6ff; color: var(--blue); }
+  .side-dis { background: #fef3c7; color: #92400e; }
+  .side-scl { background: #d1fae5; color: #065f46; }
+
+  .steps-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .step-card {
+    background: var(--slate);
+    border: 1px solid var(--grey);
+    border-radius: 12px;
+    padding: 14px 16px;
+    position: relative;
+    transition: box-shadow 0.2s;
+  }
+  .step-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+  .step-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .step-num {
+    flex: none;
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: var(--navy);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-right { flex: 1; }
+  .step-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .step-desc {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+  .ai-callout {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 6px 6px 0;
+    padding: 7px 10px;
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: #1e40af;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .ai-callout-icon { font-size: 13px; flex: none; margin-top: 1px; }
+  .ai-callout strong { font-weight: 700; }
+
+  /* Arrow connector */
+  .arrow-connector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14px;
+    color: #9ca3af;
+    font-size: 16px;
+  }
+
+  /* Track split */
+  .track-split {
+    background: var(--amber-light);
+    border: 1px dashed var(--amber);
+    border-radius: 10px;
+    padding: 10px 14px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #92400e;
+    margin: 4px 0;
+  }
+
+  .tracks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .track-card {
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .track-cash { background: #fffbeb; border: 1px solid #fde68a; }
+  .track-finance { background: #f0fdf4; border: 1px solid #86efac; }
+  .track-title {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .track-cash .track-title { color: #92400e; }
+  .track-finance .track-title { color: #065f46; }
+  .track-step {
+    font-size: 11.5px;
+    color: var(--muted);
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .track-step:last-child { border-bottom: none; }
+  .track-step-num {
+    flex: none;
+    font-size: 10px;
+    font-weight: 700;
+    color: #9ca3af;
+    margin-top: 1px;
+  }
+
+  /* ─── THREE ENGINES ──────────────────────────────────────── */
+  .engines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 4px;
+  }
+  .engine-card {
+    background: var(--navy);
+    border-radius: 14px;
+    padding: 22px 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .engine-card::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(37,99,235,0.2);
+  }
+  .engine-icon {
+    font-size: 26px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .engine-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: #60a5fa;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .engine-desc {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .engine-sources {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 6px;
+  }
+  .engine-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .pill {
+    background: rgba(37,99,235,0.25);
+    border: 1px solid rgba(37,99,235,0.4);
+    color: #93c5fd;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 99px;
+  }
+  .engine-status {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10.5px;
+    font-weight: 600;
+  }
+  .status-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #fbbf24;
+    box-shadow: 0 0 0 3px rgba(251,191,36,0.2);
+    animation: pulse 2s infinite;
+  }
+  .status-label { color: #fbbf24; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(251,191,36,0.2); }
+    50% { box-shadow: 0 0 0 6px rgba(251,191,36,0.05); }
+  }
+
+  /* ─── DEAL MATH ──────────────────────────────────────────── */
+  .deal-math {
+    background: var(--slate);
+    border: 1px solid var(--grey);
+    border-radius: 14px;
+    padding: 28px 32px;
+  }
+  .math-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .math-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .math-col {
+    background: white;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .math-col-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .math-formula {
+    font-size: 12px;
+    color: var(--text);
+    line-height: 2;
+  }
+  .math-formula .op {
+    color: #9ca3af;
+    margin: 0 2px;
+  }
+  .math-formula .num {
+    font-weight: 700;
+    color: var(--blue);
+  }
+  .math-result {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--grey);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--emerald);
+  }
+  .math-result small {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+  .math-callout {
+    background: linear-gradient(135deg, #1e3a5f, #1e2d4a);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .math-callout-icon { font-size: 24px; }
+  .math-callout-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+  }
+  .math-callout-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+  }
+
+  /* ─── FLYWHEEL ───────────────────────────────────────────── */
+  .flywheel-wrap {
+    background: var(--navy);
+    border-radius: 14px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .flywheel-diagram {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    flex: none;
+  }
+  .fw-ring {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(37,99,235,0.3);
+  }
+  .fw-ring-inner {
+    position: absolute;
+    top: 20%; left: 20%; right: 20%; bottom: 20%;
+    border-radius: 50%;
+    border: 2px dashed rgba(5,150,105,0.4);
+  }
+  .fw-center {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .fw-center-icon { font-size: 28px; display: block; margin-bottom: 2px; }
+  .fw-center-label { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; }
+  .fw-node {
+    position: absolute;
+    width: 72px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+  .fw-node-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin: 0 auto 4px;
+  }
+  .fw-node-label {
+    font-size: 9.5px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.3;
+  }
+  .fw-arrow {
+    position: absolute;
+    color: rgba(37,99,235,0.5);
+    font-size: 18px;
+    transform: translate(-50%, -50%);
+  }
+
+  .flywheel-steps {
+    flex: 1;
+  }
+  .fw-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .fw-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .fw-step-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: rgba(37,99,235,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; flex: none;
+  }
+  .fw-step-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+  }
+  .fw-step-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 1px;
+  }
+
+  /* ─── ROADMAP ────────────────────────────────────────────── */
+  .roadmap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    position: relative;
+  }
+  .roadmap::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(16.67% + 16px);
+    right: calc(16.67% + 16px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--emerald));
+    z-index: 0;
+  }
+  .phase-card {
+    border-radius: 14px;
+    padding: 22px 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .phase-1 { background: var(--blue-light); border: 2px solid var(--blue); }
+  .phase-2 { background: var(--amber-light); border: 2px solid var(--amber); }
+  .phase-3 { background: var(--emerald-light); border: 2px solid var(--emerald); }
+
+  .phase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 99px;
+    margin-bottom: 10px;
+  }
+  .phase-1 .phase-badge { background: var(--blue); color: white; }
+  .phase-2 .phase-badge { background: var(--amber); color: white; }
+  .phase-3 .phase-badge { background: var(--emerald); color: white; }
+
+  .phase-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .phase-timeline {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .phase-milestones {
+    list-style: none;
+  }
+  .phase-milestones li {
+    font-size: 12px;
+    color: var(--text);
+    padding: 4px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .phase-milestones li:last-child { border-bottom: none; }
+  .phase-milestones li::before {
+    content: '→';
+    font-weight: 700;
+    font-size: 11px;
+    margin-top: 1px;
+    flex: none;
+  }
+  .phase-1 .phase-milestones li::before { color: var(--blue); }
+  .phase-2 .phase-milestones li::before { color: var(--amber); }
+  .phase-3 .phase-milestones li::before { color: var(--emerald); }
+
+  /* ─── COMPARISON TABLE ───────────────────────────────────── */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  .compare-table th {
+    background: var(--navy);
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .compare-table th:first-child { border-radius: 8px 0 0 0; }
+  .compare-table th:last-child { border-radius: 0 8px 0 0; }
+  .compare-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--grey);
+    vertical-align: top;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:nth-child(even) td { background: var(--slate); }
+  .compare-table .step-name { font-weight: 600; color: var(--navy); }
+  .compare-table .lpg-col { color: var(--muted); }
+  .compare-table .ai-col {
+    color: var(--blue);
+    font-weight: 500;
+  }
+  .compare-table .ai-col strong {
+    display: block;
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 2px;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────────────── */
+  .footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .footer-left { display: flex; align-items: center; gap: 8px; }
+  .footer-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+
+  /* ─── PRINT ──────────────────────────────────────────────── */
+  @media print {
+    body { background: white; font-size: 11px; }
+    .page { padding: 0; box-shadow: none; }
+    .page-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+    @page { margin: 0.65in; size: letter; }
+    .header { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .engine-card, .flywheel-wrap, .math-callout { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  }
+
+  /* ─── UTILITY ────────────────────────────────────────────── */
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mb-16 { margin-bottom: 16px; }
+  .divider {
+    height: 1px;
+    background: var(--grey);
+    margin: 36px 0;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════════════════ -->
+  <div class="header no-break">
+    <div class="header-top">
+      <div class="header-badge">🏔️ Land Flipping AI System</div>
+      <div class="header-meta">
+        <div>May 2026</div>
+        <div style="margin-top:3px">Based on Jack Bosch LPG + AI</div>
+      </div>
+    </div>
+    <div class="header-title">
+      Land Flipping <span>AI Business System</span>
+      <br>Complete Operating Blueprint
+    </div>
+    <div class="header-subtitle">
+      Full pipeline · AI enhancement layer · Deal math · Scaling playbook
+    </div>
+    <div class="header-team">
+      <div class="team-chip"><div class="team-dot" style="background:#f59e0b"></div> Chris Spiewak — Operations</div>
+      <div class="team-chip"><div class="team-dot" style="background:#3b82f6"></div> Coose — Strategy</div>
+      <div class="team-chip"><div class="team-dot" style="background:#10b981"></div> Gerald 🍊 — AI Systems</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 1: FULL PIPELINE
+  ═══════════════════════════════════════════════════════ -->
+  <div class="section-label"><h2>Section 1 — Complete Business Pipeline</h2></div>
+
+  <div class="legend no-break">
+    <div class="legend-item"><div class="legend-dot dot-blue"></div> AI Handles</div>
+    <div class="legend-item"><div class="legend-dot dot-amber"></div> Chris Handles</div>
+    <div class="legend-item"><div class="legend-dot dot-emerald"></div> Both / Oversight</div>
+    <div class="legend-item"><div class="legend-dot dot-grey"></div> Third Party</div>
+    <div style="margin-left:auto; font-size:12px; color:var(--muted); font-style:italic;">Steps 1–12 · Three Sides of the Business</div>
+  </div>
+
+  <!-- SIDE 1: ACQUISITION -->
+  <div class="pipeline-section no-break">
+    <div class="side-label side-acq">Side 1 — Acquisition</div>
+    <div class="steps-col">
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">01</div>
+          <div class="step-right">
+            <div class="step-title">
+              <div class="legend-dot dot-blue" style="width:10px;height:10px;flex:none"></div>
+              County Selection
+            </div>
+            <div class="step-desc">Pick 2–3 counties using demand analysis. Donut method: 30–100mi from metro. Target markets $5K–$300K. Sold/listed ratio, path of growth indicators.</div>
+          </div>
+        </div>
+        <div class="ai-callout">
+          <div class="ai-callout-icon">🧠</div>
+          <div><strong>County Intelligence Engine:</strong> Automated county scoring across 12+ signals — sold/listed ratio, median price, DOM, flood risk, zoning. Daily monitoring + alerts when a county heats up or cools off.</div>
+        </div>
+      </div>
+
+      <div class="arrow-connector">↓</div>
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">02</div>
+          <div class="step-right">
+            <div class="step-title">
+              <div class="legend-dot dot-blue" style="width:10px;height:10px;flex:none"></div>
+              List Building
+            </div>
+            <div class="step-desc">Pull vacant land owner data — absentee owners, 1–100 acres, $5K–$300K assessed value. Filter out government entities, corporations, and banks.</div>
+          </div>
+        </div>
+        <div class="ai-callout">
+          <div class="ai-callout-icon">🤖</div>
+          <div><strong>List Engine:</strong> PropStream / ATTOM API integration. Auto-applies all filters. Deduplication, skip-trace enrichment, owner equity scoring. Export ready for mailing house.</div>
+        </div>
+      </div>
+
+      <div class="arrow-connector">↓</div>
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">03</div>
+          <div class="step-right">
+            <div class="step-title">
+              <div class="legend-dot dot-blue" style="width:10px;height:10px;flex:none"></div>
+              Direct Mail Campaign
+            </div>
+            <div class="step-desc">Neutral letters sent to every owner. Mailing house handles print, stamp, and send. Low cost per mailer ($0.50–$0.85). Volume is the game.</div>
+          </div>
+        </div>
+        <div class="ai-callout">
+          <div class="ai-callout-icon">✉️</div>
+          <div><strong>Parcel Personalization Engine:</strong> Unique AI-written letter per owner — references parcel size, county, nearby sales. Sent via Lob.com API. No templates, no robots. Response rates 2–5x standard.</div>
+        </div>
+      </div>
+
+      <div class="arrow-connector">↓</div>
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">04</div>
+          <div class="step-right">
+            <div class="step-title">
+              <div class="legend-dot dot-emerald" style="width:10px;height:10px;flex:none"></div>
+              Inbound Response Handling
+            </div>
+            <div class="step-desc">Sellers call in. Transcribe conversation. Qualify the lead. Route to offer or reject. Time-sensitive — speed wins deals.</div>
+          </div>
+        </div>
+        <div class="ai-callout">
+          <div class="ai-callout-icon">📊</div>
+          <div><strong>Response Scoring Engine (ML):</strong> Auto-transcribe calls. Score seller motivation 0–100. Flag hot leads (score &gt;75) for immediate callback. Auto-log parcel data. Chris handles final conversation.</div>
+        </div>
+      </div>
+
+      <div class="arrow-connector">↓</div>
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">05</div>
+          <div class="step-right">
+            <div class="step-title">
+              <div class="legend-dot dot-blue" style="width:10px;height:10px;flex:none"></div>
+              Offer Research
+            </div>
+            <div class="step-desc">Comp the property — LandWatch, Zillow, Realtor.com. 20–30% accuracy is sufficient for offers. Speed matters more than perfection.</div>
+          </div>
+        </div>
+        <div class="ai-callout">
+          <div class="ai-callout-icon">🗺️</div>
+          <div><strong>AI Comp Engine:</strong> Auto-pull comps from LandWatch + Zillow + county records. Generate offer range: low / mid / high. Flagged for review in &lt;60 seconds. No manual Zillow scrolling.</div>
+        </div>
+      </div>
+
+      <div class="arrow-connector">↓</div>
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">06</div>
+          <div class="step-right">
+            <div class="step-title">
+              <div class="legend-dot dot-amber" style="width:10px;height:10px;flex:none"></div>
+              Make Offers
+            </div>
+            <div class="step-desc">Send written offers at 5–35% of market value. Most sellers say no. That's fine — you need 1–3 yeses per campaign. Volume is everything.</div>
+          </div>
+        </div>
+        <div class="ai-callout">
+          <div class="ai-callout-icon">📝</div>
+          <div><strong>Offer Templates:</strong> AI-drafted offer letters. Chris reviews and approves. Batch send capability. Auto-track sent/accepted/declined status per parcel.</div>
+        </div>
+      </div>
+
+      <div class="arrow-connector">↓</div>
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">07</div>
+          <div class="step-right">
+            <div class="step-title">
+              <div class="legend-dot dot-emerald" style="width:10px;height:10px;flex:none"></div>
+              Process Acceptances
+            </div>
+            <div class="step-desc">Contracts, earnest money, title company, escrow. Title does the heavy lifting. 30–45 days to close. Clean, documented, repeatable.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SIDE 2: DISPOSITION -->
+  <div class="pipeline-section no-break">
+    <div class="side-label side-dis">Side 2 — Disposition</div>
+    <div class="steps-col">
+
+      <div class="track-split">
+        📍 After closing: choose your exit — Cash Sale or Seller Financing
+      </div>
+
+      <div class="tracks-grid">
+        <!-- TRACK A -->
+        <div class="track-card track-cash">
+          <div class="track-title">💵 Track A — Cash Sale</div>
+          <div class="track-step"><div class="track-step-num">8a</div><div><strong>List Property</strong> — LandWatch, Zillow, Facebook, Craigslist, Realtors. Multiple platforms simultaneously.</div></div>
+          <div class="track-step"><div class="track-step-num">8b</div><div><strong>Active Marketing</strong> — Craigslist, Facebook Groups, LandWatch ads. Respond fast to inquiries.</div></div>
+          <div class="track-step"><div class="track-step-num">8c</div><div><strong>Cash Closing</strong> — Contract, deed transfer, title company, collect payment. Clean exit. 30–90 days.</div></div>
+          <div class="ai-callout" style="margin-top:10px">
+            <div class="ai-callout-icon">🤖</div>
+            <div><strong>Listing Engine:</strong> Auto-generate listing copy + post to all platforms. Buyer Matching Engine cross-references buyer list.</div>
+          </div>
+        </div>
+
+        <!-- TRACK B -->
+        <div class="track-card track-finance">
+          <div class="track-title">📆 Track B — Seller Financing</div>
+          <div class="track-step"><div class="track-step-num">8d</div><div><strong>Terms Listing</strong> — Advertise with low down payment + monthly payments (e.g. $500 down, $200/mo).</div></div>
+          <div class="track-step"><div class="track-step-num">8e</div><div><strong>Installment Sale</strong> — Collect monthly payments, manage note. Higher total profit. Passive income stream.</div></div>
+          <div class="track-step"><div class="track-step-num">8f</div><div><strong>Note Management / Sale</strong> — Continue collecting or sell note to investor at discount for lump sum.</div></div>
+          <div class="ai-callout" style="margin-top:10px; background:#d1fae5; border-color:#059669">
+            <div class="ai-callout-icon" style="color:#065f46">💰</div>
+            <div style="color:#065f46"><strong>Drip Engine:</strong> Auto-follow-up with finance buyers. Payment reminders. Note portfolio tracker.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SIDE 3: SCALING -->
+  <div class="pipeline-section no-break">
+    <div class="side-label side-scl">Side 3 — Scaling</div>
+    <div class="steps-col">
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">09</div>
+          <div class="step-right">
+            <div class="step-title">
+              <div class="legend-dot dot-blue" style="width:10px;height:10px;flex:none"></div>
+              KPI Tracking
+            </div>
+            <div class="step-desc">Response rate, acceptance rate, profit per deal, days to sell, cost per mailer, cost per deal. Data drives every decision.</div>
+          </div>
+        </div>
+        <div class="ai-callout">
+          <div class="ai-callout-icon">📈</div>
+          <div><strong>Dashboard Engine:</strong> Real-time KPI dashboard. Auto-calculate CAC, profit margin, ROI per campaign. Flag underperforming counties instantly.</div>
+        </div>
+      </div>
+
+      <div class="arrow-connector">↓</div>
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">10</div>
+          <div class="step-right">
+            <div class="step-title">
+              <div class="legend-dot dot-amber" style="width:10px;height:10px;flex:none"></div>
+              VA Integration
+            </div>
+            <div class="step-desc">Hire VAs for research, data entry, follow-up, and seller communication. AI handles routing and QA. VAs multiply throughput.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arrow-connector">↓</div>
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">11</div>
+          <div class="step-right">
+            <div class="step-title">
+              <div class="legend-dot dot-emerald" style="width:10px;height:10px;flex:none"></div>
+              Multi-County Expansion
+            </div>
+            <div class="step-desc">Run 3–5 counties simultaneously. AI parallelizes research. Same system, bigger surface area. Diversifies against single-county slowdowns.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arrow-connector">↓</div>
+
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">12</div>
+          <div class="step-right">
+            <div class="step-title">
+              <div class="legend-dot dot-emerald" style="width:10px;height:10px;flex:none"></div>
+              Capital Recycling
+            </div>
+            <div class="step-desc">Profits fund the next campaign. Bigger lists → more deals → bigger profits → bigger next campaign. Compound growth flywheel.</div>
+          </div>
+        </div>
+        <div class="ai-callout">
+          <div class="ai-callout-icon">🔄</div>
+          <div><strong>Capital Optimizer:</strong> Auto-recommend next campaign budget based on profit history, available capital, and county scoring. Never let money sit idle.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 2: THREE ENGINES
+  ═══════════════════════════════════════════════════════ -->
+  <div class="page-break"></div>
+  <div class="section-label" style="margin-top:0"><h2>Section 2 — The Three Core AI Engines</h2></div>
+
+  <div class="engines-grid no-break">
+
+    <div class="engine-card">
+      <span class="engine-icon">🧠</span>
+      <div class="engine-name">County Intelligence Engine</div>
+      <div class="engine-desc">
+        Continuously scores and ranks counties across multiple market signals. Automated daily monitoring with alerts when targets heat up or cool. Replaces weeks of manual LandWatch research with instant ranked output.
+      </div>
+      <div class="engine-sources">Data Sources</div>
+      <div class="engine-pills">
+        <span class="pill">LandWatch</span>
+        <span class="pill">Zillow API</span>
+        <span class="pill">ATTOM Data</span>
+        <span class="pill">County Records</span>
+        <span class="pill">Census</span>
+        <span class="pill">FEMA Flood</span>
+      </div>
+      <div class="engine-status">
+        <div class="status-dot"></div>
+        <span class="status-label">Phase 2 — Design</span>
+      </div>
+    </div>
+
+    <div class="engine-card">
+      <span class="engine-icon">✉️</span>
+      <div class="engine-name">Parcel Personalization Engine</div>
+      <div class="engine-desc">
+        Generates a unique, human-sounding letter for every single owner on the list. References parcel specifics, local area, and selling context. Dispatches via Lob.com API — no manual mailing house setup.
+      </div>
+      <div class="engine-sources">Integrations</div>
+      <div class="engine-pills">
+        <span class="pill">GPT-4o / Claude</span>
+        <span class="pill">Lob.com API</span>
+        <span class="pill">PropStream</span>
+        <span class="pill">County GIS</span>
+        <span class="pill">USPS CASS</span>
+      </div>
+      <div class="engine-status">
+        <div class="status-dot"></div>
+        <span class="status-label">Phase 2 — Design</span>
+      </div>
+    </div>
+
+    <div class="engine-card">
+      <span class="engine-icon">📊</span>
+      <div class="engine-name">Response Scoring Engine</div>
+      <div class="engine-desc">
+        ML model that transcribes inbound calls, scores seller motivation 0–100, extracts parcel data, and routes high-score leads immediately. Prevents hot deals from going cold while Chris is unavailable.
+      </div>
+      <div class="engine-sources">Tech Stack</div>
+      <div class="engine-pills">
+        <span class="pill">Whisper / Deepgram</span>
+        <span class="pill">Fine-tuned LLM</span>
+        <span class="pill">Twilio</span>
+        <span class="pill">CRM Webhook</span>
+        <span class="pill">SMS Alert</span>
+      </div>
+      <div class="engine-status">
+        <div class="status-dot"></div>
+        <span class="status-label">Phase 2 — Design</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 3: LPG vs AI COMPARISON
+  ═══════════════════════════════════════════════════════ -->
+  <div class="section-label"><h2>Section 3 — LPG Manual vs. Our AI Approach</h2></div>
+
+  <div class="no-break" style="border-radius:12px; overflow:hidden; border:1px solid var(--grey)">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th style="width:20%">Step</th>
+          <th style="width:38%">📋 LPG Manual Approach</th>
+          <th style="width:42%">🤖 Our AI System</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="step-name">County Selection</td>
+          <td class="lpg-col">Manual research on LandWatch, Zillow, county websites. Hours per county, done once per quarter.</td>
+          <td class="ai-col"><strong>County Intelligence Engine</strong>Automated scoring, daily monitoring, push alerts. Rank any county in seconds.</td>
+        </tr>
+        <tr>
+          <td class="step-name">List Building</td>
+          <td class="lpg-col">Download CSV via Investment Dominator. Manual filter in spreadsheet. Time-consuming, error-prone.</td>
+          <td class="ai-col"><strong>List Engine</strong>PropStream/ATTOM API, automated filtering, deduplication, equity scoring. Runs overnight.</td>
+        </tr>
+        <tr>
+          <td class="step-name">Direct Mail</td>
+          <td class="lpg-col">Generic templates via Investment Dominator. Same letter to 5,000 people. Low response rates.</td>
+          <td class="ai-col"><strong>Parcel Personalization Engine</strong>Unique AI letter per owner, dispatched via Lob.com API. 2–5x response lift expected.</td>
+        </tr>
+        <tr>
+          <td class="step-name">Response Handling</td>
+          <td class="lpg-col">Answer phone manually. Handwrite notes. Easy to miss calls. No scoring or prioritization.</td>
+          <td class="ai-col"><strong>Response Scoring Engine (ML)</strong>Auto-transcribe, score 0–100, route hot leads (&gt;75) instantly. Nothing slips.</td>
+        </tr>
+        <tr>
+          <td class="step-name">Offer Research</td>
+          <td class="lpg-col">Manual comps on LandWatch. 20–30 minutes per parcel. Bottleneck in deal flow.</td>
+          <td class="ai-col"><strong>AI Comp Engine</strong>Auto-pull comps, generate offer range, flag for review in &lt;60 seconds.</td>
+        </tr>
+        <tr>
+          <td class="step-name">Listings</td>
+          <td class="lpg-col">Manual uploads to each platform via Investment Dominator. One platform at a time.</td>
+          <td class="ai-col"><strong>Listing Engine</strong>Auto-generate copy + post to all platforms simultaneously. Buyer Matching cross-reference.</td>
+        </tr>
+        <tr>
+          <td class="step-name">Buyer Outreach</td>
+          <td class="lpg-col">Manual buyer list emails. Sent when you remember. No segmentation.</td>
+          <td class="ai-col"><strong>Buyer Matching Engine</strong>AI matches inventory to buyer list by property type/price/state. Automated drip.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 4: DEAL MATH
+  ═══════════════════════════════════════════════════════ -->
+  <div class="page-break"></div>
+  <div class="section-label" style="margin-top:0"><h2>Section 4 — The Deal Math (LPG Module 2)</h2></div>
+
+  <div class="deal-math no-break">
+    <div class="math-title">📐 Why County Selection is Everything</div>
+    <div class="math-row">
+      <div class="math-col">
+        <div class="math-col-title">County A — Hot Market</div>
+        <div class="math-formula">
+          <span class="num">5,000</span> <span class="op">mailers</span><br>
+          <span class="op">×</span> <span class="num">3%</span> <span class="op">response rate</span><br>
+          <span class="op">=</span> <span class="num">150</span> <span class="op">responses</span><br>
+          <span class="op">×</span> <span class="num">2%</span> <span class="op">acceptance</span><br>
+          <span class="op">=</span> <span class="num">3</span> <span class="op">deals</span><br>
+          <span class="op">×</span> <span class="num">$10K</span> <span class="op">avg profit</span>
+        </div>
+        <div class="math-result">$30,000/mo<small>from one county campaign</small></div>
+      </div>
+      <div class="math-col">
+        <div class="math-col-title">County B — Cold Market</div>
+        <div class="math-formula">
+          <span class="num">5,000</span> <span class="op">mailers</span><br>
+          <span class="op">×</span> <span class="num">1%</span> <span class="op">response rate</span><br>
+          <span class="op">=</span> <span class="num">50</span> <span class="op">responses</span><br>
+          <span class="op">×</span> <span class="num">2%</span> <span class="op">acceptance</span><br>
+          <span class="op">=</span> <span class="num">1</span> <span class="op">deal</span><br>
+          <span class="op">×</span> <span class="num">$10K</span> <span class="op">avg profit</span>
+        </div>
+        <div class="math-result" style="color:var(--amber)">$10,000/mo<small>from one county campaign</small></div>
+      </div>
+      <div class="math-col">
+        <div class="math-col-title">Scale: 3 Counties Running</div>
+        <div class="math-formula">
+          <span class="num">2</span> <span class="op">hot counties</span><br>
+          <span class="op">+</span> <span class="num">1</span> <span class="op">warm county</span><br>
+          <span class="op">=</span> <span class="num">7</span> <span class="op">deals/mo</span><br>
+          <span class="op">×</span> <span class="num">$10K</span><br>
+          <span class="op">mailers:</span> <span class="num">$12,500</span><br>
+          <span class="op">net after costs:</span> <span class="num">~$55K</span>
+        </div>
+        <div class="math-result" style="color:var(--emerald)">$70,000/mo<small>gross, 3-county operation</small></div>
+      </div>
+    </div>
+    <div class="math-callout">
+      <div class="math-callout-icon">⚡</div>
+      <div>
+        <div class="math-callout-text">The right county = 3× the profit for the exact same effort and mail spend.</div>
+        <div class="math-callout-sub">County Intelligence Engine exists entirely to solve this problem — find the 3% counties, avoid the 1% counties.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 5: SCALING FLYWHEEL
+  ═══════════════════════════════════════════════════════ -->
+  <div class="section-label"><h2>Section 5 — The Scaling Flywheel</h2></div>
+
+  <div class="flywheel-wrap no-break">
+    <div class="flywheel-diagram">
+      <div class="fw-ring"></div>
+      <div class="fw-ring-inner"></div>
+      <div class="fw-center">
+        <span class="fw-center-icon">🔄</span>
+        <div class="fw-center-label">Flywheel</div>
+      </div>
+      <!-- Nodes positioned around circle -->
+      <div class="fw-node" style="top:5%; left:50%">
+        <div class="fw-node-icon" style="background:rgba(37,99,235,0.3)">📬</div>
+        <div class="fw-node-label">Launch Campaign</div>
+      </div>
+      <div class="fw-node" style="top:30%; left:93%">
+        <div class="fw-node-icon" style="background:rgba(217,119,6,0.3)">📞</div>
+        <div class="fw-node-label">Seller Responses</div>
+      </div>
+      <div class="fw-node" style="top:73%; left:85%">
+        <div class="fw-node-icon" style="background:rgba(5,150,105,0.3)">🤝</div>
+        <div class="fw-node-label">Close Deals</div>
+      </div>
+      <div class="fw-node" style="top:90%; left:50%">
+        <div class="fw-node-icon" style="background:rgba(5,150,105,0.3)">💰</div>
+        <div class="fw-node-label">Collect Profit</div>
+      </div>
+      <div class="fw-node" style="top:73%; left:15%">
+        <div class="fw-node-icon" style="background:rgba(217,119,6,0.3)">📊</div>
+        <div class="fw-node-label">Analyze KPIs</div>
+      </div>
+      <div class="fw-node" style="top:30%; left:7%">
+        <div class="fw-node-icon" style="background:rgba(37,99,235,0.3)">🏔️</div>
+        <div class="fw-node-label">Expand Counties</div>
+      </div>
+    </div>
+
+    <div class="flywheel-steps">
+      <div class="fw-step">
+        <div class="fw-step-icon">📬</div>
+        <div>
+          <div class="fw-step-title">Launch Campaign</div>
+          <div class="fw-step-sub">5,000 personalized mailers per county. AI handles list + letters.</div>
+        </div>
+      </div>
+      <div class="fw-step">
+        <div class="fw-step-icon">📞</div>
+        <div>
+          <div class="fw-step-title">Seller Responses + AI Scoring</div>
+          <div class="fw-step-sub">Inbound calls scored 0–100. Chris takes the hot ones.</div>
+        </div>
+      </div>
+      <div class="fw-step">
+        <div class="fw-step-icon">🤝</div>
+        <div>
+          <div class="fw-step-title">Close Deals</div>
+          <div class="fw-step-sub">Buy at 5–35% of market. Title company handles paperwork.</div>
+        </div>
+      </div>
+      <div class="fw-step">
+        <div class="fw-step-icon">💰</div>
+        <div>
+          <div class="fw-step-title">Collect Profit</div>
+          <div class="fw-step-sub">Cash sale or seller finance. $5K–$30K per deal.</div>
+        </div>
+      </div>
+      <div class="fw-step">
+        <div class="fw-step-icon">📊</div>
+        <div>
+          <div class="fw-step-title">Analyze → Optimize</div>
+          <div class="fw-step-sub">AI KPI dashboard identifies what's working. Cut losers fast.</div>
+        </div>
+      </div>
+      <div class="fw-step">
+        <div class="fw-step-icon">🏔️</div>
+        <div>
+          <div class="fw-step-title">Reinvest + Expand</div>
+          <div class="fw-step-sub">Profits fund next campaign. Add counties. Compound effect kicks in.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 6: BUILD ROADMAP
+  ═══════════════════════════════════════════════════════ -->
+  <div class="section-label"><h2>Section 6 — Build Roadmap</h2></div>
+
+  <div class="roadmap no-break">
+
+    <div class="phase-card phase-1">
+      <div class="phase-badge">Phase 1</div>
+      <div class="phase-title">First Deal</div>
+      <div class="phase-timeline">⏱ Weeks 1–8 · Manual + Learning</div>
+      <ul class="phase-milestones">
+        <li>Pick 1 county (manual research)</li>
+        <li>Build first list via PropStream</li>
+        <li>Send 500–1,000 mailers</li>
+        <li>Handle responses manually</li>
+        <li>Make offers, close first deal</li>
+        <li>Document every step for SOP</li>
+        <li>Track KPIs in spreadsheet</li>
+      </ul>
+    </div>
+
+    <div class="phase-card phase-2">
+      <div class="phase-badge">Phase 2</div>
+      <div class="phase-title">Intelligence Layer</div>
+      <div class="phase-timeline">⏱ Months 2–4 · Build AI Engines</div>
+      <ul class="phase-milestones">
+        <li>County Intelligence Engine v1</li>
+        <li>Parcel Personalization + Lob.com</li>
+        <li>Response Scoring ML model</li>
+        <li>AI Comp Engine integration</li>
+        <li>KPI Dashboard live</li>
+        <li>Scale to 3,000–5,000 mailers</li>
+        <li>First seller-financed deal</li>
+      </ul>
+    </div>
+
+    <div class="phase-card phase-3">
+      <div class="phase-badge">Phase 3</div>
+      <div class="phase-title">Scale</div>
+      <div class="phase-timeline">⏱ Month 5+ · Full Operation</div>
+      <ul class="phase-milestones">
+        <li>3–5 counties running in parallel</li>
+        <li>VA team integrated with AI tools</li>
+        <li>Buyer Matching Engine live</li>
+        <li>Note portfolio growing</li>
+        <li>Capital Optimizer active</li>
+        <li>$30K–$70K/month target</li>
+        <li>System runs with minimal oversight</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <div class="footer">
+    <div class="footer-left">
+      <div class="footer-dot"></div>
+      <span>Land Flipping AI System · Chris Spiewak × Coose × Gerald 🍊</span>
+    </div>
+    <div>May 2026 · Based on Jack Bosch LPG Methodology + AI Enhancement Layer</div>
+  </div>
+
+</div>
+</body>
+</html>
