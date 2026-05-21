@@ -2,198 +2,367 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Meeting Summary — May 21, 2026 | Land Business</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Land Business Meeting Summary - May 21, 2026</title>
 <style>
-body {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 12pt;
-  line-height: 1.6;
-  color: #1a1a1a;
-  background: #fff;
-  padding: 0.75in 1in;
-  max-width: 8.5in;
-  margin: 0 auto;
-}
-h1 { font-family: Helvetica, Arial, sans-serif; font-size: 20pt; border-bottom: 2px solid #1a1a1a; padding-bottom: 0.2em; margin-bottom: 0.1em; }
-h2 { font-family: Helvetica, Arial, sans-serif; font-size: 14pt; border-bottom: 1px solid #aaa; padding-bottom: 0.15em; margin-top: 1.4em; margin-bottom: 0.4em; }
-h3 { font-family: Helvetica, Arial, sans-serif; font-size: 12pt; margin-top: 1em; margin-bottom: 0.3em; }
-.meta { font-size: 10pt; color: #666; margin-bottom: 1.5em; }
-p { margin: 0.5em 0; }
-ul, ol { margin: 0.4em 0 0.6em 1.5em; }
-li { margin-bottom: 0.3em; }
-table { width: 100%; border-collapse: collapse; margin: 0.8em 0; font-size: 11pt; }
-th { background: #f0f0f0; font-family: Helvetica, Arial, sans-serif; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.03em; text-align: left; padding: 7px 10px; border-bottom: 2px solid #999; }
-td { padding: 7px 10px; border-bottom: 1px solid #ddd; vertical-align: top; }
-tr:nth-child(even) td { background: #fafafa; }
-blockquote { border-left: 3px solid #aaa; margin: 0.8em 0 0.8em 0.5em; padding: 0.3em 1em; color: #444; font-style: italic; }
-.decision-box { background: #f7f7f2; border: 1px solid #ddd; padding: 12px 16px; margin: 0.8em 0; }
-@media print {
-  body { padding: 0.5in 0.75in; }
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #1a1a1a;
+    background: #ffffff;
+    padding: 1in;
+    max-width: 8.5in;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4pt;
+    letter-spacing: -0.5px;
+  }
+
+  .meta {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    color: #555;
+    margin-bottom: 20pt;
+    border-bottom: 1.5pt solid #1a1a1a;
+    padding-bottom: 10pt;
+  }
+
+  h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 22pt;
+    margin-bottom: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 0.5pt solid #ccc;
+    padding-bottom: 4pt;
+  }
+
+  h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 16pt;
+    margin-bottom: 6pt;
+  }
+
+  p {
+    margin-bottom: 8pt;
+  }
+
+  ul {
+    margin: 6pt 0 10pt 18pt;
+  }
+
+  li {
+    margin-bottom: 4pt;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10pt 0 14pt 0;
+    font-size: 11pt;
+  }
+
+  th {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    font-weight: 700;
+    text-align: left;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 6pt 8pt;
+  }
+
+  td {
+    padding: 5pt 8pt;
+    border-bottom: 0.5pt solid #ddd;
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td {
+    background-color: #f5f5f5;
+  }
+
+  tr:nth-child(odd) td {
+    background-color: #ffffff;
+  }
+
+  blockquote {
+    margin: 10pt 0 10pt 20pt;
+    padding: 8pt 12pt;
+    border-left: 3pt solid #1a1a1a;
+    font-style: italic;
+    color: #333;
+    background: #f9f9f9;
+  }
+
+  blockquote em {
+    font-style: normal;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 9.5pt;
+    color: #666;
+    display: block;
+    margin-top: 4pt;
+  }
+
+  .section-intro {
+    color: #444;
+    margin-bottom: 10pt;
+  }
+
+  .footer {
+    margin-top: 28pt;
+    padding-top: 10pt;
+    border-top: 0.5pt solid #ccc;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 9pt;
+    color: #888;
+  }
+
+  @media print {
+    body {
+      padding: 0;
+    }
+  }
 </style>
 </head>
 <body>
 
-<h1>Meeting Summary — May 21, 2026</h1>
-<div class="meta">Land Business Partnership — Meeting #4 &nbsp;|&nbsp; Marcus (Coose) and Chris &nbsp;|&nbsp; Duration: ~90 minutes</div>
+<h1>Land Business Meeting Summary</h1>
+<div class="meta">May 21, 2026 &nbsp;|&nbsp; Meeting #3 &nbsp;|&nbsp; Duration: approximately 1 hour 40 minutes</div>
 
-<h2>What Marcus Brought to This Meeting</h2>
+<h2>Overview</h2>
+<p>Third weekly Thursday meeting between Marcus and Chris on their land flipping business partnership. Marcus brought printed materials: a county audit report and non-disclosure state research prepared by Gerald. The meeting covered AI tooling and transcription workflow, entity and brand decisions, county selection criteria, land acquisition strategy, and list sourcing. The session ended with a clear near-term action plan.</p>
+
+<h2>Key Topics Discussed</h2>
+
+<h3>1. Meeting Format and Workflow</h3>
 <ul>
-  <li>County audit report — all 8 counties validated against Jack Bosch Module 2 criteria</li>
-  <li>Non-disclosure states playbook — AI-assisted comp workflow for Texas and similar states</li>
-  <li>Summaries of the May 7 and May 14 meetings (printed)</li>
-  <li>Updated system map and pipeline graphic (land-business themed)</li>
+  <li>Still establishing a standard meeting template and routine.</li>
+  <li>Agreed structure: check-in on recent work, review previous meeting summary for spaced repetition, then work through agenda items.</li>
+  <li>Both committed to 90-minute meetings.</li>
+  <li>Meeting summaries from May 7 and May 14 were referenced and pulled up.</li>
+  <li>Previous meeting transcription (May 14) took approximately 4 hours due to a larger audio file and a different audio source.</li>
 </ul>
 
-<h2>Key Topics and Decisions</h2>
-
-<h3>1. Branding — Decision Made</h3>
-
-<div class="decision-box">
-<strong>Decision: Use Atlas Morgan Investments (Marcus's existing LLC) for now.</strong><br>
-Sub-page: atlasmorgan.com/land. No new entity needed to start.
-</div>
-
+<h3>2. AI Tooling and Gerald</h3>
 <ul>
-  <li>Avoids creating a new LLC, new bank account, new website from scratch</li>
-  <li>AcreLine tabled — still not fully resolved, and both agreed overhead of a new entity was slowing them down</li>
-  <li>"Let's just do deals first, build the brand entity later if it makes sense"</li>
-  <li>Gerald builds a clean landing page at atlasmorgan.com/land</li>
+  <li>Current AI workflow: record meetings with a voice app, feed the audio to Gerald (Claude via OpenClaw) for Whisper transcription, then generate meeting summaries.</li>
+  <li>Anthropic API usage: charged approximately $20 in tokens during a previous meeting session running in the background.</li>
+  <li>Grokboi skill: Gerald can query Grok (which has real-time Twitter/X access) for up-to-date information on what land investors are discussing now, supplementing training-weight knowledge.</li>
+  <li>Acknowledged that AI general knowledge doesn't always include specific investor course methodologies (e.g., Jack Bosch course videos are not indexed online).</li>
+  <li>Discussed giving Gerald API access to Zillow or RealG.com to validate county scores automatically.</li>
+  <li>SaaS market discussion: AI agents are disrupting subscription software products; what differentiates real tools is cross-referencing, guardrails, and refinement.</li>
 </ul>
 
-<h3>2. Entity / Partnership Structure</h3>
-
-<div class="decision-box">
-<strong>Decision: Amend the Atlas Morgan Investments operating agreement to add Chris as a partner.</strong>
-</div>
-
+<h3>3. Entity and Brand Decision</h3>
+<p>Long discussion about whether to create a new LLC and brand. Various names were discussed (AcreLine, Landline Properties, Landline Property, and others). Ultimately set aside in favor of moving fast.</p>
+<p><strong>Decision:</strong> In the short term, operate under Marcus's existing brand: <strong>Atlas Morgan Investments</strong>, using <strong>atlasmorgan.com/land</strong> as the landing page. No new LLC required to start. Marcus will amend his existing multi-member Colorado LLC operating agreement to include this partnership.</p>
 <ul>
-  <li>Both have existing LLCs and bank accounts — no need to open new ones</li>
-  <li>Individual deals assigned from brand entity to operating LLC for $1 — keeps brand off title</li>
-  <li>Marcus's homework: Research requirements for amending a Colorado LLC operating agreement (with Gerald)</li>
-  <li>Chris's homework: Locate Good Harvest Properties operating agreement (digital document)</li>
+  <li>Rationale: eliminates overhead of new entity setup (banking, email, domain, etc.) while getting first deals done.</li>
+  <li>Can spin up a separate brand and entity once the model is proven.</li>
+  <li>Marcus's LLC is multi-member by design, making the amendment simpler.</li>
 </ul>
 
-<h3>3. County Selection — Reviewed Together</h3>
-
-<p>Reviewed the county audit at the meeting. Key findings acknowledged:</p>
-<ul>
-  <li>Osceola County, FL — failed the donut method (inside the Orlando MSA, only 17-22 miles from downtown). Both agreed to replace it.</li>
-  <li>Kaufman County, TX — non-disclosure state flag noted. Extra comp work required. Texas growth still compelling.</li>
-  <li>Tennessee (White County) — discussed positively. Both like the Nashville/Knoxville dual-metro positioning.</li>
-  <li>North Carolina counties — Marcus's research-driven picks; Chris familiar with NC from past work.</li>
-</ul>
-
-<div class="decision-box">
-<strong>Decision: Start with THREE counties.</strong>
-<ol style="margin-top:0.5em">
-  <li><strong>One in Colorado</strong> — local, familiar market; Marcus researching which county passes the criteria (terrain/desert can be challenging)</li>
-  <li><strong>One in Tennessee</strong> — both positive on TN; Nashville orbit most likely</li>
-  <li><strong>One hot market</strong> from the audit — likely Franklin County NC or Marion County FL (to be confirmed)</li>
-</ol>
-</div>
-
-<p>Additional context: Both want to cross-reference selected counties against current land investor activity — what are people actually saying now on forums and social media, not just static data. Gerald to build this as a research tool.</p>
-
-<h3>4. Property Types — Two Types Agreed</h3>
-
-<div class="decision-box">
-<strong>Decision: Target two property types.</strong>
-<ul style="margin-top:0.5em">
-  <li><strong>Type 1: 2-3 acre buildable lots</strong> in growth corridors — desirable, can build a house, sell to people wanting land near a city</li>
-  <li><strong>Type 2: 5-30 acre recreational parcels</strong> — hunting, camping, getaway; market to city dwellers wanting their own piece of land</li>
-</ul>
-</div>
-
-<p>Infill lots considered too hard to source for a first campaign. Property type will determine county selection and list filters. Goal: narrow to one type per county for the first mailing.</p>
-
-<h3>5. Mailing Lists — How We Get Them</h3>
-
-<ul>
-  <li><strong>Platform: ListSource</strong> — Chris has used it; can filter by county, price point, owner age, out-of-state, years owned, and more</li>
-  <li>Ideal owner profile: out-of-state owner + long hold time (10+ years) + right acreage range + older owner</li>
-  <li>Probate / inherited land = highest quality leads; owners often have no emotional attachment</li>
-  <li><strong>First campaign size: ~1,000 mailers</strong> (500 not enough for meaningful data)</li>
-  <li><strong>Timeline: Within one month</strong></li>
-  <li>Gerald action item: Research how LPG list system works vs. pulling directly from ListSource or similar</li>
-</ul>
-
-<h3>6. Phone / Response System</h3>
-
-<ul>
-  <li>LandCalls.com mentioned as an answering service option (pre-screens calls before routing to Chris)</li>
-  <li>Both cautious about foreign-accent virtual assistants — rural land sellers respond poorly</li>
-  <li>For first campaign: Google Voice or similar; Marcus's number routes calls to Chris</li>
-  <li>Future: AI phone agent that captures seller info automatically before routing</li>
-</ul>
-
-<h3>7. Gerald — New Action Items</h3>
-
-<ul>
-  <li><strong>Live sold-to-active ratio tool:</strong> Build a sub-agent that navigates Zillow/LandWatch and pulls current sold-to-active ratios for any county on demand</li>
-  <li><strong>Current investor sentiment:</strong> Access land investing forums, Reddit, BiggerPockets, X (via Grokboy) to cross-reference counties against what active investors are saying right now</li>
-  <li><strong>List source research:</strong> How does the LPG system pull lists? Can Gerald replicate that without the $200/month subscription?</li>
-  <li><strong>Landing page:</strong> Build atlasmorgan.com/land</li>
-</ul>
-
-<h3>8. Long-Term Vision</h3>
-
-<p>Both got excited about the bigger picture:</p>
-<ul>
-  <li>Chris's goal: $10K/month each reliably, ~20 hours/week — not a 60-hour grind</li>
-  <li>Seller financing as a passive income layer: once deals flow, offer buyers monthly payment terms</li>
-  <li>RV parks near national parks — floated as a future play; both found it compelling ("those things get booked out")</li>
-  <li>Development / rezoning as a long-term value-add angle on acquired land</li>
-  <li>Chris's model: "10% of a million vs. 100% of $10K — I'll take the 10% every time"</li>
-</ul>
-
-<h2>Decisions Summary</h2>
+<h3>4. County Selection Criteria (Jack Bosch Framework)</h3>
+<p>Marcus walked through the county audit report Gerald prepared, organized against the Jack Bosch selection criteria:</p>
 
 <table>
-<tr><th>Decision</th><th>Detail</th></tr>
-<tr><td>Brand / entity</td><td>Use Atlas Morgan Investments — atlasmorgan.com/land</td></tr>
-<tr><td>Operating agreement</td><td>Amend to add Chris as partner; Marcus researches requirements this week</td></tr>
-<tr><td>Target markets</td><td>Three counties: one Colorado, one Tennessee, one hot market (to be finalized)</td></tr>
-<tr><td>Property types</td><td>2-3 acre buildable lots AND 5-30 acre recreational parcels</td></tr>
-<tr><td>List source</td><td>ListSource; Gerald also researches LPG list approach</td></tr>
-<tr><td>First campaign size</td><td>~1,000 mailers</td></tr>
-<tr><td>Timeline</td><td>First mailer within one month</td></tr>
+  <tr><th>Criterion</th><th>Target Value</th></tr>
+  <tr><td>State disclosure</td><td>Disclosure states preferred (sale prices are public; easier to comp)</td></tr>
+  <tr><td>Metro population</td><td>750,000 to 1,000,000+</td></tr>
+  <tr><td>Donut distance</td><td>30 to 100 miles from metro center</td></tr>
+  <tr><td>Infrastructure / topography</td><td>No landlocked parcels; road access required; no desert; no aggressive slopes</td></tr>
+  <tr><td>Sold-to-active ratio</td><td>20 to 130% ideal; minimum 50 sold (small county) or 100 sold (large county)</td></tr>
+  <tr><td>Market value distribution</td><td>50% of properties priced $5K to $300K</td></tr>
+</table>
+
+<ul>
+  <li>Counties with two nearby cities and land in between are especially attractive (dual-market demand).</li>
+  <li>Desert land is generally undesirable: undevelopable, no water infrastructure, not plantable.</li>
+  <li>Colorado is more challenging due to terrain and potentially more competition, but local proximity has strategic value.</li>
+</ul>
+
+<h3>5. Non-Disclosure States</h3>
+<ul>
+  <li>Gerald's research found 11 non-disclosure states (sale prices not publicly recorded) -- more than expected.</li>
+  <li>These make comping difficult, but not impossible: LTV estimates, merged recorded data, and Gerald's research capabilities can help navigate them.</li>
+  <li>Gerald prepared a dedicated non-disclosure state research document as part of the printed materials.</li>
+</ul>
+
+<h3>6. Target Metro Markets Identified</h3>
+<p>Gerald's county audit produced the following top-candidate metros for further validation:</p>
+<ul>
+  <li><strong>Raleigh / Durham, North Carolina</strong> -- Tier 1; Franklin County, NC specifically flagged</li>
+  <li><strong>Nashville, Tennessee</strong> -- strong market but potentially competitive</li>
+  <li><strong>Knoxville, Tennessee</strong></li>
+  <li><strong>Orlando, Florida</strong> -- Osceola County flagged as too close (approximately 30 miles)</li>
+  <li><strong>Phoenix, Arizona</strong></li>
+  <li><strong>Dallas, Texas / North Texas</strong> -- including the area near the Red River between Oklahoma City and Dallas (Chris's hometown area, noted as strong recreational land territory)</li>
+</ul>
+<ul>
+  <li>Florida and Texas residential markets are softening (25 to 30% drops in residential pricing) -- potential for more motivated sellers.</li>
+  <li>Target: the "just blown up enough" market where landowners haven't yet priced their land correctly.</li>
+  <li>Long-term portfolio target: 15 high-quality counties across 2 to 3 states.</li>
+</ul>
+
+<h3>7. Land Acquisition Strategy</h3>
+<ul>
+  <li><strong>Blind offer mailers</strong> are the primary acquisition method: send unsolicited written offers to landowners at approximately 20 cents on the dollar.</li>
+  <li>Clarification: a blind offer is a written offer letter, not an actual check. The check comes at closing.</li>
+  <li>Legal escape clauses are essential (e.g., "subject to partner approval") so offers can be rescinded if needed.</li>
+  <li>Escrow payments are minimal ($1 to $100) to establish contract consideration.</li>
+  <li><strong>Double-close strategy:</strong> contract the property, find a buyer, close both transactions simultaneously without needing to hold capital.</li>
+  <li>Even in competitive markets, timing matters: the goal is to reach a seller on the day they are ready to sell.</li>
+</ul>
+
+<h3>8. Two Target Property Types</h3>
+<p>Agreed to focus on two categories of land for the first campaign:</p>
+<table>
+  <tr><th>Type</th><th>Size</th><th>Target Buyer</th></tr>
+  <tr><td>Infill lots</td><td>0.5 to 4 acres</td><td>Buyers who want to build a home; in path of development</td></tr>
+  <tr><td>Recreational lots</td><td>5 to 30 acres</td><td>City residents wanting weekend retreats, camping, horses, family getaways</td></tr>
+</table>
+<ul>
+  <li>Property type drives both the list filter and the marketing message.</li>
+  <li>More targeted property + owner combination = higher response rate and more focused messaging.</li>
+</ul>
+
+<h3>9. List Sourcing</h3>
+<ul>
+  <li><strong>ListSource</strong> (listsource.com) identified as the primary list tool. Allows filtering by county, property price range, owner age, years of ownership, out-of-state owners, and many other parameters.</li>
+  <li>Key filter strategies discussed:</li>
+</ul>
+<table>
+  <tr><th>Filter</th><th>Rationale</th></tr>
+  <tr><td>Out-of-state owners</td><td>Classic high-motivation category; less attachment to the property</td></tr>
+  <tr><td>Inherited land</td><td>Owners with no original emotional investment are more likely to sell</td></tr>
+  <tr><td>Owner age 60+</td><td>More likely to want liquidity or to remove the burden</td></tr>
+  <tr><td>Held 10+ years</td><td>Long-hold owners may be ready to exit</td></tr>
+  <tr><td>Tax delinquency / distress signals</td><td>Highly motivated sellers</td></tr>
+</table>
+<ul>
+  <li>Gerald to research ListSource and county website data options, including whether Gerald can scrape county records directly to reduce list costs.</li>
+  <li>The combination of county target + owner filter + property type filter = the core of list strategy. Plan to build a data tracking engine to learn which combinations produce results over time.</li>
+</ul>
+
+<h3>10. First Mailer Plan</h3>
+<ul>
+  <li><strong>Goal: First mailer out within 1 month.</strong></li>
+  <li>Volume: approximately 1,000 pieces (500 was discussed initially; bumped to 1,000 for adequate statistical signal).</li>
+  <li>Target: one specific county with a defined owner filter and property type focus.</li>
+</ul>
+
+<h3>11. Lead Flow and Answering Systems</h3>
+<ul>
+  <li>Discussed using an answering service (e.g., LandCalls.com) to handle inbound calls rather than taking every call live.</li>
+  <li>System: callers answer qualifying questions; a callback is scheduled; higher-quality leads get Marcus's attention.</li>
+  <li>Overseas virtual assistants discussed but largely dismissed due to English-speaker resistance to accented calls for direct land seller negotiations.</li>
+  <li>Meta ads discussed as a supplemental channel alongside direct mail.</li>
+</ul>
+
+<h3>12. Longer-Term Vision</h3>
+<ul>
+  <li>Both partners interested in eventually moving up the value chain: mobile home parks, RV parks near national parks, boat and RV storage complexes, commercial development.</li>
+  <li>RV parks near national parks specifically called out as a compelling long-term play (books out reliably, limited competition vs. residential).</li>
+  <li>Land financing / seller-financed notes discussed as a way to build residual monthly income vs. one-time lump-sum wholesale flips.</li>
+  <li>Revenue targets discussed: $10K/month per person as the meaningful near-term goal; $60K/month within 6 months as the aspirational target.</li>
+  <li>Marcus plans: trading in the mornings, land business in the afternoons; estimates 20 hours/week capacity currently, willing to increase as deals produce income.</li>
+</ul>
+
+<h2>Decisions Made</h2>
+<table>
+  <tr><th>Decision</th><th>Detail</th></tr>
+  <tr><td>Entity / brand</td><td>Use Atlas Morgan Investments (atlasmorgan.com/land) in the short term. No new LLC.</td></tr>
+  <tr><td>Operating agreement</td><td>Marcus to amend existing Colorado LLC to include partnership. Gerald to research amendment requirements.</td></tr>
+  <tr><td>First mailer timeline</td><td>Target within 1 month</td></tr>
+  <tr><td>Mailer volume</td><td>Approximately 1,000 pieces</td></tr>
+  <tr><td>Target counties</td><td>3 to start: 1 in Colorado, 1 in Tennessee, 1 other hot market from audit list</td></tr>
+  <tr><td>Property type focus</td><td>Infill lots (0.5 to 4 acres) and recreational lots (5 to 30 acres)</td></tr>
+  <tr><td>County selection framework</td><td>Jack Bosch criteria as base, scored by Gerald, still requires human validation</td></tr>
 </table>
 
 <h2>Action Items</h2>
-
 <table>
-<tr><th>Who</th><th>Task</th></tr>
-<tr><td><strong>Marcus</strong></td><td>Finalize three target counties with Gerald (CO + TN + hot market); narrow to specific property type per county</td></tr>
-<tr><td><strong>Marcus</strong></td><td>Research LLC operating agreement amendment requirements in Colorado (with Gerald)</td></tr>
-<tr><td><strong>Chris</strong></td><td>Locate Good Harvest Properties operating agreement document</td></tr>
-<tr><td><strong>Marcus / Gerald</strong></td><td>Build live sold-to-active ratio lookup for any county (Zillow / LandWatch)</td></tr>
-<tr><td><strong>Marcus / Gerald</strong></td><td>Build current investor sentiment research tool (forums, X, Reddit) for county cross-reference</td></tr>
-<tr><td><strong>Marcus / Gerald</strong></td><td>Research LPG list system vs. ListSource; can Gerald pull lists without the $200/month subscription?</td></tr>
-<tr><td><strong>Marcus / Gerald</strong></td><td>Build atlasmorgan.com/land landing page</td></tr>
-<tr><td><strong>Both</strong></td><td>Decide on property type focus per county before pulling lists</td></tr>
+  <tr><th>Owner</th><th>Task</th></tr>
+  <tr><td>Marcus</td><td>Pull up Atlas Morgan LLC operating agreement (digital copy)</td></tr>
+  <tr><td>Marcus</td><td>Work with Gerald to understand legal requirements for amending LLC operating agreement in Colorado</td></tr>
+  <tr><td>Marcus</td><td>Finalize the 3 target counties (one CO, one TN, one other) based on audit data</td></tr>
+  <tr><td>Marcus</td><td>Decide on the two property types and specific owner filters for first mailer</td></tr>
+  <tr><td>Chris</td><td>Continue researching Colorado counties; identify specific local counties for consideration</td></tr>
+  <tr><td>Gerald</td><td>Pull all action items from this transcript and deliver to both partners</td></tr>
+  <tr><td>Gerald</td><td>Research current land investor market sentiment (Grokboi + web search) for target metros</td></tr>
+  <tr><td>Gerald</td><td>Research how Jack Bosch sources land owner lists; investigate ListSource and county website alternatives</td></tr>
+  <tr><td>Gerald</td><td>Research Colorado LLC operating agreement amendment requirements</td></tr>
+  <tr><td>Gerald</td><td>Explore Zillow API or browser access to validate sold-to-active ratios for county scoring</td></tr>
+  <tr><td>Gerald</td><td>Begin building a county selection sub-agent skill / workflow framework</td></tr>
+  <tr><td>Both</td><td>Review county audit printouts together and validate AI-scored counties against criteria</td></tr>
 </table>
 
 <h2>Open Questions</h2>
-
 <ul>
-  <li>Which specific Colorado county passes the Bosch criteria given terrain/desert challenges?</li>
-  <li>Which Tennessee county? White County still the frontrunner?</li>
-  <li>Which hot market third county? Marion County FL or Franklin County NC?</li>
-  <li>First campaign: blind offers or neutral letters?</li>
-  <li>Response system for first campaign: LandCalls.com, Google Voice, or something else?</li>
-  <li>Operating agreement amendment — what does it actually require for a Colorado LLC?</li>
+  <li>Which specific Colorado counties score high enough to justify starting locally?</li>
+  <li>Is Nashville too competitive for a first mailer campaign, or worth testing?</li>
+  <li>Should the first mailer focus on infill lots, recreational lots, or both?</li>
+  <li>What is the exact owner filter combination for the first list pull?</li>
+  <li>What does the atlasmorgan.com/land landing page need to include before mailers launch?</li>
+  <li>Can Gerald get API access to Zillow or a comparable data source for automated county validation?</li>
+  <li>What is the exact sold-to-active ratio timeframe used by Jack Bosch?</li>
+  <li>Is there a deal source opportunity through Chris's relative (realtor) in the Jacksonville / St. Augustine area?</li>
 </ul>
 
 <h2>Notable Quotes</h2>
 
-<blockquote>"I just want something where we have 10 grand each every month, no matter what, spending 20 hours a week."</blockquote>
-<blockquote>"The more narrow, the more intentional — this town, this age, this property type — the better the results."</blockquote>
-<blockquote>"Let's just use what we have and get a deal done. Then we build the brand if we need to."</blockquote>
-<blockquote>"Everybody's focused on Nashville. Maybe that means good buyers. But also a lot of competition for acquisition."</blockquote>
+<blockquote>
+  "The only thing is, throw a dart at the thing, but if you have criteria that you can then validate, you can get a good county like that."
+  <em>On using AI-generated county recommendations with human validation</em>
+</blockquote>
 
-<div class="meta" style="margin-top:2em; border-top:1px solid #ddd; padding-top:0.5em;">
-Transcribed by Gerald using Whisper (small model). Speaker attribution not attempted — mono audio. Stereo recording begins next meeting for accurate speaker identification.
+<blockquote>
+  "I want to find the places that are just blown up enough where they haven't been -- like, the people who have land there don't realize how much their land's worth. That's what you want."
+  <em>On the ideal target market</em>
+</blockquote>
+
+<blockquote>
+  "The more targeted the property type and the owner type, the more targeted the message and the more targeted the sales. The more specific, the better results."
+  <em>On list filtering philosophy</em>
+</blockquote>
+
+<blockquote>
+  "I want to build something that's simple, repeatable, scalable -- not a 80-hour-a-week thing."
+  <em>On the system vision</em>
+</blockquote>
+
+<blockquote>
+  "Even if they're getting letters, they might still not know what their land's worth."
+  <em>On why blind offers work even in competitive markets</em>
+</blockquote>
+
+<blockquote>
+  "Gerald, we decided in the short term on the brand -- instead of rebranding, building a new LLC and all that, we're just going to use my existing real estate brand, which is Atlas Morgan Investments. It's just atlasmorgan.com slash land."
+  <em>Marcus, speaking directly to the recording for the transcript</em>
+</blockquote>
+
+<div class="footer">
+  Summary generated by Gerald from Whisper transcription of meeting-2026-05-21.m4a &nbsp;|&nbsp; May 21, 2026
 </div>
 
 </body>
