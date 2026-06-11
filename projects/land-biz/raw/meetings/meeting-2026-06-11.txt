@@ -1,0 +1,1632 @@
+Get those counties down there and get the system set up, and pretty much, pretty much it launched, I'm like, wow, it's such a good field.
+Yeah, we have to build a bit of our infrastructure, but all right, so here we are, it's June 11th.
+Is it?
+Yeah, and we're starting the meeting, Chris just mentioned that it would be good to have a 24-hour reminder.
+So Gerald, can you set up a cron job so that 24 hours after our meeting,
+that you will email us a reminder of the tasks that we want to do within one day.
+So, and that is what we're within a day, we want to be able to review the meeting.
+Yeah, so I was just thinking, Gerald, it's Chris, that as soon as you can have the meeting summary after the meeting, the better.
+That was on me.
+Yeah, that's okay.
+I was saying to Marcus that we should have a new goal, not just, we don't just do 90 minutes a week outside of everything, but within 24 hours of the meeting, we both have to go through the meeting summary and wrap our heads around next steps, our tasks, the meeting, because I think it's really easy to just have a week go by, especially when we're just doing small commitments.
+So having this new commitment, this part of our monthly commitment, where it's like 24 hours of meeting, we'll have to go through the meeting summary and wrap our heads around our tasks and what we got to do.
+Okay, well, what do we want to meet twice a week now?
+We can do it twice a week.
+I think we're good.
+I think we should.
+We can do this one.
+So Monday and Thursday.
+Monday and Thursday work.
+Oh no, watch out, got your TV guide.
+No, no.
+And we got TV guides.
+No, no, no.
+It's a crazy girl.
+Crazy plug.
+Crazy plug going crazy.
+But yeah, I think, so we got a 90 minute a week commitment on our own.
+We got a Thursday commitment together.
+We got within 24 hour commitment, each on our own to review the current weeks that, you know, the day before is meeting.
+And then we're going to start trying to make Monday happen as well together.
+Yep.
+Great.
+So if we come over here, we can take a look at the summary from last week.
+Yeah, I thought we should go through it together real quick.
+So put this on the big screen, dude.
+Can you do that?
+Yeah, I don't like that.
+This is, I'll do that next time.
+I just want to make some progress.
+All right.
+So call system, that's a big focus, operating agreement, county selection, and yeah, meeting cadence,
+which we already addressed the meeting cadence.
+So we're good on that.
+Call system I can talk about a little bit.
+So I think I got a list of things I want to dig into deeper,
+but a couple of top systems that work well.
+Can't make either names off the top of my head right now.
+It's so weird.
+But I have a couple of systems that work that can do the calling.
+The thing I really ran into as I was going through this is that
+we want the real caller calls in.
+We want to take those calls, or how do human take those calls.
+But so many of the calls that are coming in and be like,
+fuck you, take me off your list, bitch, get this thing.
+So we want a pre-filter, but we don't want a pre-filter.
+Like if we had a digital pre-filter, it was press one to reach a partner, you know?
+That's going to probably get more bullshit calls to call through than
+real callers, because they're just like old people.
+They don't want to deal with press one.
+They just think it's corporate.
+So what I really think we have to have is a pre-filter that goes to a live person.
+Maybe this is that live.
+So the call comes in.
+Hey, is it all right?
+Can I check it?
+Take me off your front of the list.
+Okay, thank you.
+Goodbye.
+We never hear that calls.
+We don't need to see it.
+We need to see those in the system.
+But we got 20 calls a week that we're taking off your list or whatever.
+But we don't need to see that.
+We don't need to have those calls right in our phones.
+But what we want is that, hey, I got your postcard.
+I'm interested to call my thing.
+Let me connect you to the partners.
+Boom.
+Now it's ringing both of our phones.
+Either one of us answers or a person is already answered.
+If they get them, they come back and they're like,
+you know, both the partners are on their call.
+Let me have them call you back as soon as we can.
+Now they've got a human person that's touched them.
+They know it's real.
+They're not disgruntled.
+They're not okay.
+I like that.
+So you're going to, you're going to design that.
+I'm going to set up a system.
+So it's like, it's probably going to be how live looks like in front of the best doctor.
+No, no, no, no, no, no, no.
+Is there anything you want to take on there?
+Okay.
+So yeah, that's why I think the system can work.
+Hey, you want a different phone number, I think,
+for people who are calling once we start to get on the disposition side?
+I think that's what they would say.
+So there's a lot of different ways to do it.
+You can have, because you've got two different markets.
+You have a seller strategy and you're going to have a whole seller brand built around
+two different sellers and a whole disposition side of it.
+This is a bigger conversation about it.
+Really what matters is a message that contacts,
+because when they contact, unless you're really changing up the message,
+you've got to figure it out.
+I, yeah, that's about, I've looked into it enough.
+And I think the whole branding world.
+So if I'm pretty good, I think for what we're doing,
+we can over engineer the setup and never fucking make a call.
+What we want is a, it's a, a single number that we can maybe transfer in the future
+into a cyber partnership, or it becomes the Alzheimer's in landline
+that isn't, have anything to do with my multifamily ownership
+that I'm doing inside the business.
+That's our, that's the land only number.
+And I was talking about this actually with, with a little bit like,
+do we have separate extensions or separate numbers for each strategy?
+And it's like, the single number is the best, it's the least friction.
+They have a number, they're not down an extension.
+So that the sellers get the postcard, they're generally interested,
+or they're not whatever they call in.
+That's trackable just for land.
+So these are all these calls, these are land.
+All these calls, that's other stuff, you know,
+so it's like they're really, really separable by the land strategy.
+I don't think we need to separate further by this is a, this position call.
+And this isn't, we just start micromanaging the calls.
+We just need to be able to take the calls and get the calls
+and message them on the calls with this home number.
+So we have, call comes in, goes to a live agent,
+live agent immediately transfers real calls to us.
+One of us takes the call or picks up first.
+And again, you can be like, hey, it's Marcus.
+You know, my part is actually more experience in that thing.
+Let me connect with him right away.
+So the touch points of real people, people answering the phone,
+for real sellers, that is like, that's the golden thing.
+And those 10, 20% that would not call
+because it's press one to get to a partner,
+those are the ones that are mostly going to be a good deal.
+So I think we just have to have a call come in that's always answered,
+and probably is an agent first, and then that filters to us.
+So I'll set, figure out the final, I basically have to continue
+what I've already been doing, what's already on the list.
+So I basically have to continue doing the call finalization.
+Have you gotten any progress on the counties?
+Yeah.
+Well, yeah, we're going to go and deeper on that.
+I think the operating agreement conversations much shorter.
+So let's just knock that off.
+I think what we should do for this is not,
+not mess with this operating agreement because we're adding
+a member and we have to do some different good splits and all that crap.
+I think we just have as a simple-
+No, we should write something inside it and I should be a part of it.
+Before we start getting into any way of money or building something with value,
+not that I don't trust you, but it's not about that.
+It's about I want to have a legal foundation so we have sheer liability.
+I think what you have is you have a partnership agreement or an operating agreement that's
+that gives all the ownership and control you want to have around this particular thing
+versus actually modifying this existing-
+It's not hard to do this.
+It's not, but I just-
+You give him the language.
+Gerald Fix changes it.
+We sign it.
+It's very simple.
+I guess so.
+I have some resistance to that.
+But I think really, if you were to partner on someone for a short-term thing like we're doing,
+we're trying to do a test run, see how it works, see how we work together,
+see, and making you a partnership in an existing LLC,
+it's not the right approach in this kind of thing.
+You really just have a separate document.
+You can have Gerald maybe research to this a little bit too.
+Research the easiest way to do like a-
+Except there's no world that exists where I'm at like screw you over,
+keep the money for the thing, or take value and run this shit.
+I have no interest in that.
+Like I'm not even making land happen without your involvement.
+So like that's not an issue at all.
+But I think you do have a simple legal partnership agreement that says,
+we're going to do a five-deal run after that, what we evaluate.
+If that feels good, I make you a full partner in the business.
+Focused on the land side of things or something like that.
+I'm not going to put all that time and effort into something without an agreement.
+That's what I'm saying, that is an agreement.
+It's just not, it's not a making you a member of the LLC,
+which it could be.
+Maybe that's maybe that's safer.
+I don't see it.
+It's so easy.
+It's it's trivial.
+I know the paperwork side of it's easy, but the like-
+Unless I'm missing something.
+All the ifs and hows of like what happens and what that does to the decision-making power
+and how that does the like, you know, if we get in and say, okay,
+I want this to be as we want to go separate ways or this land thing doesn't work.
+You know, you can just gracefully bow out or now you're, now you are
+a member of a LLC that I've been working on for 13 years from a trial run on this.
+It just doesn't feel like the right, doesn't feel like the right context.
+And again, we can dig in this a little bit more.
+But I do, I just feel like we have a limited agreement that's like
+what like like the the branding kind of comes in under the any ownership and even just like
+the messaging that would be on this call system.
+We have like, they're so filtered now by Verizon T-Mobile ownership.
+So you actually have to register your LLC in order to message those things.
+So you're not spamming.
+You'll just get blocked forever.
+So it's a care.
+It's also something we want to be careful of.
+So that happens all under the under the under the LLC.
+But in terms of the short term,
+I just, to me, you have as an agreement for this particular run that's got a particular
+length of time or a particular number of deals or whatever we decide is the like
+framework for testing this partnership out.
+We're building like, you know, a business, right?
+100%.
+And there's a business.
+To even do five deals, we're building a business.
+Yeah.
+We're building systems in place for sure.
+Yeah.
+So you just feel really strong.
+You want to be a member of the parent LLC just to do this job run?
+Yeah.
+I've done this with other partners.
+It's, you know, trivial to build that.
+And everybody signs off and we have a strong container.
+I'm into strong containers.
+I agree.
+So then if you really want to be a member,
+then I'm going to go through and read all the shit that's in that,
+that I'm programming to make sure what has to be included, what has to have.
+Because you really can do it.
+So much of what has to happen,
+or so much what's important about an LLC having
+is how you buy each other out, how you buy out, what happens to the thing.
+That shit is all becomes a legal thing that I don't think we need to,
+we shouldn't get into it somewhat.
+We don't have to.
+I've done this, I've done this so many times.
+Have you done it with anyone where you've had a problem getting in or out,
+or you've had complete an interest or somebody didn't work?
+No.
+We've done this very straightforwardly with people who trained under JPMorgan and,
+you know, high level, you know, agreements.
+Sure.
+Been done very cleanly, very easily.
+There's an added piece, but I want to continue to try to build my
+multi-family real estate investment portfolio under this brand,
+that's really what this brand's about.
+So how does that work?
+With splits, with money, with whatever, I feel like if it's a separate thing.
+We can do it under an LLC if you want.
+I mean, if you don't want to be building something that you don't want me to be a part of,
+I mean, I don't know.
+They're just really two separate things.
+You don't have an exclusivity agreement or anything.
+No, no, no.
+I just want to make sure that everything we do together,
+is a hundred percent.
+Yeah.
+Hi.
+Yeah, how's it going?
+Good.
+You know Chris?
+I don't need Kevin.
+I don't think so.
+Hi.
+Kevin's my roommate.
+Oh, hey, how you doing?
+Good.
+Nice to meet you.
+Chris?
+Kevin.
+Nice to meet you.
+Pleasure.
+Come on.
+What is this?
+Do you guys know each other from before?
+Just a new...
+Yeah, yeah.
+Kevin and I met back at the farm.
+When I was at the farm.
+Do you want to be one of the workers on the farm?
+One of the workers.
+One of the bees.
+I think I don't remember crossing paths with you, man.
+He did mostly farmer's market stuff.
+So he was there on the weekends.
+Running shit.
+Which room did my Margaret stuff you into?
+Right here.
+This little guy, this little perfect little room.
+It's a perfect little spot.
+Yeah.
+Nice.
+So one, you know, we did lots of work on this
+when I was doing my bluegrass regenerative stuff.
+Sure.
+Built.
+That was like a huge part of what the focus was.
+And structuring it so that, like, you know,
+if you have Atlas Morgan as a parent, LLC,
+and you want to do other stuff with it,
+but you want that to then own the thing that we do together,
+you know?
+I mean, of course, there's like paper work and stuff,
+but it's trivial to have AI basically do structural stuff.
+Well, then let me do this.
+Let me dig in deeper to my operating agreement.
+And put some more thought to that.
+If I've really, I've also always been thinking,
+like, okay, this is going to be, you know,
+a handshake agreement to do X number of deals,
+and then we look at how it goes forward.
+Well, if you really feel comfortable about that.
+A handshake's agreements are good.
+I mean, but the thing is, is that we are building,
+we're actually in systems and processes.
+I mean, it's a real, we are building a business,
+or just not building a whole separate LLC,
+entity, brand, identity, just for land.
+We're putting a lot of work, putting hundreds of hours into this.
+And I want to, I want to put hundreds of hours
+into something.
+I want to get some ownership.
+Sure.
+Yeah.
+Well, let me just put some thought then to other ways to,
+or in other ways, the best way for me to do this
+and how that split would work and what that ownership is.
+And I don't quite know how.
+But again, just give it, give it to Claude.
+Give it to Claude, Claude Fablefile.
+Fablefile.
+I'm not worried about the actual language of the document.
+That's, it's more of a sort of conceptually how it works,
+how we split it, how the, I just think of everything,
+everything that is related to land is yours.
+Yeah.
+But if I'm doing stuff that has nothing to do with land on my own,
+that's not yours in my head.
+It's not like you're not a full owner of this business.
+They should be two different businesses.
+Well, you can have, that's why this is a trial and run
+without any billable super business.
+We just use my existing brand.
+We just started LLC that is what we do.
+If you don't want to give up that,
+it sounds like you want to be able to do what you do
+with Atlas Morgan.
+That's totally understandable.
+100%.
+I mean, so the simple way is that you have that, is that,
+and what we do is what we do.
+Sure.
+So then if we do set up a whole nother entity,
+then we can get back to like,
+okay, let's set up a different brand,
+and we have new business bank accounts,
+and we have new all that sort of stuff, which is fine.
+And we just have a 50-50 split in that business,
+its own business, and I probably have Atlas own.
+It's, Atlas would probably be the owning entity of that 50% for me,
+just as, because that's a top level thing I,
+it's probably the way to reverse it in me personally,
+but it's, that's the cleanest way to do it,
+because then it's just like, okay, this is me and you in 50-50,
+and whatever the fuck we're doing elsewhere,
+it doesn't really matter.
+But I still feel like there's a lot of
+prestigious in the right word,
+but there's, I mean, right now there's not fucking any,
+honestly, because I just used to construct the whole website,
+there's not much out there for a footprint,
+but there's just the like, since 2013,
+you know, so there's a little bit of,
+a little bit of cachet there,
+but it doesn't really matter for the sake of, for sellers,
+they just want to see something that they trust,
+and if we develop an, we develop an online footprint brand,
+et cetera, that they can access easily,
+which then comes back to the branding question,
+but yes, I mean, I guess, I guess that's it,
+maybe because that, maybe I'm struggling
+because I feel like this is more of a trial run,
+and you really are thinking like,
+fuck, we're just going to be going all down the end,
+we're going to do this, and that's all there is to it,
+this isn't just a trial run,
+so then you really are setting up,
+you're just setting up a business bank account,
+and you're setting up a new LLC,
+and you're setting up new secretary of state documents,
+and you're setting up,
+it's pretty, it's not that tough,
+it's not, but it's, there's a lot of moving parts,
+and I don't realize you can have AI do some of this stuff,
+but I have, I would have good harvest properties,
+you know, and you can do business ads,
+whatever you want it to be,
+it's just, you know,
+I mean, the DBA piece is, it's relevant,
+because we could have more DBAs,
+I don't think it's going to be an actual LLC
+that is, is the rain we're operating under,
+whether it's, you know,
+about some market slash land,
+or it's acre line, or whatever you're doing,
+but I think, if it's about that,
+but the presentation's not as important
+as sort of how the thing's operating behind that,
+like right now I've already got all these pieces in place,
+bank account and SOS,
+established LLC docs, et cetera,
+and I just cleaned a lot of it up in March.
+That sort of thing is a,
+I sort of went through the process and like,
+God, I'm really going to build out a whole other company
+and parallel with the company I'm barely trying to build,
+so probably my brother-in-law built out his whole new brand,
+and I'm just like, oh, fuck, I've got to be just using deals,
+but the deals need to land somewhere,
+so they've got to come into a system,
+they've got to go into a bank account,
+they've got to come out of a bank account,
+they've got to have,
+so the idea of a clean business that's just land,
+versus land being part of my business,
+which is like, I guess I wouldn't do that,
+and I wouldn't want to do land deals separately,
+but maybe that's even the trick,
+because in my brand,
+if I have a separate land business for you,
+then my sort of Alice Morgan slash land
+just points to our new brand,
+because I don't do any land in my business,
+and I really could let Alice Morgan focus on multi-family
+buying hold rules, there was just the goal with that,
+actually, it was like trying to build a portfolio,
+so I'm not like chasing deal after deal,
+I did a wholesale, I made 80 grand,
+I took three more years to do another one,
+if I'm broke, versus having like,
+I got 100 bucks a door for this investor finance thing,
+and I'm getting 10% up front,
+you get 100 doors at 100 bucks a month,
+it starts to be like,
+why, I actually pay my rent with this thing I built,
+and they're paying down equity over time,
+and you can do some of this creative stuff with land too,
+it's a separate thing,
+but maybe that's another way to think about it,
+so then I go back to the like,
+okay, let's just develop a nice clean power line brand,
+launch GLC under that brand,
+and go with 50-50 partners,
+50-50 bank accounts, 50-50 liability,
+that's either that or put me in 50-50 with Alice Morgan.
+Yeah, I think that's what I'm doing.
+That's your, I mean,
+you can choose what you want to do, that's your choice.
+It's more just the duplication,
+but it doesn't really matter,
+I like the idea of a clean separate entity,
+that's clean separate expense, clean separate books,
+totally tripped,
+and everything I have is all of the audible,
+audit, auditable,
+but it was just thinking like,
+God, I really want to build on another brand,
+I'm barely trying to get my thinking ready,
+but it actually, in some ways, it's like,
+even the fun inside of things,
+like I do want to focus on,
+look at the Philadelphia Real Estate,
+you really need big investment partners
+to do that kind of stuff,
+it's like, they become your sponsors for these deals,
+and you're putting into guns,
+and you get deals even paid for payment of deals together,
+you get a piece of every single door,
+you get a piece on the outside,
+but that single strategy,
+and a single niche, and a single market,
+and a single property size,
+that is a fucking intense business all by itself,
+so being like, houses, and when you land,
+and when you flip, so like,
+even mentally, if I just think of the land thing
+as being something that I'm partial with you on,
+and whether I ever really make anything happen with house,
+or not, at least this thing is a business.
+I mean, you could put the next 5 or 10 years into this,
+and make a really great living,
+and you know, I love it.
+So that, man, it's a good conversation, I think.
+Well, I'm excited to get to the county selection part,
+because there's some good-
+Did you dig into it?
+Yeah.
+So it sounds like we're agreed we're gonna do...
+Just do a clean, clean.
+So, we're having LLC.
+So we're gonna...
+I was happy to change...
+You just want to make me a 50-fit, if you like that.
+I'd make you a 50-fit.
+But then we still want a brand,
+yeah, which could just be a DBA,
+but we still gotta acquire all those online assets,
+social assets, I mean...
+DBA, Morgan Atlas.
+Well, I wouldn't do,
+I wouldn't use Atlas for the land stuff.
+I mean, you could, it could just be elsewhere on land,
+but I just feel like...
+No, I said Morgan Atlas.
+DBA, even all things being equal in this world,
+it's not a fun look, but like, the Atlas goes a long way.
+But it's...
+And Atlas land already exists,
+there's a million different lands.
+I can get my head back into the brand,
+and I actually really love exploring the brand and stuff,
+but it's...
+I think if we do it...
+I think we do it, we just do it.
+If we're gonna do it and not be inside
+one of our existing LLCs,
+then we just do a clean, stand-alone LLC business,
+50-50.
+Everything's fucking...
+Everything else is just 50-50, and then it's easy.
+Just everything comes in, it's split,
+everything goes out, it's split.
+You're gonna invest a lot more up front,
+and you get paid out more up front,
+which I think is the way to do it.
+If we stay and put in 15 grand up front
+to get this thing rolling,
+and we do 30 grand in the first couple months,
+I think 15 goes...
+You can do it over time if you want,
+but I think we just take 15 and pay you out,
+and then we know this business
+has got 15 grand of its own money.
+That's just 50-50 going forward
+at all the expenses,
+and you are not like...
+There's no big capital contribution up front
+beyond that.
+You know, it's enough to get the business rolling,
+and then in the setup,
+and some of this holding costs and stuff,
+so I don't know if I can eat it or not,
+but I'm afraid to buy cherries lately.
+I'm really getting nervous about the money.
+But...
+All right.
+So...
+So we'll do both of them in the brand.
+So, Gerald, put me on the list to like
+dig my head back into finalizing
+some brand selection stuff,
+and that's going to relate to all the online assets,
+digital footprint,
+all the stuff that's going to matter.
+Because we're not using Atlas Morgan as the brand anymore.
+Yeah.
+We're...
+I'm just going to keep Atlas.
+But do we want to use my LLC,
+so we have to pay whatever, like,
+a few hundred dollars to start an LLC?
+I could just...
+It's not a few hundred bucks.
+It's cheaper than that.
+We got to do the SOS finally fee
+instead of a bank account,
+which is not then...
+Like, it's not.
+But there's...
+We want to be under a hundred bucks
+to set up a new business.
+Right.
+I do like the idea of a clean start versus...
+Sure.
+Because then it's just reversing it.
+It's just doing your LLC versus my LLC.
+Yeah, but I don't care.
+Yeah, but I just think at this point...
+So...
+Yeah.
+I think at this point,
+we just do a fucking clean LLC for land,
+and then we just think,
+this is our fucking land business,
+and whatever else we got going on,
+because we'll partner our other shit,
+even if, like, I get to know them.
+Okay.
+So, we'll start a new LLC,
+and you'll start to think about names again.
+All right.
+So, moving on, county selection.
+So, this kind of opens up a little bit bigger conversation.
+I don't want to go into it,
+but I do want to mention...
+Well, I did start to talk about it earlier.
+So, we started to look into the software situation.
+Okay.
+Which software situation?
+Well, the CRM software.
+Oh, yeah.
+Yeah, it's A.
+So, again, I don't want to go into it right now,
+but I just want to say,
+there's some system building that's still required
+that I am going to be working on,
+system building with Gerald.
+Yeah.
+Do not build a CRM from scratch.
+No.
+No.
+But we started to look into what CRM software we do want to use.
+Okay.
+So, we went into that a little bit, right?
+So, we are, yes, using a third-party software.
+Okay.
+And this is some of the stuff that's available.
+And...
+Which ones?
+Read this to me, because I'm not blind.
+R.E. Simply.
+We're Simply.
+Podio and Globiflow, Airtable, Investment Dominator,
+FreedomSoft, so...
+So, FreedomSoft's really good.
+It's actually owned by a local guy, Rob, so I want to know.
+R.E. Simply is a newer one that's kind of...
+Podio is really past its prime.
+Podio is pretty good.
+Back when there wasn't a lot of systems,
+there was a lot of free-to-automate stuff,
+I wouldn't go with that.
+And then there's some things inside of a lot of other systems,
+like, oh, there's a lot of other systems,
+but go ahead.
+Yeah, Podio, it's just being in land investment community, but...
+It's being in a lot of communities,
+because it was such a flexible space development language.
+R.E. Simply is, like, $100 to $200 a month.
+Airtable is free to $20 a month.
+Is FreedomSoft up to $200 a month?
+Well, I don't know that years ago.
+It's used a lot, I like about FreedomSoft.
+Well, I want to know is, can Gerald,
+and this is some homework for Gerald,
+legitimately build the kind of things that
+R.E. Simply and Podio and FreedomSoft offer
+into Airtable specifically things like deal pipeline,
+mail, calls, even land information.
+I'm sure it could.
+Information about the particular properties
+that are associated with these customers.
+I'm sure it could, but here's the problem.
+Someone really has to go through and figure it out
+and clean it up and make sure it's working.
+How's it working?
+That's a whole job and world of timing and all itself.
+Yeah, I've got a lot of those types of things with Gerald.
+For building it.
+Yeah, no, I don't.
+We build lots of stuff.
+So I think definitely using,
+I think even though there's a little bit of cost there,
+I think like...
+Okay, if we're running the way that my business has been running,
+it's pointless.
+You're just basically paying for shit and not doing any deals.
+But if we're actually doing deals,
+you know, say we just do 10 grand a month
+and we get a thousand a month and all these fucking expenses,
+we're still making nine bucks and we're running a month.
+So it's like, but if it's a thousand bucks a month
+and we're not actually having any coming in,
+it feels really brutal.
+As long as we're in the positive after it.
+Well, I want to say what Airtable,
+I mean, we don't need that much information
+to be tracked with this stuff.
+Okay, it doesn't need to be super, super complicated.
+No, no, for the most part not at all.
+What's nice about,
+it depends again on the numbers we start doing
+and then how dialed in the list are.
+And like, you know, if we're doing,
+for blanket hitting counties,
+we're going to have a lot of leads
+that are going to want to follow up on.
+And even some pincers, someone says,
+you know, I'm not really interested,
+but I'm not really in a rush.
+We want that on some CRM drip campaign.
+We're like every six months,
+they get an email like, hey, it's more like,
+I want to check it on the property,
+but it's not yet.
+Because you want to stay in their minds
+when they come back around and like,
+I want to be selling it.
+And they've already got 400 other postcards.
+We're the first person to think that
+because they talk to us and they got a drip from us.
+So it's like, that's where CRMs are really useful.
+It is really, I mean,
+being able to track those key performance indicators
+to like, how many calls, how many mailers,
+how many incoming, what's the percentage return,
+what's the percentage to close, what's the cost.
+That shit is so weird.
+He says it's easy to build a LAN pipeline in.
+I mean, look, maybe we open it up and we take a look.
+I mean, you have some experience
+with some of these platforms.
+I've never heard a barrier table.
+So what is that?
+Where did it come about from?
+I think it's a customizable CRM.
+I mean, all like Salesforce,
+Mark and Vinny all just came out and said that all of,
+it's basically all Salesforce platforms
+are going to be headless soon.
+Like they're not even going to have a fucking
+like a visual platform because of all the AI integration.
+It's going to be all driven by agents.
+There's still going to be some,
+he's still going to want to sit down and see the fucking data.
+Like there's going to be some-
+Well, you ask it to and it creates it from the database.
+Yeah, maybe it's where it's at,
+but it's like, you're still going to want to be able
+to see your data.
+Like just to sit back and make decisions at the top level.
+Like shit, why are we sending 60% of our ads
+in this time where we're making 2% of our money
+versus the 3% we're spending here
+and making 80% of our money?
+Like you want to be able to see those big picture numbers,
+big picture spreadsheets, big picture charts,
+big picture visuals because it really helps you dial stuff in.
+So this is it.
+This is there, April.
+Yeah.
+I don't know.
+It's tricky too because this is one of those areas
+where I do not want to try to reinvent the wheel.
+We just want to start doing land deals
+and we can try to dial in our systems good up front.
+We want to have solid systems that work
+but just start calling things.
+I think we worked out makes a lot of sense.
+They don't want to be super expensive, but-
+So what are you talking about then?
+Freedoms?
+Well, I don't really know, dude.
+I mean, there's so many reasons.
+The freedoms office so focused on,
+they have a lot of wholesaling and renovation
+to rent kind of stuff.
+I don't know how they've evolved musketeers.
+I haven't even got emails from them for a while.
+I don't know what happened there.
+I guess, you know, that's spammed out, right?
+That's spammed out, I don't know.
+Um, I think they've really changed.
+They've changed.
+It's just actively used by the people that develop it.
+You know, like I said, Robson can be local.
+It's 150 a month.
+What's this?
+How many years?
+Nine years?
+Six years or so?
+That's plenty.
+Three websites.
+One phone number.
+All phone number included.
+But you don't want any phone number tied to their system
+because then you're stuck with it.
+There's just a little bit of number.
+But maybe that's the way to do it to launch.
+Who knows?
+We get 3,000 lead downloads per month.
+Is that how many you can upload onto their system
+from some other service?
+Or is that like leads they're giving you?
+Lead downloads.
+I don't know, Sheriff.
+What are the other options?
+So up to, he is just up to six weeks.
+It's just more numbers and more numbers and leads.
+Or more users and leads, more numbers.
+I get three websites, too.
+Hey, man, let's put it.
+So you get some stuff with this.
+I want one solid website.
+But it's tricky because it's like,
+it's like, we really want to control.
+We want to control the domain and we want to control the website.
+Are they hosting the domain?
+Is that what they're saying?
+It probably is all included.
+We do control it.
+It's just a hosting service.
+You can change that over any time.
+In most situations, for sure.
+But is that they can include the registration of that domain?
+They could refuse the hosting of that domain.
+Where is that going to be?
+Is it they're just going to do it all for GoDaddy,
+which is a fucking name and all that stuff.
+But what I remembered with their system is it's just so...
+They have a very step-by-step process.
+The other one, too, is look up RAIsoft.
+Cold call, Tyler.
+They're really good.
+They're so cool.
+They're focused on real investors.
+I think we should use it.
+You like it?
+Yeah, I guess.
+You want to get rid of yourself?
+Pull up this other one.
+Look up RAI.
+I want to say it's RAIsoft.
+RAI Pro.
+Maybe?
+No, that's not it.
+That's very simple.
+Look up RAI Pro.
+My recent logo slot.
+RAI Brother.
+There we go.
+One thing I really love about them
+is they have this step-by-step lead to close system
+that's built into their CRM.
+And it's just like...
+Go back up just a little bit.
+What was the one?
+Down, down, down.
+Oh, that's 10 for your lesson.
+Don't worry.
+They have...
+Look at that work.
+Click on the workflow one.
+Where's that?
+In the middle there.
+Oh.
+At the top of their menu there.
+In the menu bar, workflow.
+Yeah, that 10-excusable steps system for real investors.
+It's so good.
+Like, it's just like,
+oh, yeah, I'm going to work through every one of these leads
+on these 10 steps.
+Mm-hmm.
+And an AI can do that, or a human can do that.
+And like...
+That's helpful.
+If you're going to just pull up like a quick little video
+on this thing,
+it's one of these systems that's really...
+That's really pretty good.
+Does do any of these other ones have that?
+Are they simple?
+I've heard good things about,
+but I just don't know as much about it.
+They remember them being really able to integrate.
+Like they had an API powerful...
+Powerful API.
+Uh-huh.
+That allows you to tie into every single thing you can make up.
+But pull up the...
+Where's our intro?
+Where did I go?
+Oh, that's very simple.
+There we go.
+Pull up there.
+So I had little videos or something out here.
+Just want to see if the quick video...
+Did they have a black only?
+What was that?
+Click on your lead again?
+Or like, just get that menu?
+Bank on.
+I didn't take black on.
+I'm like, man, that is really dialing it
+for automated systems.
+Hit that 10.
+Don't hit that learn more.
+I just thought that was one of the best things
+about this system.
+I saw some video on the whole thing
+and it was like, man, that's so good.
+It sounds so stupid, obvious,
+but like when you really think about just
+trying to work through a deal,
+you know, and a lot of these programs
+have overlapping things.
+But I think most of them are focused on
+property.
+And if we're going to focus exclusively on land,
+it's a different thing.
+But it's, um...
+Like what was...
+Yeah, is this good for land?
+Because I'm...
+That's the other question.
+I don't know if it's good for homes and stuff,
+but is this really good for land?
+And then do you get...
+It's a skip tracing at a certain price.
+Obviously it helps you with skip tracing,
+does it?
+Do you get leads?
+So...
+You get leads included in that?
+It depends.
+And leads are...
+Leads are...
+Yeah.
+Yeah.
+Or what's the term?
+Leads are...
+Like leads can be anything, you know?
+So I don't know.
+Well, so they do have big amounts of land.
+They don't make land any more days.
+This is $110 a month.
+What's the basics of...
+12...
+Leads sources.
+So this has property records built in.
+So we don't have to also do that, right?
+This is...
+No, no, no.
+A lot of these integrated systems...
+There's so many reasons you use integrated systems.
+Start off...
+Yeah.
+Doing land...
+Direct mail engines.
+So many mail pieces and they're all tied
+into a CRN that's tied to the lead up on...
+One of the things I love about RAI Soft
+is it wasn't just like...
+You could do a campaign that would track all the leads
+and calls would come in and...
+You get $10,000 per month.
+Exports?
+Yeah.
+I think any of these systems would be worth...
+We'll probably be fine.
+But the thing I don't know...
+What are the specifics about land?
+Like, are you a dominator?
+Is the Jack Bosch's thing right?
+The investment dominator.
+Investment dominator.
+That's their system focused on land.
+And it would be interesting to compare...
+Maybe you're up and do that.
+Like, compare FreedomSoft, RAI Pro, and Investment Dominator
+as three platforms that are all fantastic, but...
+RAI Simply, FreedomSoft, and RAI...
+Pro.
+Pro.
+And Investment Dominator, right?
+I don't think we want to go with Investment Dominator anyway.
+It's just...
+It looks like it's overpriced, honestly.
+For what it is, yeah.
+And it's built for the land profit generator workflow.
+So, I think it's just an overpriced version.
+That, honestly, I used it and I was always talking to support, like, all time.
+Okay, so what do I do?
+So, FreedomSoft is definitely a more...
+They're definitely more of a property-focused thing.
+When I think about their business model, a lot of what they do...
+And they've done all of it.
+They've done all of it.
+A lot of flips to rent and hold.
+A lot of rentals to try to build things.
+They're converting people.
+Like, he's...
+I don't care about that personally.
+I just want to focus on land and...
+I know, but I just wanted to...
+Like, the system, the step-by-steps of the saying
+whether it's land or whether it's property, whatever.
+The thing is with some of those systems,
+they have a whole section of just your renovation breakdown.
+But you can just skip that tab and go to the next thing
+because it's not part of land.
+So, it's like, which one, in the context of land,
+if you were to look at RAI Pro versus FreedomSoft versus RAI Simply,
+or maybe even some others who are not thinking of,
+that would be where Gerald can be really useful.
+Right, Gerald.
+Look into those three and you know us pretty well at this point.
+So, utilize what you do know from all of our meetings
+and what we're trying to do
+and give us a breakdown of what software would be best
+for our purposes right now.
+And Gerald, having looked into both FreedomSoft and RAI Pro,
+I'm impressed with both of them
+in terms of their step-by-step workflow
+that really made for and used by daily for real estate investors.
+So, they really understand that process of
+generating the lead, tracking deals,
+following up, closing step-by-step checklist
+that are really powerful.
+I don't quite know.
+I think it'll transfer to land really well.
+It's just a different property type,
+but that might be the one piece
+where you could be really helpful to figure out
+how to say just FreedomSoft and RAI Pro
+or in the context of a, you know,
+vacant land investors.
+So, you're really nice.
+Yeah, maybe a feature matrix and breakdown,
+you know, the score of each one,
+each feature and how each platform stacks up.
+All right.
+Another thing is when we're doing county selection,
+I think, Gerald, we need to have a county selection skill,
+okay, something that we call on and it's repeatable
+because we're going to be building
+state-specific research processes, protocols
+for states that are, you know,
+for instance, non-disclosure states versus disclosure states.
+And we want to be able to,
+I want to make sure that these numbers
+that are being quoted by Gerald are actually researched.
+All right, so we're trying to glue them to guardrails
+and protocols for how he gets these numbers.
+We don't have a Zillow integration yet, I don't think,
+or at least Gerald didn't think so.
+I can't remember.
+We might have actually gotten a Zillow API going,
+but he used a different program to get some of these numbers for,
+he used land watch for active listings.
+And watch is for me, what is that again?
+Well, this is something we'll look into more.
+I want to really dial this in so that we have,
+this, so this is something that for me is
+to dial in a repeatable county search process.
+Sure, I'm going to repeat it with everything process.
+Everything, everything.
+I don't want to wing anything.
+I don't want to fucking hoping.
+I just want to know that like if we do A, B, C, X, Y, Z,
+then we're going to make X number, closes the month, X number.
+I just want to know we have some process we have to hit,
+and if we hit that process,
+there's a 90% chance we're getting X, Y, Z, X.
+If you want to be able to go back and do it again,
+and the way you pull the business is when you go back and do it again,
+you do it in half the time that it took you the first time,
+and then when you go back and do it again,
+it takes you another 120% whole time.
+And it's also scalable.
+Our goal is not to fucking create a job, flip and land.
+Our goal is to create income via the land investments.
+So anyway, and Ron LeGrand always says,
+it's like the more I delegate, the more money I make,
+the less I do, the more money I make.
+That's the goal with this.
+I don't want to be like scouring land deals for the rest of my days.
+I want to be creating houses and designing stuff and doing sculpture,
+and oh, it's creating shit in my heart, gardening, whatever.
+It's like this is a vehicle to do that.
+Not that my heart is passionate about a piece of land in Texas that might.
+Totally, I get it.
+So in that vein, I'm going to make sure that this is in our documentation
+so that we have a skill, a county search skill that actually uses illo.
+Right now it is used to land watch and real best.
+And I don't know.
+I don't know if these numbers are solid or not,
+but we're going to take a look at it
+because we did start to get into what the numbers are.
+We looked at Texas, we looked around Tyler, Texas.
+We looked in Colorado.
+What were the counties in Colorado?
+Did you end up?
+So look, this is what we looked at.
+So we looked at Fremont Park, Weld, Albert, Morgan.
+This is what he chose.
+We can get it.
+So Park's pretty good.
+Park's pretty good.
+Why did it hit?
+Why did it hit?
+Um, so Weldfield, Weldfield.
+It's not about Park County.
+It's like a sweet spot from Denver.
+You're kind of in the mountains, right?
+A little bit.
+This is the issue with Colorado.
+Is you're going to come up against access and terrain issues.
+Sure.
+But.
+And that's what's great about Texas.
+And when we get to Texas, you'll see we try to,
+you want areas that have trees.
+Those are the better recreation areas.
+Sure.
+It's interesting too, because it's like,
+that we're going after a recreational land
+or we're going off land that can be
+entitled and divided or sold off as lots.
+Both.
+You know?
+Both.
+Because I feel like we're going to do both.
+We'll probably get into this not before long.
+And I mean, my background definitely leans towards this
+than that.
+If we can get a piece of land that has potential to be
+multiple lots for custom homes, there's always a buyer
+with enough like stars in their eyes to be like,
+screw it.
+Let's just buy this piece of land.
+And we buy that.
+We buy the whole piece of land for 50 grand
+before we know we're selling lots out for 150 grand
+of pop or 10 times that, you know, depends on the place.
+But I just feel like the goal is to buy a low sell high.
+Do it as consistently and repeatable as possible.
+But if it all it takes is one more step to subdivide
+or do a road system or whatever.
+That's where that big money is made.
+It's what I can.
+Yeah, I have some friends that live up in Evergreen
+and it's a really cool community over there.
+Evergreen is a cool spot.
+They're all like in the mountains and they have this
+like community center, sports activity center,
+horseback riding.
+Evergreen.
+And it's this cool little, yeah.
+You're like two seconds in Evergreen,
+two seconds from, you know, Steamboat.
+What a nice Steamboat, but like all the 70s mountains
+about mountain biking.
+My friend, my friend lived up there with a family for a while
+and she was from Boulder,
+or she was in Boulder before I met her.
+And she went up there and was like,
+every time she'd share photos or write me,
+I was like, man, you're a good man.
+Well, just to just to hop over from there
+a little bit further in the mountains,
+like by Bailey and whatnot.
+I mean, that's that's a really good area.
+You know, that's a great area.
+So what are the recommended three counties?
+So two counties in Colorado,
+he went with Fremont County,
+which is down by Colorado Springs.
+And that's kind of more in the plains.
+I think it's East.
+Sure.
+So.
+But it hits all the points.
+Yeah.
+I know some, I heard in the class
+that people were doing down by Colorado Springs.
+And Colorado Springs, for so many reasons,
+like even just looking at another family development,
+everything I use with AI
+to try to help me pick the counties in Colorado.
+Yeah.
+They just keep laying in Colorado Springs.
+And there's so much Exodus in Colorado right now,
+especially in the Big Denver area.
+It's like, I didn't want to go do anything in Colorado,
+but that market's still just hot.
+So if you want to do Colorado, it's, you know, Park County.
+I would like to do at least one, you know,
+one mailer and see how, you know, it's landing.
+All right.
+Let's, let's find out what County Bailey is in.
+I'll look right now, actually.
+Yeah, it's in Park.
+It's in Park County.
+I think that's a good one.
+I think Bailey's a good one.
+I mean, Park County is a good one.
+So we'll go with Park County, Colorado.
+And then we'll go with Smith County, Texas.
+And then we'll go with White County, Tennessee.
+So we looked around, we looked around Tyler, Texas.
+So what's the tummy in the target land
+in these, in these land pipe in these areas?
+Oh, what was that crack area that?
+Well, they have two different types.
+In both, in both areas.
+Yeah.
+Okay.
+But we can dial that in a little more.
+That's something we're going to go through.
+We're going to take another pass at that.
+But so Smith County,
+so there's more than Kauffman.
+It's not as close to Dallas, which I think is good.
+It's over closer to Tyler, Texas,
+which Tyler has 100,000 people in that city.
+And East Texas Pine Forests.
+It's genuine recreational in the pill, for sure.
+It is a non-disclosure state.
+So we're going to get into that.
+So, yeah.
+But you're thinking, again, from a process perspective,
+you're really thinking closely.
+You're not thinking about acquiring,
+sitting on until we find the right buyer.
+You're talking about basically just,
+just enough funds to lock up the contract.
+And then we go find a buyer for that contract.
+You don't have any funds, right?
+It's like the assignment.
+I don't know.
+Yeah, exactly.
+Yeah.
+I mean, that's what I would prefer.
+I don't, I mean, because I don't have an experience of no one,
+like how long I'm going to have to have my capital locked up for it.
+You know?
+Well, you don't want to lock it up.
+If you buy, if you,
+if you want to order,
+it's me a fucking bag of big pens.
+If you get it cheap enough,
+there's always a buyer that's willing to pay.
+But if it's something that like,
+you know, you're buying at 50%,
+like finding someone at 60%,
+still might be hard.
+There's a reason that banks do,
+you know, 70% loan to value.
+They just don't even want to fucking risk it.
+And even if they risk it,
+they still might be only out at 50% loan to value.
+But at least they're not losing,
+you know, 90%.
+So it's,
+So the biggest situation for county selection is,
+right, getting, doing, being able to do comps.
+And,
+so can Gerald
+help solve that?
+Can Gerald run comps on the fly?
+Because a lot of times talking to an owner,
+they always want a price on the phone.
+And you never give them a price on the phone.
+But it's like, well, how much,
+they're going to call you like,
+how much you want to give me for it?
+Like, well, what's your property?
+How can I help you do it?
+And like that, that sort of conversational flow,
+how you don't give them a number,
+you try to give them to give you a number,
+or you just do the blind offers,
+which I think in land buy has a lot of power.
+Like just, let's just make 20% blind offers.
+And anyone takes them,
+we can sell them for 30% tomorrow.
+So that's an easy thing to double close.
+So here's the, here's the thing.
+We're going to do a triangulation engine.
+Okay.
+And we're going to use three different things,
+prop stream estimate,
+CAD, appraised values,
+Hilo estimate.
+Yeah, those,
+the triangulation is on the estimate for land.
+Yeah, to do comps.
+Yeah, it's funny because I've never run.
+And then you get a range,
+and then you can confidently do,
+you know, whatever 25 cents on the dollar.
+So I think we should go after non-disclosure states.
+And does the Jack Ross system
+say like, just do not make offers of,
+like what's your max level offer?
+What is it?
+Is it 20%?
+Yes, exactly.
+It's low.
+Yeah.
+So it's not like real estate where it's like,
+you know, 67 even in really out markets,
+you might even go 75, 80,
+because you know you can find a buyer at 85, 90.
+But that's the land I wouldn't want to do that.
+And there's,
+Yeah, it's a different person that you're going after.
+Yeah, that's the situation.
+Okay.
+So there we go.
+I think we've got a good sense of the three counties.
+Do we want to prioritize the counties?
+I would like to prioritize it.
+I don't know.
+Well, depending on how big it,
+I don't think we do more than a single
+small mailer to start.
+Oh, phone system's not working.
+Maybe I was not coming through.
+I think we do a thousand mailers
+per county.
+So we have a $3,000 star.
+We do a one week.
+We do a thousand next week.
+It's like 20 cents per thing, isn't it?
+Well, it's not the cost of the mailers.
+It's the processing of the incoming calls on a new system.
+Like the phone's not working.
+That's a high quality problem.
+I hear you that.
+But it's like,
+really, we should do like just a small test room.
+Like I can verify all the technical stuff
+before we launch,
+but then you bring in the amazing other stuff.
+But it's like just making sure that like,
+how am I even taking the calls and how the answer
+and how is the ring system working?
+Like we can just do a hundred person
+and maybe get 10 calls and realize,
+oh shit, every one of those calls
+is a fail because of this or this or this or that.
+I don't think you just drop it
+without at least doing the test run
+and make sure all the systems are in place.
+Because that's literally what we're starting up.
+Like it's making sure that the phone rings
+and the phone rings to the pad live
+and the pad live rings to us
+and we're able to answer and how does it work
+and if the filters work and let's see,
+okay, we get 10 calls,
+two went out to both of the,
+two went out to all the partners
+where it was answering the calls.
+And here's an eight list that said,
+six of those were taking me off your list
+and two of them or whatever.
+And we can realize, oh, out of a hundred cards,
+you know, 20% of them were legit,
+80% of them were this crappy for this reason.
+Maybe we adjust our list or our filter criteria.
+So we get less of those 80% bullshit
+and we get more of the 20% real leads
+and that maybe that's location,
+maybe that's seller type,
+maybe that's whatever I think.
+There's a certain amount of just blanket
+and someone's gonna catch the right person
+at the right time with the right marketing piece.
+But there's a certain amount of like,
+the more of that stuff you can style.
+You get that out of state owner
+that's going through divorce,
+it's got a tax lien, he's going to jail,
+who's, you know, my partner just got arrested.
+We're like, give me out, give me out of this piece of land.
+I need my money now.
+That's a good lead, you know.
+But it's, we can figure that shit out.
+So we can dial out that in
+before we do our first mail in.
+But either way, it's not as much
+about the closing ratios.
+It is about like, do our systems even work.
+This is the first time we're doing it.
+Anyways, I'm Ramon.
+Great, let's do it.
+So we've got our three counties.
+Okay, so we've got three counties.
+We've got to really dial in,
+I guess one of the next big things
+would be dialing in the exact property type
+and the exact owner type.
+Because that's really what the list is built on.
+You know, so it's like, we want,
+we want owners that X, Y, Z,
+the owner property that's what.
+It's like, those great, like,
+you go to this listsource.com.
+There's 8,000 options.
+And we can just check our way through them.
+You start with the big picture stuff.
+It's this zip code.
+It's this square footage.
+It's this X, Y, Z.
+And then you get into the person type.
+And we can just, we can get a list
+that's really expensive and just works.
+Yeah, I was thinking at least six of them.
+Again, some of those lead,
+like the lead things in these systems
+can be useful, but can you dial them in
+in a way that is the most valuable?
+You know, so you don't have 10,000
+kind of generic leads,
+but you have a thousand really targeted leads.
+You know, that's the ideal thing.
+So some of these, it's going to depend on those,
+the source we go with and what kind of,
+data they're using,
+what kind of access to data they're using.
+But again, those aren't possible problems.
+We're going to see something.
+On the farm.
+Something very recently about how
+they kind of describe the two different types of things.
+It's like what, one of five acres?
+And then five to, five to 30 acres?
+Is that the target that go for?
+And this is, again, this is where I've not
+spent a lot of time in this, in this lane.
+It's like the nuances of what lane
+that go after a lot of people do that
+and fill a lot.
+So I think those are really hard to get.
+Like you might be like,
+it's just like any other property.
+Like someone has an input a lot
+that meant to build a property
+and you reach them and say,
+I want to buy it.
+Almost likely they're just going to list it.
+But if you get them at the right time,
+we're like, hey, we're going to buy that a lot.
+And then you can use market that to build those
+developers that are kind of, you know,
+design build speculators.
+And you can give the top price for that piece of land.
+And it's just like, it's just, it's literally just,
+can we buy shit low and sell it high?
+How do we get to the owners and property types
+that are going to go low?
+And so if we just, if you know that the right
+thing is one to five acre,
+well then boom, there's our number one category.
+If it's not one to five acres and we don't do it,
+not six acres, not a half acre.
+And again, that it could be three to four acre.
+Like you can dial the shit in.
+I don't know what the, I don't know,
+I don't know what the specifics are for land,
+why it matters, you know, versus five to three acres.
+It seems like even, even less than an acre was okay.
+I mean, that's where you get to until a lot.
+Well, I mean, here you get quarter acres of bull or $3 million.
+I'm going up and I'll find that stupid little house.
+I'm the guy, I want to fucking like two and a half.
+I'm like, dude, I'll give you a million for that tomorrow.
+But he was just like, no, when he waited like four years,
+then I think he'd buy a soul for just around two.
+So, you know, if you have that control,
+you inherited this parent's old house for the house.
+They tried to sell it as a house and tore it down,
+but anyways, that's here and there.
+But I think like, Dalin in these lists
+really means Dalin in the property type.
+The owner type is easier because that's the same,
+the same distress points or motivation points
+work across every single property type,
+whether you're a, you know, a commercial owner
+might be more fed up with dealing with tenants playing
+where a residential guy might just don't want to pay
+property taxes or whatever.
+But all those pain points are the same,
+but then the next level of filter
+or the first level of filter is still like,
+are we focused on an old family?
+Are we focused on residential?
+Are we focused on land?
+Are we focused on storage?
+I have a crazy question.
+Sure.
+Would it be possible for Gerald to take the list
+of the property owners and see if there's any
+personal information to be found online
+and then customize the mailer in some way to that person?
+Gerald can skip-phrase it one level.
+They basically do skip-phrasing,
+but one of the most effective types of mailing,
+which doesn't really work as well with land,
+but it still could because you could do a sale.
+But like, if you think of houses,
+you would do this Google Street view of the house
+and be like, well, I don't know what we're like,
+panic, margin, like, urgent.
+You're about to lose whatever they call you.
+That's not the way I want to find approach.
+Just stress people out for anything.
+But to send them a picture of their car and say,
+we just drove by and we love this house.
+I want to guess it all.
+They're like, I just got this postcard or anything
+because they see their house on a car
+and they're like, what's this?
+Or it's just a generic wall that says,
+we want to buy your house.
+So that, we can definitely target in the list.
+And it might be just if it's our criteria or whatever.
+It's, we want to, this is our dream property or something.
+Well, I don't know.
+You speak to how it works for what you want to do.
+A hundred percent.
+So you target in the property type,
+but then the message is targeted to the owner.
+That is unique for each owner.
+So it's not just like the name on the front
+of the generic postcard is changing,
+but that generic postcard uses in generic.
+It's like, we're interested in your house
+or your multi-family.
+We just see those three.
+The message is specific to the land.
+But it might be specific to land for a divorcee or a land
+for, I don't know how specific you get,
+but it's like, you can definitely cross.
+You can definitely, if you know that property
+is the property you want,
+well, then you freaking know everything you can
+about that owner and your messages are written in them.
+Like, hey, sorry to hear about your mom.
+You know, if you want some stress off your hands,
+we're happy to get this property out of your way.
+Like you start learning about these other pain points
+and you can do it.
+You don't have to get super deep.
+Like you can definitely see that, okay,
+this is an inherited property.
+They lost their dad one over 30 years.
+The message is different.
+It's softer or it's more specific.
+But I mean, that might be the follow-up message.
+But I do think the more targeted and everything,
+it's like, what do you stop and pay attention to?
+You know, like it's the stuff that's on your mind.
+You know, like I'm suddenly like seeing all the stuff
+about potatoes and how you kill them.
+And like, I got a postcard that was like,
+you want to make those potatoes grow?
+Like how the fuck do they know?
+And I've got to stop and read it, right?
+So it's like the more targeted, the more effective.
+I mean, you hear about, you know, Gary Vaynerchuk,
+he talks about this all the time.
+He'll do like a view that's like, you know, like,
+Chicago, we're coming for you.
+And it'll be like this specific neighborhood
+who's got this thing, see you there.
+Like it's like, because it's the more targeted,
+the more likely you're to get clicks and hits.
+And it's true with everything.
+It's like, come on, jump, jump, jump.
+You can do it.
+Oh, I need help.
+Oh, she needs help.
+I need help sometimes.
+Did you come up here and make out?
+She likes to lick faces.
+That pug likes to lick all the faces.
+She's flirting with this really cute girl to try and do the work.
+This girl, like, got like 10 different seats.
+It's the sun moving around the room.
+I'm like, you just need this seat.
+And I'm taking those.
+Well, I got to get out of here soon.
+Within the next 10 minutes.
+All right, so Gerald, sum up this meeting
+and get it off to us today, right?
+Yeah, I'll send it to you right now.
+Are we done with the meeting though?
+Anything else?
+Sum up in your head, one of the next steps for each of us.
+I'm going to finalize a brand direction.
+And you're going to call in system.
+So I got, I got to finalize brand and calling system.
+And you're going to.
+Did we finalize kind of tease?
+I guess we did.
+You got to, so you got to dig into,
+the specifics of land property types
+and why one versus the other.
+Like, so we really know what we're going for and why.
+What's the way you can recall the chair?
+We got to do another one.
+Do you really think you can do that?
+I think I can do another one.
+I just, when Sylvia and I, it's been a couple of years
+where I haven't been working with my wife.
+Oh, and they're not showing them.
+If I get real here and the whole of the problem,
+even when my dad was little, I'd be like,
+brand, your birthday, I don't cover the light.
+It's floating.
+I just don't want to.
+I don't want to.
+Right.
+I can do this.
+Oh, right.
+Do they have them?
+Good point.
+Remember when you gave me that big one?
+I had to buy a panel on Sunday.
+So do you know what I'm talking about?
+I don't do it here.
