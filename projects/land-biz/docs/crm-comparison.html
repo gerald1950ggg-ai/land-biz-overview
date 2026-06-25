@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CRM Comparison — Land Business</title>
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 12pt;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #fff;
+  padding: 0.75in 1in;
+  max-width: 8.5in;
+  margin: 0 auto;
+}
+h1 { font-family: Helvetica, Arial, sans-serif; font-size: 18pt; border-bottom: 2px solid #1a1a1a; padding-bottom: 0.2em; margin-bottom: 0.1em; }
+h2 { font-family: Helvetica, Arial, sans-serif; font-size: 14pt; border-bottom: 1px solid #aaa; padding-bottom: 0.15em; margin-top: 1.4em; margin-bottom: 0.4em; }
+h3 { font-family: Helvetica, Arial, sans-serif; font-size: 12pt; margin-top: 1em; margin-bottom: 0.3em; }
+.meta { font-size: 10pt; color: #666; margin-bottom: 1.5em; }
+p { margin: 0.5em 0; }
+ul, ol { margin: 0.4em 0 0.6em 1.5em; }
+li { margin-bottom: 0.3em; }
+table { width: 100%; border-collapse: collapse; margin: 0.8em 0; font-size: 11pt; }
+th { background: #f0f0f0; font-family: Helvetica, Arial, sans-serif; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.03em; text-align: left; padding: 7px 10px; border-bottom: 2px solid #999; }
+td { padding: 7px 10px; border-bottom: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #fafafa; }
+.callout { background: #f7f7f0; border-left: 3px solid #555; padding: 10px 14px; margin: 0.8em 0; font-size: 11pt; }
+.winner { background: #e8f5e9; }
+.tag { display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 9pt; font-weight: bold; padding: 2px 8px; border-radius: 3px; }
+.best { background: #d4edda; color: #155724; }
+.ok { background: #fff3cd; color: #856404; }
+.caution { background: #f8d7da; color: #721c24; }
+.na { color: #999; font-style: italic; }
+.section-platform { margin-bottom: 1.8em; }
+@media print { body { padding: 0.5in 0.75in; } }
+</style>
+</head>
+<body>
+
+<h1>CRM Comparison — Land Business</h1>
+<div class="meta">Land Business — Marcus + Chris | Prepared June 11, 2026 | Platforms: FreedomSoft · REsimpli · REIPro · Airtable</div>
+
+<h2>Context &amp; Requirements</h2>
+
+<p>This comparison is built for a <strong>raw land flipping operation</strong> — not houses. The distinction matters because most CRMs in this space are built for house wholesaling. Two partners (Marcus + Chris) starting with 3 counties, ~1,000 mailers for the first campaign. Gerald (AI agent) will need to read/write to the CRM via API or browser automation.</p>
+
+<p><strong>Must-haves:</strong> Lead tracking · Deal pipeline · Mail integration · Call logging · Skip tracing · API access (for Gerald) · 2-user support · Auditability / no black boxes</p>
+
+<p><strong>Budget constraint:</strong> PropStream already covers data at $99/mo. CRM cost should be defensible relative to that baseline.</p>
+
+<div class="callout">
+<strong>Critical land-specific caveat:</strong> Raw land parcels are identified by APN (Assessor Parcel Number), not a street address. Many parcels have no mailing address whatsoever. Any CRM that <em>requires</em> a property address to import records is a serious problem for a land operation. This was confirmed in a 2023 BiggerPockets thread (REsimpli) and is worth testing on any platform before committing.
+</div>
+
+<h2>Platform Profiles</h2>
+
+<div class="section-platform">
+<h3>1. FreedomSoft</h3>
+
+<p>All-in-one platform built by investors for investors. Heavy focus on house wholesaling and flipping, but used across REI niches. Includes built-in lead generation, CRM, phone system, skip tracing, direct mail, investor websites, deal analysis, and Zapier/developer integration. Marketed heavily to beginners through guru channels.</p>
+
+<table>
+<tr><th>Plan</th><th>Monthly</th><th>Annual (per month)</th><th>Users</th><th>Lead Downloads</th></tr>
+<tr><td>START</td><td>$197/mo</td><td>$147/mo</td><td>Up to 6</td><td>3,000/mo</td></tr>
+<tr><td>GROW</td><td>$297/mo</td><td>$247/mo</td><td>Up to 8</td><td>6,000/mo</td></tr>
+<tr class="winner"><td>SCALE</td><td>$797/mo</td><td>$597/mo</td><td>Up to 12</td><td>12,000/mo</td></tr>
+</table>
+
+<p><strong>Add-ons (separate cost):</strong> MLS Data Subscription $67/mo · Dig Tool (skip tracing) $297 one-time · MailNow Premium $997 one-time · Automator Suite $997 one-time · Market Analyzer $597 one-time</p>
+
+<p><strong>For 2 partners:</strong> START plan at $197/mo (monthly) or $147/mo (annual) — both cover up to 6 users.</p>
+
+<table>
+<tr><th>Feature</th><th>Details</th><th>Land-Friendly?</th></tr>
+<tr><td>Lead/contact mgmt</td><td>Full CRM with seller leads, buyer leads, contact records, custom fields, pipeline stages</td><td><span class="tag ok">Partial</span> — house-first UX</td></tr>
+<tr><td>Deal pipeline</td><td>Workflow automation, status-based lead management, customizable stages</td><td><span class="tag ok">Yes</span></td></tr>
+<tr><td>Mail integration</td><td>Built-in direct mail via MailNow (postcards, letters, yellow letters). MailNow Premium is $997 one-time add-on. Also integrates with external mail services via Zapier.</td><td><span class="tag ok">Yes</span></td></tr>
+<tr><td>Skip tracing</td><td>Built-in; Dig Tool add-on for bulk. Included credits vary by plan — exact monthly allowance not publicly listed for START plan.</td><td><span class="tag ok">Yes</span></td></tr>
+<tr><td>Call tracking</td><td>Built-in phone system. 1 number on START, 3 on GROW. Call recording, voicemail drop, call automation.</td><td><span class="tag best">Yes</span></td></tr>
+<tr><td>API access</td><td>"Full Developer Suite" listed on pricing page. Zapier integration with 5,000+ apps. Triggers and actions for seller leads, buyer leads, tasks. Public REST API docs not prominently published — integration primarily via Zapier or webhooks.</td><td><span class="tag ok">Zapier / webhooks</span></td></tr>
+<tr><td>Multi-user</td><td>All plans support multiple users with permission controls</td><td><span class="tag best">Yes — START covers 2</span></td></tr>
+<tr><td>Mobile app</td><td>iOS + Android available</td><td><span class="tag best">Yes</span></td></tr>
+<tr><td>Auditability</td><td>Activity logs, call recordings, CRM history — reasonable audit trail</td><td><span class="tag ok">Moderate</span></td></tr>
+</table>
+
+<p><strong>Pros for land:</strong></p>
+<ul>
+  <li>All-in-one — CRM, phone, mail, skip tracing, websites in one bill</li>
+  <li>6 users on START plan is generous for a small team</li>
+  <li>Phone system built in — no additional dialers needed</li>
+  <li>Zapier integration allows Gerald to read/write records</li>
+  <li>30-day money-back guarantee</li>
+</ul>
+
+<p><strong>Cons for land:</strong></p>
+<ul>
+  <li>Built for house wholesaling — land-specific workflows require customization</li>
+  <li>Add-ons (MailNow, Dig Tool) add significant one-time costs on top of subscription</li>
+  <li>BBB D- rating — unresolved complaints, aggressive upselling reported</li>
+  <li>No true public REST API — programmatic access requires Zapier as middleware (adds latency + Zapier cost)</li>
+  <li>Lead downloads (3,000/mo on START) not needed since PropStream handles data</li>
+  <li>Community feedback: "just over what I wanted to pay" for what you actually use</li>
+</ul>
+</div>
+
+<div class="section-platform">
+<h3>2. REsimpli</h3>
+
+<p>Positioned as the "#1 AI-powered CRM for real estate investors." Built by active investor Sharad Mehta (750+ deals closed). Strong community reputation for customer service and rapid feature development. Includes free skip tracing, direct mail, drip campaigns, KPI dashboards, and a suite of AI agents (call answering, follow-up, scoring). Growing quickly — recently added Gen 2 AI features.</p>
+
+<table>
+<tr><th>Plan</th><th>Annual (per month)</th><th>Monthly approx.</th><th>Users included</th><th>Free Skip Traces</th></tr>
+<tr><td>Basic</td><td>$149/mo</td><td>~$210/mo</td><td>1</td><td>10,000/mo</td></tr>
+<tr class="winner"><td>Pro</td><td>$299/mo</td><td>~$421/mo</td><td>5</td><td>20,000/mo</td></tr>
+<tr><td>Enterprise</td><td>$599/mo</td><td>~$843/mo</td><td>10</td><td>50,000/mo</td></tr>
+</table>
+
+<p><strong>For 2 partners:</strong> Basic plan is 1 user only. Would need Pro at $299/mo annual ($149/mo saves ~30%) or pay monthly at ~$421/mo. Additional users on Basic: +$99/mo each.</p>
+
+<p><em>Note: Annual pricing confirmed from resimpli.com. Exact monthly pricing varies — listed as "save up to 29% yearly."</em></p>
+
+<table>
+<tr><th>Feature</th><th>Details</th><th>Land-Friendly?</th></tr>
+<tr><td>Lead/contact mgmt</td><td>Full CRM with customizable lead stages, contact history, drip campaigns. List stacking for deduplication.</td><td><span class="tag caution">Caution</span> — address required for import</td></tr>
+<tr><td>Deal pipeline</td><td>Fully customizable pipeline stages. KPI dashboard tracking cost-per-lead, cost-per-deal, revenue.</td><td><span class="tag best">Yes</span></td></tr>
+<tr><td>Mail integration</td><td>Built-in direct mail — 90+ postcard/letter templates, bulk campaigns, competitive pricing. Integrates with USPS for address validation.</td><td><span class="tag best">Yes</span></td></tr>
+<tr><td>Skip tracing</td><td>FREE — 10,000 credits on Basic, 20,000 on Pro. Highest value in this category by far.</td><td><span class="tag best">Exceptional</span></td></tr>
+<tr><td>Call tracking</td><td>Built-in phone system with call recording, voicemail, SMS. Minutes included (250/mo Basic, 1,000/mo Pro).</td><td><span class="tag best">Yes</span></td></tr>
+<tr><td>API access</td><td>API Token available in settings. Zapier integration. Webhooks configurable. API used by Zapier "API Request (Beta)" — functional programmatic access but not a formally documented public API.</td><td><span class="tag ok">API token + Zapier</span></td></tr>
+<tr><td>Multi-user</td><td>Basic = 1 user. Pro = 5 users. Additional users at $99-$89/mo each.</td><td><span class="tag ok">Need Pro for 2 partners</span></td></tr>
+<tr><td>Mobile app</td><td>iOS + Android with in-app answering</td><td><span class="tag best">Yes</span></td></tr>
+<tr><td>Auditability</td><td>Full activity logging, call recordings, KPI dashboards — strong audit trail</td><td><span class="tag best">Strong</span></td></tr>
+</table>
+
+<div class="callout">
+<strong>⚠️ Land-Specific Issue — Address Requirement:</strong> A May 2023 BiggerPockets thread (confirmed by REsimpli user) documents that REsimpli requires a property address to import records. Raw land parcels are often identified only by APN — no street address exists. Before committing, test whether APN-only records can be imported (e.g., using county/APN as a workaround address). This is a potential deal-breaker that must be verified.
+</div>
+
+<p><strong>Pros for land:</strong></p>
+<ul>
+  <li>Free skip tracing included — 10,000-20,000 credits/mo is enormous value (PropStream skip tracing is extra)</li>
+  <li>Excellent customer service reputation (BiggerPockets consistently positive)</li>
+  <li>Built-in mail, phone, drip, KPI in one platform</li>
+  <li>API token + webhooks allow Gerald integration</li>
+  <li>Actively developed — new features added monthly</li>
+  <li>30-day free trial available</li>
+</ul>
+
+<p><strong>Cons for land:</strong></p>
+<ul>
+  <li><strong>Address requirement</strong> is a confirmed friction point for raw land</li>
+  <li>Need Pro plan ($299/mo annual) for 2 users — Basic is 1 user only</li>
+  <li>Most expensive of the three dedicated platforms for a 2-person team</li>
+  <li>Built for house wholesaling workflows — land customization requires rethinking their templates</li>
+  <li>Direct mail turnaround time reported as up to 12 days by early users (may have improved)</li>
+</ul>
+</div>
+
+<div class="section-platform">
+<h3>3. REIPro</h3>
+
+<p>Created by veteran investor Chris Goff. Structured around a 10-step workflow from lead to paycheck. Strong beginner orientation with clear process guidance. Includes built-in lead sources (pre-foreclosures, absentee owners, probates), MLS comps, skip tracing, direct mail, and CRM. Less AI-heavy than REsimpli, more workflow-focused.</p>
+
+<table>
+<tr><th>Plan</th><th>Monthly</th><th>Annual (per month)</th><th>Users</th><th>Skip Traces/mo</th><th>Lead Exports/mo</th></tr>
+<tr class="winner"><td>Standard</td><td>$109/mo</td><td>$69/mo</td><td>Up to 3</td><td>50</td><td>10,000</td></tr>
+<tr><td>Team</td><td>$297/mo</td><td>~$167/mo</td><td>Up to 12</td><td>200</td><td>20,000</td></tr>
+</table>
+
+<p><strong>For 2 partners:</strong> Standard plan at $109/mo covers up to 3 users — fits the team at lowest cost entry point of any dedicated platform.</p>
+
+<table>
+<tr><th>Feature</th><th>Details</th><th>Land-Friendly?</th></tr>
+<tr><td>Lead/contact mgmt</td><td>CRM with contacts, transactions, properties, buyer management, pipeline tracking</td><td><span class="tag ok">Partial</span> — house-first structure</td></tr>
+<tr><td>Deal pipeline</td><td>10-step workflow system from lead generation to closing. Clear, structured progression.</td><td><span class="tag ok">Adaptable</span> — would need customization for land flow</td></tr>
+<tr><td>Mail integration</td><td>Built-in direct mail engine. Postcards and letters. 25% discount on postcard printing on Standard+.</td><td><span class="tag ok">Yes</span></td></tr>
+<tr><td>Skip tracing</td><td>50/mo on Standard, 200/mo on Team. Additional at $0.13 each. Not competitive with REsimpli's free 10,000.</td><td><span class="tag ok">Limited</span> — supplemental skip tracing needed</td></tr>
+<tr><td>Call tracking</td><td>Phone number lookup, cell/non-published number data. No built-in phone system for calling — separate dialer needed.</td><td><span class="tag caution">No built-in dialer</span></td></tr>
+<tr><td>API access</td><td>API confirmed — documented use with Carrot/WordPress websites. Integration capabilities exist but limited public documentation found.</td><td><span class="tag ok">Limited docs</span></td></tr>
+<tr><td>Multi-user</td><td>Standard covers 3 users — perfect for 2 partners</td><td><span class="tag best">Yes</span></td></tr>
+<tr><td>Mobile app</td><td>Mobile-friendly dashboard. Dedicated app status unclear — appears to be responsive web.</td><td><span class="tag ok">Web-responsive</span></td></tr>
+<tr><td>Auditability</td><td>Deal and contact tracking. Less robust reporting vs. REsimpli's KPI dashboard.</td><td><span class="tag ok">Moderate</span></td></tr>
+</table>
+
+<p><strong>Pros for land:</strong></p>
+<ul>
+  <li>Lowest monthly cost of any dedicated platform — $109/mo covers 2 partners</li>
+  <li>Annual billing drops to $69/mo — remarkable value</li>
+  <li>3-user Standard plan fits Marcus + Chris without upselling</li>
+  <li>Clear workflow structure good for a team learning the process</li>
+  <li>API exists — usable for Gerald integration</li>
+  <li>Free trial available</li>
+</ul>
+
+<p><strong>Cons for land:</strong></p>
+<ul>
+  <li>Only 50 skip traces/month — a real campaign will blow through this quickly</li>
+  <li>No built-in phone/dialer — adds another tool and another bill</li>
+  <li>10-step workflow is house-oriented; land process maps differently</li>
+  <li>Less active development cadence than REsimpli</li>
+  <li>API documentation is thin — integration with Gerald would require more discovery work</li>
+  <li>BiggerPockets feedback positive but limited — smaller community than REsimpli</li>
+</ul>
+</div>
+
+<div class="section-platform">
+<h3>4. Airtable (Gerald's Recommended Lean Alternative)</h3>
+
+<p>Airtable is a cloud-based spreadsheet/database hybrid used across industries. For land investors specifically, a pre-built template called <em>Airtable for Land Investors</em> (created by Paul Brewer / Legacy Lands USA) exists and has been reviewed positively on REtipster. The core distinction: Airtable requires assembly and integration, but it gives you exactly what you build — no house-focused assumptions, no mandatory address fields, and a clean public REST API for programmatic access.</p>
+
+<table>
+<tr><th>Plan</th><th>Monthly</th><th>Annual (per month)</th><th>Users</th><th>Notes</th></tr>
+<tr class="winner"><td>Free</td><td>$0</td><td>$0</td><td>5</td><td>Unlimited bases, 1,000 records/base, 1GB storage</td></tr>
+<tr><td>Team</td><td>$20/user/mo</td><td>$20/user/mo</td><td>Unlimited</td><td>50,000 records/base, 20GB, automations, extensions</td></tr>
+<tr><td>Business</td><td>$45/user/mo</td><td>$45/user/mo</td><td>Unlimited</td><td>125,000 records/base, admin controls, sync</td></tr>
+</table>
+
+<p><strong>For 2 partners:</strong> Free tier supports 5 users and handles thousands of land records. Team plan at $40/mo total (2 users × $20) for expanded limits. Likely start free, upgrade if needed.</p>
+
+<table>
+<tr><th>Feature</th><th>Details</th><th>Land-Friendly?</th></tr>
+<tr><td>Lead/contact mgmt</td><td>Fully customizable tables and fields. No mandatory address field. APN-native if you build it that way. Land Investors template (Paul Brewer) provides a pre-built base.</td><td><span class="tag best">Best — fully custom</span></td></tr>
+<tr><td>Deal pipeline</td><td>Kanban views for visual pipeline. Custom stages. Linked records between leads, properties, mail campaigns.</td><td><span class="tag best">Yes — build your own stages</span></td></tr>
+<tr><td>Mail integration</td><td>No native mail. Connect to PostcardMania, Click2Mail, or PrintingForLess via Zapier/Make. More steps, but flexible vendor choice.</td><td><span class="tag ok">Requires integration</span></td></tr>
+<tr><td>Skip tracing</td><td>None built-in. Connect to BatchSkipTracing, REISkip, or similar via Zapier. PropStream skip tracing already covers this.</td><td><span class="tag ok">Via external service</span></td></tr>
+<tr><td>Call tracking</td><td>None built-in. Log call notes manually or via Zapier from a dialer (CallRail, Mojo, etc.).</td><td><span class="tag ok">Via integration</span></td></tr>
+<tr><td>API access</td><td><strong>Full documented REST API.</strong> Create, read, update, delete any record. Native Python/JS SDKs. Gerald can query, update, and automate directly without Zapier middleware.</td><td><span class="tag best">Excellent — best in class</span></td></tr>
+<tr><td>Multi-user</td><td>Free tier: 5 users. Granular permission controls on paid plans.</td><td><span class="tag best">Free plan covers team</span></td></tr>
+<tr><td>Mobile app</td><td>iOS + Android native apps</td><td><span class="tag best">Yes</span></td></tr>
+<tr><td>Auditability</td><td>Every record change is logged with timestamp and user. Full revision history. Completely transparent — no black boxes.</td><td><span class="tag best">Best — full audit trail</span></td></tr>
+</table>
+
+<p><strong>Pros for land:</strong></p>
+<ul>
+  <li><strong>No address requirement</strong> — fields are whatever you define. APN-first from day one.</li>
+  <li><strong>Full REST API</strong> — Gerald can read/write records directly without Zapier, with full documentation</li>
+  <li><strong>Complete auditability</strong> — every change logged, revision history available</li>
+  <li>Free tier handles thousands of records — no monthly CRM bill at start</li>
+  <li>Pre-built "Airtable for Land Investors" template (Paul Brewer) exists — not starting from zero</li>
+  <li>Scales gracefully — add tables, views, automations as the business grows</li>
+  <li>Zapier integration for connecting to mail, skip tracing, dialers, PropStream</li>
+  <li>No house-first assumptions baked in — it does exactly what you tell it to do</li>
+</ul>
+
+<p><strong>Cons for land:</strong></p>
+<ul>
+  <li>Requires setup work — not plug-and-play like dedicated REI platforms</li>
+  <li>No built-in phone, mail, skip tracing — each adds a separate integration</li>
+  <li>Free record limits (1,000/base) may require upgrading as campaigns scale; Team plan ($40/mo for 2 users) likely needed within a few campaigns</li>
+  <li>Template from Paul Brewer is an additional purchase (one-time, not verified current pricing)</li>
+  <li>Learning curve for non-technical partners (Coose and Chris may need onboarding)</li>
+  <li>Total cost of integrations (mail vendor, dialer, etc.) can add up — though each is optional</li>
+</ul>
+</div>
+
+<h2>Head-to-Head Feature Matrix</h2>
+
+<table>
+<tr>
+  <th>Factor</th>
+  <th>FreedomSoft</th>
+  <th>REsimpli</th>
+  <th>REIPro</th>
+  <th>Airtable</th>
+</tr>
+<tr>
+  <td><strong>Monthly cost (2 users)</strong></td>
+  <td>$197/mo (START)<br><small>or $147/mo annual</small></td>
+  <td>$299/mo (Pro annual)<br><small>Basic = 1 user only</small></td>
+  <td><span class="tag best">$109/mo (Standard)</span><br><small>or $69/mo annual</small></td>
+  <td><span class="tag best">$0 free / $40 Team</span></td>
+</tr>
+<tr>
+  <td><strong>Land-specific workflow</strong></td>
+  <td><span class="tag ok">Adaptable</span></td>
+  <td><span class="tag caution">Address required ⚠️</span></td>
+  <td><span class="tag ok">Adaptable</span></td>
+  <td><span class="tag best">Fully custom</span></td>
+</tr>
+<tr>
+  <td><strong>Skip tracing</strong></td>
+  <td><span class="tag ok">Included (amount unclear)</span></td>
+  <td><span class="tag best">10,000–20,000 FREE</span></td>
+  <td><span class="tag ok">50–200/mo</span></td>
+  <td><span class="tag ok">Via external service</span></td>
+</tr>
+<tr>
+  <td><strong>Mail integration</strong></td>
+  <td><span class="tag ok">Built-in ($997 add-on)</span></td>
+  <td><span class="tag best">Built-in, 90+ templates</span></td>
+  <td><span class="tag ok">Built-in, 25% discount</span></td>
+  <td><span class="tag ok">Via Zapier/vendor</span></td>
+</tr>
+<tr>
+  <td><strong>Built-in phone/dialer</strong></td>
+  <td><span class="tag best">Yes — 1 number included</span></td>
+  <td><span class="tag best">Yes — minutes included</span></td>
+  <td><span class="tag caution">No — data only</span></td>
+  <td><span class="tag caution">No — integration needed</span></td>
+</tr>
+<tr>
+  <td><strong>API for Gerald</strong></td>
+  <td><span class="tag ok">Zapier / webhooks</span></td>
+  <td><span class="tag ok">API token + Zapier</span></td>
+  <td><span class="tag ok">API (limited docs)</span></td>
+  <td><span class="tag best">Full REST API + SDK</span></td>
+</tr>
+<tr>
+  <td><strong>Multi-user (2 partners)</strong></td>
+  <td><span class="tag best">Yes — 6 on START</span></td>
+  <td><span class="tag caution">Need Pro ($299/mo)</span></td>
+  <td><span class="tag best">Yes — 3 on Standard</span></td>
+  <td><span class="tag best">Yes — 5 on free</span></td>
+</tr>
+<tr>
+  <td><strong>Mobile app</strong></td>
+  <td><span class="tag best">iOS + Android</span></td>
+  <td><span class="tag best">iOS + Android</span></td>
+  <td><span class="tag ok">Web-responsive</span></td>
+  <td><span class="tag best">iOS + Android</span></td>
+</tr>
+<tr>
+  <td><strong>Auditability</strong></td>
+  <td><span class="tag ok">Moderate</span></td>
+  <td><span class="tag best">Strong — full KPI logs</span></td>
+  <td><span class="tag ok">Moderate</span></td>
+  <td><span class="tag best">Complete — revision history</span></td>
+</tr>
+<tr>
+  <td><strong>Land investor community</strong></td>
+  <td><span class="tag ok">House-focused community</span></td>
+  <td><span class="tag ok">Mixed — confirmed land friction</span></td>
+  <td><span class="tag ok">House-focused</span></td>
+  <td><span class="tag best">Native land template exists</span></td>
+</tr>
+<tr>
+  <td><strong>Setup complexity</strong></td>
+  <td><span class="tag best">Low — ready to go</span></td>
+  <td><span class="tag best">Low — ready to go</span></td>
+  <td><span class="tag best">Low — guided workflow</span></td>
+  <td><span class="tag ok">Medium — template + config</span></td>
+</tr>
+<tr>
+  <td><strong>Transparency / black boxes</strong></td>
+  <td><span class="tag ok">Some opacity in add-ons</span></td>
+  <td><span class="tag ok">Clean but some AI opacity</span></td>
+  <td><span class="tag ok">Mostly transparent</span></td>
+  <td><span class="tag best">Fully auditable</span></td>
+</tr>
+</table>
+
+<h2>Cost Summary for Year One</h2>
+
+<table>
+<tr><th>Platform</th><th>Annual Cost (2 users)</th><th>Key assumptions</th></tr>
+<tr><td>FreedomSoft START (annual)</td><td>$1,764/yr ($147/mo)</td><td>Annual billing; MailNow add-on +$997 one-time if needed</td></tr>
+<tr><td>REsimpli Pro (annual)</td><td>$3,588/yr ($299/mo)</td><td>Annual billing; only plan with 2-user support</td></tr>
+<tr><td>REIPro Standard (annual)</td><td>$828/yr ($69/mo)</td><td>Annual billing; add separate dialer ~$50-100/mo if needed</td></tr>
+<tr class="winner"><td>Airtable Free + Team</td><td>$0 to $480/yr</td><td>Free until scale requires upgrade; Team = $20/user/mo</td></tr>
+</table>
+
+<h2>Recommendation</h2>
+
+<div class="callout">
+<strong>Short answer: Start with Airtable + PropStream. Add REIPro Standard later if you need structure.</strong>
+</div>
+
+<h3>Phase 1 (Now — First 3 Campaigns): Airtable + PropStream</h3>
+
+<p>For a lean 2-person land operation starting from scratch, <strong>Airtable is the right call</strong>. Here's why:</p>
+
+<ol>
+  <li><strong>No address-required friction.</strong> Raw land runs on APNs. Every dedicated REI platform was built for houses. Airtable doesn't care — you define the fields, you define the structure.</li>
+  <li><strong>Gerald integrates cleanly.</strong> The Airtable REST API is fully documented, publicly available, and battle-tested. Gerald can query the lead table, update deal stages, log call outcomes, and flag records for action without needing Zapier in the middle. No middleware tax, no opacity.</li>
+  <li><strong>PropStream already handles data.</strong> You're not buying REsimpli's free skip tracing because you already have PropStream. You're not buying FreedomSoft's lead downloads because PropStream exports cover that. The bundled value props of the dedicated platforms are partially redundant.</li>
+  <li><strong>Cost: effectively $0 to start.</strong> Free tier handles thousands of records. Upgrade to $40/mo Team plan when records exceed 1,000 per base. No surprise add-on bills.</li>
+  <li><strong>Auditability.</strong> Every record change has a timestamp and author. Full revision history. No black boxes — Airtable is entirely transparent about what changed, when, and who did it.</li>
+  <li><strong>Land investor template exists.</strong> Paul Brewer's "Airtable for Land Investors" template (from Legacy Lands USA / REtipster review) provides a pre-built base with property tracking, mailing list management, ad posting support, and Zapier automations. One-time purchase — not built from scratch.</li>
+</ol>
+
+<p><strong>Gaps to fill outside Airtable:</strong></p>
+<ul>
+  <li>Mail: Connect to <strong>PostcardMania</strong> or <strong>Click2Mail</strong> via Zapier (or Gerald can automate through their APIs). PostcardMania has a documented API; Click2Mail has Zapier integration.</li>
+  <li>Phone/call logging: Use a simple VOIP number (Google Voice, or a $10/mo virtual number) and log call notes back into Airtable via Gerald.</li>
+  <li>Skip tracing: PropStream covers this. BatchSkipTracing ($0.18-0.25/record) as backup if needed.</li>
+</ul>
+
+<h3>Phase 2 (After 5-10 Closed Deals): Reassess</h3>
+
+<p>Once the business is running — deals closed, mail cadence established, call volume real — revisit the dedicated platforms. At that point:</p>
+
+<ul>
+  <li>If workflow structure becomes a bottleneck: <strong>REIPro Standard ($69/mo annual)</strong> is the lowest-cost dedicated platform with 3-user support. Good 10-step framework, built-in mail, API for Gerald.</li>
+  <li>If skip tracing volume becomes expensive: <strong>REsimpli Pro</strong> ($299/mo annual) includes 20,000 free skip traces/month — but first verify that the APN import issue has been resolved or has a reliable workaround.</li>
+  <li>Skip FreedomSoft: At $147-197/mo for features you largely already have (data = PropStream, skip tracing = PropStream, mail = external), the value isn't there for a land operation. The BBB D- rating is also a concern.</li>
+</ul>
+
+<div class="callout">
+<strong>Summary recommendation:</strong> Airtable (free) + PropStream ($99/mo, already budgeted) = complete stack for Year 1. Total new CRM spend: $0. Gerald reads/writes via Airtable REST API directly. When you outgrow it or need a phone system, add REIPro Standard at $69/mo annual — cheapest dedicated upgrade path.
+</div>
+
+<div class="meta" style="margin-top:2em; border-top:1px solid #ddd; padding-top:0.5em;">
+Sources: FreedomSoft pricing page (freedomsoft.com/pricing, accessed June 2026) · REsimpli pricing page (resimpli.com/pricing, accessed June 2026) · REsimpli features (resimpli.com/features) · REIPro review — realestateskills.com, realestatebees.com (accessed June 2026) · BiggerPockets forums: "Using RESimpli for Land" (May 2023), "REIPro" thread, "RESimpli CRM Pros &amp; Cons" (Feb 2026) · REtipster — "Is Airtable the Best CRM for Land Investors?" (2021) · Legacy Lands USA — Airtable for Land Investors (legacylandsusa.com) · Zapier integration listings for FreedomSoft and REsimpli (zapier.com) · REsimpli blog: "REIPro vs PropStream" (Nov 2025) · All pricing verified as of June 2026 where possible; always confirm current pricing on vendor sites before purchasing.
+</div>
+
+</body>
+</html>
