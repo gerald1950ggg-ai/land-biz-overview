@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zillow Manual Lookup — Quick Steps</title>
+<style>
+  @page { size: letter; margin: 0.6in 0.7in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+    line-height: 1.45;
+    color: #1a1a1a;
+  }
+  .header {
+    text-align: center;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+  .header h1 {
+    font-size: 19pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #2c3e50;
+  }
+  .header .sub {
+    font-size: 10pt;
+    color: #777;
+    margin-top: 2px;
+  }
+
+  .step {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: #2c3e50;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13pt;
+    font-weight: 700;
+  }
+  .step-body { flex: 1; }
+  .step-title {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 2px;
+  }
+  .step-detail {
+    font-size: 11pt;
+    color: #333;
+  }
+  .tag {
+    display: inline-block;
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-family: 'Menlo', 'Consolas', monospace;
+    font-size: 10.5pt;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+
+  .note-box {
+    background: #f4f7f9;
+    border-left: 4px solid #2c3e50;
+    padding: 8px 14px;
+    margin-top: 16px;
+    margin-bottom: 14px;
+    border-radius: 0 4px 4px 0;
+  }
+  .note-box .note-title {
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #2c3e50;
+    margin-bottom: 4px;
+  }
+  .note-box pre {
+    font-family: 'Menlo', 'Consolas', monospace;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 8px 12px;
+    margin-top: 4px;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 8.5pt;
+    color: #999;
+    margin-top: 18px;
+    border-top: 1px solid #ddd;
+    padding-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Zillow Manual STR Lookup</h1>
+  <div class="sub">Quick steps to pull Active &amp; Sold counts &nbsp;·&nbsp; ~5 min for 3 counties</div>
+</div>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-body">
+    <div class="step-title">Go to Zillow</div>
+    <div class="step-detail">Open <span class="tag">zillow.com</span></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-body">
+    <div class="step-title">Search the county</div>
+    <div class="step-detail">Type in the search bar: <span class="tag">Park County, CO</span> (or Smith County, TX / White County, TN) → hit Enter</div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-body">
+    <div class="step-title">Set the filter to LAND</div>
+    <div class="step-detail">Click <strong>“Home Type”</strong> → uncheck everything → check <strong>“Lots/Land”</strong> only → click <strong>Apply</strong></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-body">
+    <div class="step-title">Set acreage to 1–5 acres</div>
+    <div class="step-detail">Click <strong>“More”</strong> → scroll to <strong>“Lot Size”</strong> → Min: <span class="tag">1 acre</span> &nbsp; Max: <span class="tag">5 acres</span> → click <strong>Apply</strong></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">5</div>
+  <div class="step-body">
+    <div class="step-title">Count the ACTIVE listings</div>
+    <div class="step-detail">Toggle at top should say <strong>“For Sale”</strong> → look at the result count at the top of the page (e.g., <em>“218 results”</em>) → <strong>write that down as Active</strong></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">6</div>
+  <div class="step-body">
+    <div class="step-title">Switch to SOLD</div>
+    <div class="step-detail">Click the top toggle <strong>“For Sale”</strong> → switch to <strong>“Sold”</strong></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">7</div>
+  <div class="step-body">
+    <div class="step-title">Set sold timeframe to 12 months</div>
+    <div class="step-detail">Click <strong>“Sold in last…”</strong> → select <strong>“12 months”</strong></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">8</div>
+  <div class="step-body">
+    <div class="step-title">Count the SOLD listings</div>
+    <div class="step-detail">Look at the result count at the top of the page → <strong>write that down as Sold</strong></div>
+  </div>
+</div>
+
+<div class="note-box">
+  <div class="note-title">Step 9 — Send Gerald the numbers</div>
+  <div class="step-detail">Just text back like this:</div>
+  <pre>Park CO:    Active = ___    Sold = ___
+Smith TX:   Active = ___    Sold = ___
+White TN:   Active = ___    Sold = ___</pre>
+  <div class="step-detail" style="margin-top:4px;">Gerald calculates STR%, fills the scorecards, reprints.</div>
+</div>
+
+<div class="footer">
+  STR % = Sold ÷ Active × 100 &nbsp; · &nbsp; Ideal: 20–130% &nbsp; · &nbsp; Min Sold = 50 (skip if lower) &nbsp; · &nbsp; Prepared by Gerald 🍊
+</div>
+
+</body>
+</html>

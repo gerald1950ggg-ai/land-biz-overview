@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CRM Comparison Tier 2 — Airtable vs HubSpot vs Pipedrive</title>
+<style>
+  @page { size: letter landscape; margin: 0.35in 0.4in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 8pt;
+    line-height: 1.28;
+    color: #1a1a1a;
+  }
+  .header {
+    text-align: center;
+    border-bottom: 2.5px solid #2c3e50;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-size: 14pt;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2c3e50;
+  }
+  .header .sub { font-size: 8pt; color: #777; margin-top: 1px; }
+
+  h2 {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: 7px;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #2c3e50;
+    padding-bottom: 1px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.5pt;
+    margin-top: 2px;
+  }
+  th, td {
+    border: 1px solid #d0d4d8;
+    padding: 2.5px 5px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #ecf0f1;
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  td.feature { font-weight: 700; color: #2c3e50; width: 145px; }
+  .winner-col { background: #e8f5e9 !important; }
+
+  .tag {
+    display: inline-block;
+    font-size: 7pt;
+    font-weight: 700;
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+  .best    { background: #d4edda; color: #155724; }
+  .ok      { background: #fff3cd; color: #856404; }
+  .caution { background: #f8d7da; color: #721c24; }
+
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .callout {
+    background: #e8f5e9;
+    border-left: 4px solid #27ae60;
+    padding: 6px 10px;
+    margin: 5px 0;
+    font-size: 8pt;
+    border-radius: 0 3px 3px 0;
+  }
+  .callout strong { color: #1e7e34; }
+
+  .warning {
+    background: #fff8e1;
+    border-left: 4px solid #f57c00;
+    padding: 6px 10px;
+    margin: 5px 0;
+    font-size: 8pt;
+    border-radius: 0 3px 3px 0;
+  }
+  .warning strong { color: #c66200; }
+
+  ul.tight { margin: 1px 0 0 14px; padding: 0; }
+  ul.tight li { margin-bottom: 1px; }
+
+  .footer {
+    text-align: center;
+    font-size: 7pt;
+    color: #999;
+    margin-top: 6px;
+    border-top: 1px solid #ddd;
+    padding-top: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>CRM Comparison Tier 2 — Airtable vs HubSpot vs Pipedrive</h1>
+  <div class="sub">For 2 users, land focus, API-first agent operation · June 25, 2026 · Full doc: <em>crm-comparison.html</em></div>
+</div>
+
+<div class="callout">
+  <strong>RECOMMENDATION:</strong> <strong>Airtable Free</strong> remains the top choice. <strong>Pipedrive Lite ($14/seat/mo)</strong> is the strongest "real CRM" alternative if a pre-built deal pipeline becomes preferable to building it in Airtable. <strong>HubSpot Free</strong> is viable but has a steep custom-objects cliff at $890/mo + $3K onboarding.
+</div>
+
+<h2>Feature Matrix</h2>
+<table>
+  <tr>
+    <th style="width:145px;">Feature</th>
+    <th class="winner-col">Airtable ⭐</th>
+    <th>HubSpot</th>
+    <th>Pipedrive</th>
+  </tr>
+  <tr>
+    <td class="feature">Annual cost (2 users, starting tier)</td>
+    <td class="winner-col"><strong>$0</strong> (Free, 5 editors, 1K records/base)</td>
+    <td>$0 (Free, 2 users, 1 deal pipeline)<br>or $360/yr (Starter $15/seat)</td>
+    <td>$336/yr (Lite $14/seat) — <strong>no free tier</strong></td>
+  </tr>
+  <tr>
+    <td class="feature">Land-friendly (APN, no address req)</td>
+    <td class="winner-col"><span class="tag best">Fully customizable</span></td>
+    <td><span class="tag best">Custom properties OK</span></td>
+    <td><span class="tag best">Custom fields included</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Deal pipeline (kanban, stages)</td>
+    <td class="winner-col"><span class="tag ok">Build yourself (template avail)</span></td>
+    <td><span class="tag best">1 pipeline on free</span></td>
+    <td><span class="tag best">Pipeline-native — core product</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Custom fields per record</td>
+    <td class="winner-col"><span class="tag best">Unlimited, any type</span></td>
+    <td><span class="tag caution">Starter+ only</span></td>
+    <td><span class="tag best">Plan-limited but generous</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Custom objects (Properties as 1st-class)</td>
+    <td class="winner-col"><span class="tag best">Native (just create base)</span></td>
+    <td><span class="tag caution">Enterprise tier — $890/mo</span></td>
+    <td><span class="tag ok">Workaround via deal labels</span></td>
+  </tr>
+  <tr>
+    <td class="feature">API — read records</td>
+    <td class="winner-col"><span class="tag best">Full REST + Python SDK</span></td>
+    <td><span class="tag best">World-class — Node/Python SDK</span></td>
+    <td><span class="tag best">Full REST + dev community</span></td>
+  </tr>
+  <tr>
+    <td class="feature">API — update lead status</td>
+    <td class="winner-col"><span class="tag best">Yes — any field</span></td>
+    <td><span class="tag best">Yes — full PATCH</span></td>
+    <td><span class="tag best">Yes — deal stage API</span></td>
+  </tr>
+  <tr>
+    <td class="feature">API — query/filter records</td>
+    <td class="winner-col"><span class="tag best">Formulas + filterByFormula</span></td>
+    <td><span class="tag best">CRM search API + lists</span></td>
+    <td><span class="tag best">Search API + filters</span></td>
+  </tr>
+  <tr>
+    <td class="feature">API — bulk operations</td>
+    <td class="winner-col"><span class="tag best">Up to 10 records/call</span></td>
+    <td><span class="tag best">Up to 100 records/call (batch)</span></td>
+    <td><span class="tag ok">Standard pagination</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Native webhooks (built-in)</td>
+    <td class="winner-col"><span class="tag best">Yes</span></td>
+    <td><span class="tag best">Yes</span></td>
+    <td><span class="tag best">Yes — recently expanded</span></td>
+  </tr>
+  <tr>
+    <td class="feature">API rate limits (free/starter)</td>
+    <td class="winner-col"><span class="tag best">5 req/sec per base — generous</span></td>
+    <td><span class="tag caution">100 req / 10 sec, 250K/day</span></td>
+    <td><span class="tag ok">~20K-100K calls/day plan-dep.</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Mail integration (postcards)</td>
+    <td class="winner-col"><span class="tag ok">PostcardMania/Click2Mail via Zap</span></td>
+    <td><span class="tag ok">Via Zapier</span></td>
+    <td><span class="tag ok">Via Zapier</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Built-in phone/dialer</td>
+    <td class="winner-col"><span class="tag caution">No — Twilio integration</span></td>
+    <td><span class="tag best">Calling add-on $50/mo</span></td>
+    <td><span class="tag best">Caller add-on built-in</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Skip tracing</td>
+    <td class="winner-col"><span class="tag ok">PropStream handles it</span></td>
+    <td><span class="tag ok">PropStream handles it</span></td>
+    <td><span class="tag ok">PropStream handles it</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Multi-user (2 partners)</td>
+    <td class="winner-col"><span class="tag best">5 editors on free</span></td>
+    <td><span class="tag best">2 users on free</span></td>
+    <td><span class="tag best">2+ on paid (no free)</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Auditability / revision history</td>
+    <td class="winner-col"><span class="tag best">Per-cell revision history</span></td>
+    <td><span class="tag best">Activity timeline + audit logs</span></td>
+    <td><span class="tag best">Per-field history</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Setup complexity</td>
+    <td class="winner-col"><span class="tag ok">Medium — template + config</span></td>
+    <td><span class="tag best">Low — guided onboarding</span></td>
+    <td><span class="tag best">Low — pipeline ready</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Land-specific features built-in</td>
+    <td class="winner-col"><span class="tag caution">None (build yourself)</span></td>
+    <td><span class="tag caution">None (general-purpose)</span></td>
+    <td><span class="tag caution">None (general-purpose)</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Cost cliff / hidden trap</td>
+    <td class="winner-col"><span class="tag best">Linear: $0 → $20/seat at scale</span></td>
+    <td><span class="tag caution">⚠️ Custom Objects: $890/mo + $3K onboarding</span></td>
+    <td><span class="tag ok">Linear: Lite → Growth → Premium</span></td>
+  </tr>
+  <tr>
+    <td class="feature">Reputation / industry standing</td>
+    <td class="winner-col"><span class="tag best">Industry standard, 300K+ co</span></td>
+    <td><span class="tag best">Largest SMB CRM, public co</span></td>
+    <td><span class="tag best">100K+ companies, EU-built</span></td>
+  </tr>
+</table>
+
+<div class="grid2">
+  <div>
+    <h2>Why Airtable Still Wins</h2>
+    <ul class="tight">
+      <li><strong>$0 to start</strong> — only platform with free tier that includes API access at usable limits</li>
+      <li><strong>Custom objects native</strong> — Properties, Owners, Mailers, Deals all as first-class objects without an Enterprise upcharge</li>
+      <li><strong>5 req/sec rate limit</strong> — generous; HubSpot free/starter is 100 req/10s which gets tight for agent operations</li>
+      <li><strong>No cost cliff</strong> — linear scaling, $0 → $20/seat/mo if you outgrow the free tier</li>
+      <li><strong>Per-cell revision history</strong> — full audit trail of every change</li>
+      <li><strong>Paul Brewer's land template</strong> already exists for property tracking</li>
+    </ul>
+
+    <h2>Pipedrive — Strongest Alternative</h2>
+    <ul class="tight">
+      <li><strong>Built FOR deal pipelines</strong> — kanban, drag-and-drop stages, deal aging, all native</li>
+      <li><strong>$14/seat/mo Lite</strong> = $336/yr for 2 users — cheapest dedicated CRM with a real API</li>
+      <li><strong>Custom fields included</strong> at every tier (HubSpot locks them behind Starter)</li>
+      <li><strong>Strong API + active dev community</strong> — May 2026 changelog shows ongoing improvements</li>
+      <li><strong>Built-in calling</strong> via Caller add-on — useful when Chris's call system goes live</li>
+      <li><strong>Verdict:</strong> Best if you want a pre-built pipeline instead of building in Airtable. Reassess at Phase 2.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>HubSpot — Strongest API, Worst Cost Trap</h2>
+    <ul class="tight">
+      <li><strong>API quality is unmatched</strong> — full SDKs in Node/Python/Ruby, batch endpoints (100 records/call), Zapier-free</li>
+      <li><strong>Free tier real:</strong> 2 users, unlimited contacts (1K marketing), 1 pipeline</li>
+      <li><strong>BUT free tier blocks custom properties</strong> — Starter $15/seat to unlock</li>
+      <li><strong>Custom Objects are Enterprise-only</strong> — $890/mo base + $3,000 mandatory onboarding fee</li>
+      <li><strong>Marketing contact pricing</strong> kicks in once you mail more than 1,000 prospects</li>
+      <li><strong>Verdict:</strong> Great if you stay on free forever or are fine on Starter. Risky if growth demands Properties as a custom object.</li>
+    </ul>
+
+    <div class="warning">
+      <strong>⚠️ HubSpot trap:</strong> Going from $0 (Free) to $890/mo when you need Custom Objects (e.g., Properties as objects) is a 60x leap. There is no middle tier. Many bootstrapped users get caught here.
+    </div>
+  </div>
+</div>
+
+<h2>Cost Comparison — 2 Users, Annual</h2>
+<table>
+  <tr>
+    <th>Tier</th>
+    <th>Airtable</th>
+    <th>HubSpot</th>
+    <th>Pipedrive</th>
+  </tr>
+  <tr>
+    <td class="feature">Starting (free/cheapest)</td>
+    <td class="winner-col"><strong>$0/yr</strong></td>
+    <td><strong>$0/yr</strong> (Free) → $360/yr (Starter)</td>
+    <td>$336/yr (Lite)</td>
+  </tr>
+  <tr>
+    <td class="feature">Mid-tier (real CRM features)</td>
+    <td class="winner-col">$480/yr (Team $20/seat)</td>
+    <td>$10,680/yr (Pro) + $3K onboarding</td>
+    <td>$936/yr (Growth) — automation included</td>
+  </tr>
+  <tr>
+    <td class="feature">Enterprise-grade</td>
+    <td class="winner-col">$1,200/yr (Business $50/seat)</td>
+    <td>$43,200/yr + $7K onboarding</td>
+    <td>$1,896/yr (Ultimate)</td>
+  </tr>
+</table>
+
+<div class="footer">
+  Sources: airtable.com · hubspot.com legal/product catalog · saaszap.com (HubSpot pricing 2026) · devdecide.com (HubSpot API limits) · pipedrive.com/pricing · devcommunity.pipedrive.com (May 2026 API changelog) · Prepared by Gerald 🍊
+</div>
+
+</body>
+</html>

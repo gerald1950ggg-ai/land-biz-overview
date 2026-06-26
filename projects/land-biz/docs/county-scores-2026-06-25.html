@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>County Scorecards — Park, Smith, White</title>
+<style>
+  @page {
+    size: letter landscape;
+    margin: 0.35in 0.45in;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 9pt;
+    line-height: 1.3;
+    color: #1a1a1a;
+    background: #fff;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    border-bottom: 2.5px solid #2c3e50;
+    padding-bottom: 5px;
+    margin-bottom: 9px;
+  }
+  .header h1 {
+    font-size: 15pt;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2c3e50;
+  }
+  .header .sub {
+    font-size: 8pt;
+    color: #777;
+    letter-spacing: 0.02em;
+    margin-top: 1px;
+  }
+
+  /* Three-column grid */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .col {
+    page-break-inside: avoid;
+  }
+  .col-title {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Scorecard — same style as the original card */
+  .scorecard {
+    border: 1.5px solid #2c3e50;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-bottom: 5px;
+  }
+  .scorecard-title {
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #2c3e50;
+    letter-spacing: 0.03em;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1px;
+  }
+  .scorecard-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 7.5pt;
+    padding: 1.5px 0;
+    border-bottom: 1px dotted #ddd;
+    gap: 4px;
+  }
+  .scorecard-row:last-child { border-bottom: none; }
+  .scorecard-label {
+    color: #555;
+    flex-shrink: 0;
+  }
+  .scorecard-value {
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: right;
+  }
+
+  /* Notes */
+  .notes {
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    padding: 5px 8px;
+    background: #fafafa;
+    font-size: 7.5pt;
+    line-height: 1.35;
+  }
+  .notes-title {
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #2c3e50;
+    letter-spacing: 0.03em;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1px;
+  }
+  .notes p {
+    margin-bottom: 3px;
+    color: #333;
+  }
+  .notes p:last-child { margin-bottom: 0; }
+  .notes .label {
+    font-weight: 700;
+    color: #2c3e50;
+  }
+  .notes .pos { color: #1e7e34; font-weight: 700; }
+  .notes .neg { color: #b53737; font-weight: 700; }
+
+  /* Verdict badges in card */
+  .v-go    { color: #27ae60; font-weight: 800; }
+  .v-maybe { color: #e67e22; font-weight: 800; }
+  .v-no    { color: #c0392b; font-weight: 800; }
+
+  .pending { color: #999; font-style: italic; font-weight: 500; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 7pt;
+    color: #999;
+    margin-top: 8px;
+    border-top: 1px solid #ddd;
+    padding-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>County Scorecards — Three-Way Comparison</h1>
+  <div class="sub">Park CO · Smith TX · White TN &nbsp; · &nbsp; Scored June 25, 2026 &nbsp; · &nbsp; LPG Module 2 Rubric</div>
+</div>
+
+<div class="grid">
+
+  <!-- ============ PARK CO ============ -->
+  <div class="col">
+    <div class="col-title">🏔️ Park, CO</div>
+
+    <div class="scorecard">
+      <div class="scorecard-title">Quick Scorecard</div>
+      <div class="scorecard-row"><span class="scorecard-label">County / State</span><span class="scorecard-value">Park, CO</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Disclosure?</span><span class="scorecard-value">Y</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Nearest Metro (pop)</span><span class="scorecard-value">Denver (3.05M)</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Distance to Metro</span><span class="scorecard-value">85 mi / 60 mi*</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Infrastructure OK?</span><span class="scorecard-value">Y ⚠️</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Active / Sold (12mo)</span><span class="scorecard-value">560 / <span class="pending">pend</span></span></div>
+      <div class="scorecard-row"><span class="scorecard-label">STR %</span><span class="scorecard-value"><span class="pending">pending Zillow</span></span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Median Price</span><span class="scorecard-value">~$50K</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Verdict</span><span class="scorecard-value v-go">GO</span></div>
+    </div>
+
+    <div class="notes">
+      <div class="notes-title">Notes</div>
+      <p><span class="pos">+ Strength:</span> Volume + sweet-spot pricing + Denver anchor. Largest CO inventory audited. Sweet-spot lots $15–150K range.</p>
+      <p><span class="neg">– Weakness:</span> 8–10K ft altitude limits buyer pool. Seasonal road access on some parcels (Oct–Apr).</p>
+      <p><span class="label">Buyer profile:</span> Denver second-home / outdoor rec / off-grid seekers.</p>
+      <p><span class="label">Focus sub-markets:</span> Hartsel basin floor, Lake George, Bailey corridor.</p>
+      <p><span class="label">Active count source:</span> LandWatch (June 2026).</p>
+      <p><span class="label">*Distance:</span> 85 mi from Fairplay (county seat), 60 mi from Bailey area.</p>
+    </div>
+  </div>
+
+  <!-- ============ SMITH TX ============ -->
+  <div class="col">
+    <div class="col-title">🌲 Smith, TX</div>
+
+    <div class="scorecard">
+      <div class="scorecard-title">Quick Scorecard</div>
+      <div class="scorecard-row"><span class="scorecard-label">County / State</span><span class="scorecard-value">Smith, TX</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Disclosure?</span><span class="scorecard-value">N</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Nearest Metro (pop)</span><span class="scorecard-value">DFW (8.35M)</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Distance to Metro</span><span class="scorecard-value">97 mi (outer)</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Infrastructure OK?</span><span class="scorecard-value">Y</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Active / Sold (12mo)</span><span class="scorecard-value">901 / <span class="pending">unverif*</span></span></div>
+      <div class="scorecard-row"><span class="scorecard-label">STR %</span><span class="scorecard-value"><span class="pending">pend PropStream</span></span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Median Price</span><span class="scorecard-value">~$150K</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Verdict</span><span class="scorecard-value v-maybe">MAYBE</span></div>
+    </div>
+
+    <div class="notes">
+      <div class="notes-title">Notes</div>
+      <p><span class="pos">+ Strength:</span> Massive metro (DFW 8.35M) + huge volume (901 listings) + strong recreational draw.</p>
+      <p><span class="neg">– Weakness:</span> Non-disclosure state + outer-boundary donut (97 mi).</p>
+      <p><span class="label">Buyer profile:</span> Hunters, fishermen, timber investors, lake-lot buyers.</p>
+      <p><span class="label">Focus sub-markets:</span> Western/central Smith County parcels (80–95 mi from Dallas). Avoid eastern edge (past 100 mi).</p>
+      <p><span class="label">Active count source:</span> LandWatch (June 2026).</p>
+      <p><span class="label">*Sold unverifiable:</span> TX non-disclosure. Need PropStream + AcreValue for comp workflow.</p>
+    </div>
+  </div>
+
+  <!-- ============ WHITE TN ============ -->
+  <div class="col">
+    <div class="col-title">🌳 White, TN</div>
+
+    <div class="scorecard">
+      <div class="scorecard-title">Quick Scorecard</div>
+      <div class="scorecard-row"><span class="scorecard-label">County / State</span><span class="scorecard-value">White, TN</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Disclosure?</span><span class="scorecard-value">Y</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Nearest Metro (pop)</span><span class="scorecard-value">Nash 2.16M + Knox 957K ⭐</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Distance to Metro</span><span class="scorecard-value">97 / 98 mi</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Infrastructure OK?</span><span class="scorecard-value">Y ⚠️</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Active / Sold (12mo)</span><span class="scorecard-value">137 / ~80 est</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">STR %</span><span class="scorecard-value">~58% <span class="pending">est</span></span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Median Price</span><span class="scorecard-value">~$120K</span></div>
+      <div class="scorecard-row"><span class="scorecard-label">Verdict</span><span class="scorecard-value v-go">GO</span></div>
+    </div>
+
+    <div class="notes">
+      <div class="notes-title">Notes</div>
+      <p><span class="pos">+ Strength:</span> Dual-metro positioning (Nashville + Knoxville) — genuine Bosch advantage. Disclosure state + price fit.</p>
+      <p><span class="neg">– Weakness:</span> Thin inventory (137 active vs. Park's 560 and Smith's 901). Some Cumberland Plateau terrain.</p>
+      <p><span class="label">Buyer profile:</span> Recreational + infill; Nashville &amp; Knoxville commuter/2nd-home buyers.</p>
+      <p><span class="label">Mailer sizing:</span> Smaller campaigns, more frequent. Don't over-mail this market.</p>
+      <p><span class="label">Active count source:</span> LandWatch (June 2026). STR estimate from May audit (28.8% 6-mo sell-through → annualized).</p>
+      <p><span class="label">Cumberland Plateau:</span> Some parcels have steep escarpment edges — screen at parcel level.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Working verdict ranking: <strong>1. Park CO &nbsp;·&nbsp; 2. White TN &nbsp;·&nbsp; 3. Smith TX</strong>
+  &nbsp; · &nbsp;
+  Pending: Zillow STR for Park &amp; White · PropStream sold data for Smith TX
+  <br>
+  Data sources: County audits 2026-05-21 + 2026-06-11 · LandWatch · USAFacts/FRED · Prepared by Gerald 🍊
+</div>
+
+</body>
+</html>

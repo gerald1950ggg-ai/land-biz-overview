@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>County Selection Rubric</title>
+<style>
+  @page {
+    size: letter;
+    margin: 0.35in 0.45in;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.3;
+    color: #1a1a1a;
+    background: #fff;
+    max-width: 7.6in;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 18pt;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #2c3e50;
+    margin-bottom: 1px;
+  }
+  .header .sub {
+    font-size: 9pt;
+    color: #777;
+    letter-spacing: 0.02em;
+  }
+
+  /* Steps */
+  .step {
+    margin-bottom: 6px;
+    page-break-inside: avoid;
+  }
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 2px;
+  }
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: #2c3e50;
+    color: #fff;
+    font-size: 10pt;
+    font-weight: 700;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #2c3e50;
+  }
+  .step-body {
+    margin-left: 26px;
+    font-size: 9pt;
+    color: #333;
+  }
+  .step-body ul {
+    margin: 1px 0 0 14px;
+    padding: 0;
+  }
+  .step-body li {
+    margin-bottom: 1px;
+  }
+
+  /* Threshold badges */
+  .thresh {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 9pt;
+    padding: 0px 5px;
+    border-radius: 3px;
+    color: #fff;
+  }
+  .pass { background: #27ae60; }
+  .warn { background: #e67e22; }
+  .fail { background: #c0392b; }
+  .num { font-weight: 700; color: #2c3e50; }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1.5px dashed #bbb;
+    margin: 6px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 7.5pt;
+    color: #999;
+    margin-top: 8px;
+    border-top: 1px solid #ddd;
+    padding-top: 4px;
+  }
+
+  /* Scorecard */
+  .scorecard {
+    border: 1.5px solid #2c3e50;
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-top: 6px;
+    max-width: 4in;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .scorecard-title {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #2c3e50;
+    letter-spacing: 0.03em;
+    margin-bottom: 2px;
+  }
+  .scorecard-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 7.5pt;
+    padding: 1px 0;
+    border-bottom: 1px dotted #ddd;
+  }
+  .scorecard-row:last-child { border-bottom: none; }
+  .scorecard-label { color: #555; }
+  .scorecard-value { font-weight: 600; color: #2c3e50; min-width: 90px; text-align: right; }
+
+  /* Print */
+  @media print {
+    body { width: 100%; padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>County Selection Rubric</h1>
+  <div class="sub">Land Profit Generator Method — 6-Step Screen</div>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <span class="step-num">1</span>
+    <span class="step-title">Pick State — Disclosure Check</span>
+  </div>
+  <div class="step-body">
+    <span class="pass thresh">GO</span> Full disclosure state (sale prices public)<br>
+    <span class="warn thresh">CAUTION</span> Non-disclosure — harder comps, skip if starting out<br>
+    Non-disclosure: <strong>TX, ID, UT, AK, MS, ND, KS, LA, MO, MT, NM, WY</strong>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <span class="step-num">2</span>
+    <span class="step-title">Target Metro — Population ≥ 750K</span>
+  </div>
+  <div class="step-body">
+    Find the nearest metro (MSA) to your target county.<br>
+    <span class="pass thresh">GO</span> Metro pop <span class="num">≥ 750K</span> (ideally 1M+)<br>
+    <span class="fail thresh">NO-GO</span> Metro pop <span class="num">&lt; 750K</span><br>
+    Source: Google "<em>[city] metro area population</em>" or Census MSA tables
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <span class="step-num">3</span>
+    <span class="step-title">Donut Distance — 30 to 100 Miles</span>
+  </div>
+  <div class="step-body">
+    Measure driving distance from metro center to county seat.<br>
+    <span class="fail thresh">TOO CLOSE</span> <span class="num">&lt; 30 mi</span> — land too expensive<br>
+    <span class="pass thresh">SWEET SPOT</span> <span class="num">30–100 mi</span> — growth expansion zone<br>
+    <span class="fail thresh">TOO FAR</span> <span class="num">&gt; 100 mi</span> — buyer pool thins out<br>
+    Use Google Maps "Measure distance" · Metros expand outward — be ahead of the growth, not in it
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <span class="step-num">4</span>
+    <span class="step-title">Infrastructure &amp; Topography</span>
+  </div>
+  <div class="step-body">
+    Google Maps satellite view — scan for red flags:<br>
+    <span class="fail thresh">AVOID</span> No road grid (landlocked), desert, aggressive slopes<br>
+    <span class="pass thresh">GO</span> County roads on grid, usable terrain, low flood risk<br>
+    Ask: "Is there an obvious reason people wouldn't want to live here?" · Check FEMA flood map (<em>msc.fema.gov</em>)
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="step">
+  <div class="step-header">
+    <span class="step-num">5</span>
+    <span class="step-title">Sold-to-Active Ratio (Zillow) — 20% to 130%</span>
+  </div>
+  <div class="step-body">
+    Zillow → <strong>Lots/Land only</strong> → your acreage range (1–5 ac).<br>
+    <em>Active:</em> "For Sale" → any days → record total. <em>Sold:</em> "Sold" → 12 months → record total.<br>
+    <strong>Formula:</strong> Sold ÷ Active × 100 = <strong>STR%</strong><br>
+    <span class="fail thresh">DEAD</span> STR <span class="num">&lt; 20%</span> — market too slow, land sits<br>
+    <span class="pass thresh">IDEAL</span> STR <span class="num">20–130%</span> — competitive balance<br>
+    <span class="warn thresh">HOT</span> STR <span class="num">&gt; 130%</span> — seller's market, may overpay<br>
+    <span class="fail thresh">LOW SAMPLE</span> Sold count <span class="num">&lt; 50</span> — insufficient data, skip<br>
+    Cross-check on Redfin — if within 25%, average them. If not, investigate.
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <span class="step-num">6</span>
+    <span class="step-title">Market Values — $5K to $300K Sweet Spot</span>
+  </div>
+  <div class="step-body">
+    Same Zillow filter — sort by price, scan the distribution.<br>
+    <span class="pass thresh">GO</span> 50%+ of listings priced <span class="num">$5K–$300K</span><br>
+    <span class="fail thresh">TOO CHEAP</span> Most <span class="num">&lt; $5K</span> — profit eaten by fixed costs<br>
+    <span class="fail thresh">TOO PRICEY</span> Most <span class="num">&gt; $300K</span> — complex deals, slow turns<br>
+    Best sweet spot: <span class="num">$10K–$100K</span> for rapid acquisition &amp; sale
+  </div>
+</div>
+
+<div class="scorecard">
+  <div class="scorecard-title">Quick Scorecard — Fill In Per County</div>
+  <div class="scorecard-row"><span class="scorecard-label">County / State</span><span class="scorecard-value">___________________</span></div>
+  <div class="scorecard-row"><span class="scorecard-label">Disclosure?</span><span class="scorecard-value">Y / N</span></div>
+  <div class="scorecard-row"><span class="scorecard-label">Nearest Metro (pop)</span><span class="scorecard-value">____________ (____K)</span></div>
+  <div class="scorecard-row"><span class="scorecard-label">Distance to Metro</span><span class="scorecard-value">_______ mi</span></div>
+  <div class="scorecard-row"><span class="scorecard-label">Infrastructure OK?</span><span class="scorecard-value">Y / N</span></div>
+  <div class="scorecard-row"><span class="scorecard-label">Active / Sold (12mo)</span><span class="scorecard-value">______ / ______</span></div>
+  <div class="scorecard-row"><span class="scorecard-label">STR %</span><span class="scorecard-value">_______%</span></div>
+  <div class="scorecard-row"><span class="scorecard-label">Median Price</span><span class="scorecard-value">$__________</span></div>
+  <div class="scorecard-row"><span class="scorecard-label">Verdict</span><span class="scorecard-value">GO / MAYBE / NO-GO</span></div>
+</div>
+
+<div class="footer">
+  LPG Module 2 + Jack Bosch Criteria · Target: 15 counties across 2–3 states · Start 500–750 mailers/county to test<br>
+  Sources: Zillow, Redfin, Google Maps, Census MSA, FEMA · Prepared by Gerald 🍊
+</div>
+
+</body>
+</html>
